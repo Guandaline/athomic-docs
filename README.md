@@ -1,15 +1,15 @@
-# Nala Core API (Fortify Framework)
+# Athomic Docs (Athomic Framework)
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/guandaline/nala-core-api/ci.yml?branch=main)](https://github.com/guandaline/nala-core-api/actions)
-[![Coverage](https://img.shields.io/codecov/c/github/guandaline/nala-core-api.svg)](https://codecov.io/gh/guandaline/nala-core-api)
-[![License](https://img.shields.io/github/license/guandaline/nala-core-api)](./LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/guandaline/athomic-docs/ci.yml?branch=main)](https://github.com/guandaline/athomic-docs/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/guandaline/athomic-docs.svg)](https://codecov.io/gh/guandaline/athomic-docs)
+[![License](https://img.shields.io/github/license/guandaline/athomic-docs)](./LICENSE)
 [![Commit Style](https://img.shields.io/badge/commit%20style-conventional-blue.svg)](./COMMIT_GUIDE.md)
 
-**Nala Core API** is an opinionated, production-ready application chassis designed in Python to build resilient, observable, and secure microservices. It provides a robust foundation—the **Fortify Layer**—that handles cross-cutting infrastructure concerns, allowing engineering teams to focus exclusively on delivering business value.
+**Athomic Docs** is an opinionated, production-ready application chassis designed in Python to build resilient, observable, and secure microservices. It provides a robust foundation—the **Athomic Layer**—that handles cross-cutting infrastructure concerns, allowing engineering teams to focus exclusively on delivering business value.
 
 ## 🎯 Core Philosophy
 
-The framework's architecture is built on the principle of **inverting control from the infrastructure to the business logic**. By providing a rich set of production-grade components as a service, Fortify accelerates development, enforces best practices, and drastically reduces the cognitive load on developers. Our design is guided by:
+The framework's architecture is built on the principle of **inverting control from the infrastructure to the business logic**. By providing a rich set of production-grade components as a service, Athomic accelerates development, enforces best practices, and drastically reduces the cognitive load on developers. Our design is guided by:
 
 -   **Layered & Domain-Driven Design**: A strict separation between Domain, Application, and Infrastructure layers ensures your business logic remains pure and technology-agnostic.
 -   **Protocol-Oriented Contracts**: Components are decoupled through abstract protocols, making the framework extensible and easy to test.
@@ -19,11 +19,11 @@ The framework's architecture is built on the principle of **inverting control fr
 
 ## ✨ Feature Spotlight: Production-Ready Capabilities
 
-While the framework is comprehensive, three core pillars exemplify the value Fortify delivers out-of-the-box.
+While the framework is comprehensive, three core pillars exemplify the value Athomic delivers out-of-the-box.
 
 ### 1. Unshakeable Resilience & Fault Tolerance
 
-Fortify provides a complete, cohesive suite of over a dozen resilience patterns that work together to create self-healing systems. It's not just a collection of tools; it's an integrated ecosystem.
+Athomic provides a complete, cohesive suite of over a dozen resilience patterns that work together to create self-healing systems. It's not just a collection of tools; it's an integrated ecosystem.
 
 -   **Proactive Failure Prevention**: The **Circuit Breaker**, **Bulkhead**, and **Rate Limiter** patterns protect your services from being overwhelmed by failing or slow dependencies. The state for these components can be distributed (via Redis), making them effective across a whole cluster of service instances.
 -   **Automated Recovery**: The **Retry** pattern, with exponential backoff and jitter, handles transient failures automatically. For more complex scenarios, the **Fallback** mechanism allows for graceful degradation, serving stale cache data or default values instead of failing completely.
@@ -31,25 +31,25 @@ Fortify provides a complete, cohesive suite of over a dozen resilience patterns 
 
 ### 2. Deep, Correlated Observability
 
-Understanding a distributed system is impossible without first-class observability. Fortify provides a "three pillars" solution where logs, metrics, and traces are automatically correlated, giving you a unified view of every request.
+Understanding a distributed system is impossible without first-class observability. Athomic provides a "three pillars" solution where logs, metrics, and traces are automatically correlated, giving you a unified view of every request.
 
 -   **Structured Logging with Zero PII Leakage**: Our `Loguru`-based logging is not only structured (JSON) but also features a powerful, extensible engine that **automatically masks sensitive data and PII** before a log is ever written.
 -   **End-to-End Distributed Tracing**: Built on the **OpenTelemetry** standard, tracing is automatic for all database calls, HTTP requests, and cache operations. Our most powerful feature is **seamless context propagation** across message brokers, meaning a single trace can span from an initial API request to the background worker that processes its resulting event.
--   **Rich Prometheus Metrics**: Nearly every component in Fortify is instrumented with detailed Prometheus metrics: API latency, database query times, Kafka consumer lag, circuit breaker state changes, and more. This provides immediate, deep insight into your application's health and performance.
+-   **Rich Prometheus Metrics**: Nearly every component in Athomic is instrumented with detailed Prometheus metrics: API latency, database query times, Kafka consumer lag, circuit breaker state changes, and more. This provides immediate, deep insight into your application's health and performance.
 
 ### 3. Guaranteed Messaging with the Transactional Outbox
 
-Fortify solves the critical "dual-write" problem in microservices with a powerful, horizontally scalable implementation of the **Transactional Outbox** pattern.
+Athomic solves the critical "dual-write" problem in microservices with a powerful, horizontally scalable implementation of the **Transactional Outbox** pattern.
 
 -   **Atomic & Reliable**: Events are saved to your primary database within the *same transaction* as your business data. This guarantees that a message is queued for delivery **if and only if** your business transaction succeeds.
 -   **Distributed & Scalable Publisher**: A dedicated, multi-instance background service (the `OutboxPublisher`) reliably polls for new events and publishes them to the message broker.
--   **Intelligent Coordination**: The publisher uses other Fortify patterns like **Sharding** (to distribute the workload), **Leasing** (to guarantee event ordering per entity), and **Backpressure** (to avoid hammering a failing broker) to operate safely and efficiently at scale.
+-   **Intelligent Coordination**: The publisher uses other Athomic patterns like **Sharding** (to distribute the workload), **Leasing** (to guarantee event ordering per entity), and **Backpressure** (to avoid hammering a failing broker) to operate safely and efficiently at scale.
 
 ---
 
 ## 🗺️ Framework Modules at a Glance
 
-This is a map of the capabilities provided by the Fortify Layer.
+This is a map of the capabilities provided by the Athomic Layer.
 
 #### Core & Lifecycle
 -   **Lifecycle Management**: Orchestrates the startup and shutdown sequence of all services.
