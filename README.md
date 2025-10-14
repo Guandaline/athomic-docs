@@ -91,7 +91,7 @@ This is a map of the capabilities provided by the Athomic Layer.
 
 ## 📚 Documentation
 
-For a deep dive into each module, architectural decision records (ADRs), and usage guides, please visit our **[full documentation site](https://guandaline.github.io/page-docs/)**.
+For a deep dive into each module, architectural decision records (ADRs), and usage guides, please visit our **[full documentation site](https://guandaline.github.io/athomic-docs/)**.
 
 ## 🤝 Contributing
 
