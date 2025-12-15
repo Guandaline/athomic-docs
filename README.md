@@ -1,144 +1,102 @@
-# Athomic 
+# Athomic Docs (Athomic Framework)
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/guandaline/athomic-docs/ci.yml?branch=main)](https://github.com/guandaline/athomic-docs/actions)
 [![Coverage](https://img.shields.io/codecov/c/github/guandaline/athomic-docs.svg)](https://codecov.io/gh/guandaline/athomic-docs)
-[![License](https://img.shields.io/github/license/guandaline/athomic-docs)](https://github.com/guandaline/athomic-docs/blob/main/LICENSE)
-[![Python Version](https://img.shields.io/pypi/pyversions/athomic-docs.svg)](https://pypi.org/project/athomic-docs/)
+[![License](https://img.shields.io/github/license/guandaline/athomic-docs)](./LICENSE)
+[![Commit Style](https://img.shields.io/badge/commit%20style-conventional-blue.svg)](./COMMIT_GUIDE.md)
 
-**Athomic** is an opinionated, production-ready engine for building resilient, observable, and scalable microservices in Python. It provides a robust foundation—the **Athomic Layer**—that handles cross-cutting concerns, allowing developers to focus purely on business logic.
+**Athomic Docs** is an opinionated, production-ready application chassis designed in Python to build resilient, observable, and secure microservices. It provides a robust foundation—the **Athomic Layer**—that handles cross-cutting infrastructure concerns, allowing engineering teams to focus exclusively on delivering business value.
 
-Our philosophy is grounded in battle-tested software engineering principles like **SOLID**, **Single Responsibility (SRP)**, and **Dependency Injection (DI)**, ensuring that applications built on this engine are maintainable, scalable, and easy to test.
+## 🎯 Core Philosophy
 
----
+The framework's architecture is built on the principle of **inverting control from the infrastructure to the business logic**. By providing a rich set of production-grade components as a service, Athomic accelerates development, enforces best practices, and drastically reduces the cognitive load on developers. Our design is guided by:
 
-## 🚀 Features & The "Athomic Layer"
-
-Athomic provides a comprehensive set of modules known as the **Athomic Layer**, designed to handle the complexities of modern distributed systems.
-
-### 🧠 AI & LLM Integration
-* **Agents & RAG:** Built-in support for building AI agents and Retrieval-Augmented Generation systems.
-* **LLM Abstraction:** Agnostic interfaces for various LLM providers.
-* **Document Ingestion:** Pipelines for ingesting and processing documents for vector search.
-* **Memory & Governance:** State management for AI conversations and governance policies.
-
-### 💾 Data & Persistence
-* **Connection Management:** Centralized lifecycle management for all data store connections.
-* **Document Stores:** Robust abstraction for document databases (e.g., MongoDB) with **Beanie** ODM integration.
-* **Key-Value Stores:** High-performance caching and storage (e.g., Redis) with flexible wrappers.
-* **Graph Databases:** Asynchronous graph database support (e.g., Neo4j).
-* **Vector Stores:** Integration with vector databases (e.g., Qdrant) for AI applications.
-* **Transactional Outbox:** Guaranteed at-least-once event delivery using the Outbox Pattern.
-* **Migrations:** Database-agnostic migration engine with distributed locking support.
-
-### 🛡️ Security
-* **Authentication & Authorization:** Policy-based security using JWT and API Keys.
-* **Secrets Management:** Secure runtime secret resolution from providers like Vault.
-* **Cryptography:** High-level abstractions for symmetric encryption.
-
-### 👁️ Observability
-* **Structured Logging:** JSON-based structured logging with automatic sensitive data masking.
-* **Distributed Tracing:** End-to-end tracing powered by **OpenTelemetry**.
-* **Metrics:** Out-of-the-box instrumentation with **Prometheus**.
-* **Health Checks:** Extensible readiness and liveness probes for Kubernetes.
-* **Data Lineage:** Tracking data flow and dependencies (OpenLineage support).
-
-### ⚡ Performance & Resilience
-* **Resilience Patterns:** Comprehensive implementation of patterns like **Retry**, **Circuit Breaker**, **Rate Limiter**, **Bulkhead**, **Timeout**, **Fallback**, and **Backpressure**.
-* **Caching:** Decorator-based caching strategies.
-* **High Performance:** Optimized bootstrap using `uvloop`.
-
-### 🧩 Integration
-* **Messaging:** Unified producer/consumer interfaces for message brokers (e.g., Kafka).
-* **Service Discovery:** Integration with tools like Consul.
-* **Feature Flags:** Dynamic feature toggling.
+-   **Layered & Domain-Driven Design**: A strict separation between Domain, Application, and Infrastructure layers ensures your business logic remains pure and technology-agnostic.
+-   **Protocol-Oriented Contracts**: Components are decoupled through abstract protocols, making the framework extensible and easy to test.
+-   **Resilience & Security by Default**: We believe that a reliable and secure application is not an afterthought. These qualities are baked into the core of the framework.
 
 ---
 
-## 🏗️ Architecture
+## ✨ Feature Spotlight: Production-Ready Capabilities
 
-The project follows a clean, layered architecture to enforce separation of concerns:
+While the framework is comprehensive, three core pillars exemplify the value Athomic delivers out-of-the-box.
 
-* **Athomic Layer:** The infrastructure and utility layer provided by this framework.
-* **Domain Layer:** Your business logic, completely decoupled from infrastructure details.
-* **API Layer:** The entry point (FastAPI) that orchestrates the domain and athomic layers.
+### 1. Unshakeable Resilience & Fault Tolerance
 
-Dependencies are managed via a robust **Dependency Injection** system, making components loosely coupled and highly testable.
+Athomic provides a complete, cohesive suite of over a dozen resilience patterns that work together to create self-healing systems. It's not just a collection of tools; it's an integrated ecosystem.
 
----
+-   **Proactive Failure Prevention**: The **Circuit Breaker**, **Bulkhead**, and **Rate Limiter** patterns protect your services from being overwhelmed by failing or slow dependencies. The state for these components can be distributed (via Redis), making them effective across a whole cluster of service instances.
+-   **Automated Recovery**: The **Retry** pattern, with exponential backoff and jitter, handles transient failures automatically. For more complex scenarios, the **Fallback** mechanism allows for graceful degradation, serving stale cache data or default values instead of failing completely.
+-   **Data Consistency in a Distributed World**: We provide advanced patterns like **Distributed Locking**, **Idempotency** for safe API retries, and a full-fledged **Saga** implementation (with both Orchestration and Choreography) to manage complex, multi-service transactions without distributed ACID.
 
-## 🛠️ Getting Started
+### 2. Deep, Correlated Observability
 
-Follow these steps to get a local development environment up and running.
+Understanding a distributed system is impossible without first-class observability. Athomic provides a "three pillars" solution where logs, metrics, and traces are automatically correlated, giving you a unified view of every request.
 
-### Prerequisites
+-   **Structured Logging with Zero PII Leakage**: Our `Loguru`-based logging is not only structured (JSON) but also features a powerful, extensible engine that **automatically masks sensitive data and PII** before a log is ever written.
+-   **End-to-End Distributed Tracing**: Built on the **OpenTelemetry** standard, tracing is automatic for all database calls, HTTP requests, and cache operations. Our most powerful feature is **seamless context propagation** across message brokers, meaning a single trace can span from an initial API request to the background worker that processes its resulting event.
+-   **Rich Prometheus Metrics**: Nearly every component in Athomic is instrumented with detailed Prometheus metrics: API latency, database query times, Kafka consumer lag, circuit breaker state changes, and more. This provides immediate, deep insight into your application's health and performance.
 
-* **Docker** & **Docker Compose**
-* **Python 3.11+**
-* **Poetry**
+### 3. Guaranteed Messaging with the Transactional Outbox
 
-### 1. Clone the Repository
+Athomic solves the critical "dual-write" problem in microservices with a powerful, horizontally scalable implementation of the **Transactional Outbox** pattern.
 
-\```bash
-git clone [https://github.com/guandaline/athomic-docs.git](https://github.com/guandaline/athomic-docs.git)
-cd athomic-docs
-\```
-
-### 2. Start Infrastructure Services
-
-This command will start all necessary backing services defined in `docker-compose.yml` (e.g., MongoDB, Redis, Vault, Neo4j, Qdrant).
-
-\```bash
-docker-compose up -d
-\```
-
-### 3. Install Dependencies
-
-Install the project's Python dependencies using Poetry.
-
-\```bash
-poetry install
-\```
-
-### 4. Run the Application
-
-Execute the application using `uvicorn`.
-
-\```bash
-poetry run uvicorn nala.api.main:app --reload
-\```
-
-The server will start on `http://127.0.0.1:8000`. You can access the interactive API documentation at:
-* **Swagger UI:** `http://127.0.0.1:8000/docs`
-* **ReDoc:** `http://127.0.0.1:8000/redoc`
+-   **Atomic & Reliable**: Events are saved to your primary database within the *same transaction* as your business data. This guarantees that a message is queued for delivery **if and only if** your business transaction succeeds.
+-   **Distributed & Scalable Publisher**: A dedicated, multi-instance background service (the `OutboxPublisher`) reliably polls for new events and publishes them to the message broker.
+-   **Intelligent Coordination**: The publisher uses other Athomic patterns like **Sharding** (to distribute the workload), **Leasing** (to guarantee event ordering per entity), and **Backpressure** (to avoid hammering a failing broker) to operate safely and efficiently at scale.
 
 ---
 
-## ⚙️ Configuration
+## 🗺️ Framework Modules at a Glance
 
-Athomic uses a tiered configuration system supported by `Dynaconf` and `Pydantic`.
+This is a map of the capabilities provided by the Athomic Layer.
 
-1.  **`settings.toml`**: Base configuration file.
-2.  **Environment Variables**: Override any setting using the `NALA_` prefix (e.g., `NALA_DATABASE__DOCUMENTS__DEFAULT__URI`).
-3.  **Secrets**: Sensitive values are resolved at runtime via the `SecretsManager`.
+#### Core & Lifecycle
+-   **Lifecycle Management**: Orchestrates the startup and shutdown sequence of all services.
+-   **Plugin System**: Extends the application with new features (like API routes) in a decoupled way.
+-   **Services**: A base protocol for all stateful, long-running components.
 
-Example `settings.toml` snippet:
+#### Configuration & Context
+-   **Configuration**: A type-safe system combining `Dynaconf` and `Pydantic` for validated, environment-aware settings.
+-   **Live Configuration**: A hot-reloading system to change application settings at runtime without restarts.
+-   **Context Management**: Manages request-scoped context (`trace_id`, `tenant_id`) using `contextvars` for seamless propagation.
 
-\```toml
-[default.database.documents.default_mongo]
-enabled = true
-backend = "mongo"
-  [default.database.documents.default_mongo.provider]
-  database_name = "nala_db"
-  # Secure password reference
-  password = { path = "database/mongo", key = "password" }
-\```
+#### Data & Persistence
+-   **Connection Management**: A central, lifecycle-managed registry for all database and cache connections.
+-   **Document & Key-Value Stores**: Abstractions for MongoDB and Redis with a powerful wrapper system.
+-   **Transactional Outbox**: Guarantees at-least-once event delivery.
+-   **Database Migrations**: A programmatic, version-controlled schema migration engine.
+-   **File Storage**: A clean abstraction for object storage (GCS, local files).
+
+#### Security
+-   **Secrets Management**: Just-in-time secret resolution from backends like HashiCorp Vault.
+-   **Authentication & Authorization**: A flexible, policy-based system for securing endpoints (JWT, API Keys).
+-   **Cryptography**: High-level abstraction for symmetric payload encryption (Fernet).
+
+#### Cross-Cutting Concerns & Control
+-   **Payload Pipeline**: A "Pipes and Filters" system for composing transformations like encryption and compression.
+-   **Notifications**: A resilient system for sending emails (SMTP) and other notifications.
+-   **Internal Event Bus**: An in-process Pub/Sub for intra-service communication.
+-   **HTTP Client**: A factory for creating pre-configured, resilient, and observable HTTP clients.
+-   **Feature Flags**: A system for dynamically toggling features at runtime.
+-   **Task Scheduler**: A persistent, distributed scheduler for future or delayed task execution.
+
+#### Integration Layer
+-   **Messaging (Producers & Consumers)**: A high-level abstraction for Kafka with decorator-based consumers.
+-   **Background Tasks**: An abstraction for enqueuing jobs to distributed task brokers like Taskiq or RQ.
+-   **Service Discovery**: An integration with Consul for service registration and discovery.
+-   **Data Lineage**: Generates and stores lineage events compliant with the **OpenLineage** standard.
 
 ---
+
+## 📚 Documentation
+
+For a deep dive into each module, architectural decision records (ADRs), and usage guides, please visit our **[full documentation site](https://guandaline.github.io/athomic-docs/)**.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) to learn about our development process, how to propose bug fixes and improvements, and how to build and test your changes to Athomic.
+We welcome contributions! Please read our [**Contributing Guide**](./CONTRIBUTING.md) to learn about our development process, coding standards, and how to submit pull requests.
 
-## 📄 License
+## 📜 License
 
-This project is licensed under the terms of the MIT license.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
