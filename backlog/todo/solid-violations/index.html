@@ -1,0 +1,5320 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Robust IDP for building resilient, observable, and scalable microservices in Python.">
+      
+      
+        <meta name="author" content="Nalaminds">
+      
+      
+        <link rel="canonical" href="https://guandaline.github.io/athomic/backlog/todo/solid-violations/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>SOLID Violations Backlog - Athomic</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#solid-violations-backlog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Athomic" class="md-header__button md-logo" aria-label="Athomic" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Athomic
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SOLID Violations Backlog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/guandaline/athomic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/athomic
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../athomic/ai/agents/" class="md-tabs__link">
+          
+  
+  
+  Athomic Layer
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Athomic" class="md-nav__button md-logo" aria-label="Athomic" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Athomic
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/guandaline/athomic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/athomic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/athomic-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/domain-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Athomic Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embeddings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/semantic_cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/qa_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA & Evaluation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/ai/feature_platform_runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Platform Runbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core & Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core & Lifecycle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Settings & Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/config/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/live_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/credentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credential Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Persistence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & Persistence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connection Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/kvstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key-Value Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/outbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactional Outbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/cloud_native_mesh_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud-Native & Service Mesh Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication & Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/crypto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structured Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Tracing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health & Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/lineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Lineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting Concerns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting Concerns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/serializer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serializer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/payload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/compression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/notification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Event Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/feature_flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Flags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Performance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/compression_middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/bootstrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap (uvloop)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11_1" id="__nav_3_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messaging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Messaging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/producer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Producer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consumer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/retry-dlq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry & DLQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/delay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delayed Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/context-propagation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Propagation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/outbox_publisher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbox Publisher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/consul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consul Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/settings_providers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Settings Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/openlineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenLineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resilience Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resilience Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/retry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/circuit_breaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuit Breaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/rate_limiter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeout & Cancellation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/bulkhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bulkhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/fallback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/locking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Locking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/idempotency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Idempotency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/leasing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Leasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/sharding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workload Sharding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/backpressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backpressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/backoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exponential Backoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/sagas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sagas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/adaptive_throttling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Throttling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p0-cross-layer-dip-violations-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0 — Cross-Layer DIP Violations (CRITICAL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P0 — Cross-Layer DIP Violations (CRITICAL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-001-observability-importing-ai-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-001 — observability/ importing ai/ ✅ FIXED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-002-plugins-importing-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-002 — plugins/ importing facade/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-003-pluginsinterfacespy-importing-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-003 — plugins/interfaces.py importing facade/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p1-within-package-circular-import-violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — Within-Package Circular Import Violations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P1 — Within-Package Circular Import Violations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-004-resilienceadaptive_concurrencyadmissionqueuepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-004 — resilience/adaptive_concurrency/admission/queue.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-005-resilienceadaptive_concurrencyalgorithmstelemetrypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-005 — resilience/adaptive_concurrency/algorithms/telemetry.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-006-resilienceadaptive_concurrencypoliciescontextpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-006 — resilience/adaptive_concurrency/policies/context.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-007-resilienceadaptive_concurrencyfairnessdrfpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-007 — resilience/adaptive_concurrency/fairness/drf.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-008-resilienceadaptive_concurrencyslotslotpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-008 — resilience/adaptive_concurrency/slot/slot.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-009-integrationmessagingproducersstrategiesprotocolpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-009 — integration/messaging/producers/strategies/protocol.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-010-integrationmessagingproducersstrategiesdirectpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-010 — integration/messaging/producers/strategies/direct.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-011-integrationmessagingproducersstrategiesdelayedpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-011 — integration/messaging/producers/strategies/delayed.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-012-integrationmessagingretryprocessor_servicepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-012 — integration/messaging/retry/processor_service.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-013-integrationmessagingproviderslocalstrategiessinglepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-013 — integration/messaging/providers/local/strategies/single.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-014-integrationmessagingproviderslocalstrategiesbatchpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-014 — integration/messaging/providers/local/strategies/batch.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-015-integrationmessagingproviderskafkastrategiessinglepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-015 — integration/messaging/providers/kafka/strategies/single.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-016-integrationmessagingproviderslocalstrategiescreatorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-016 — integration/messaging/providers/local/strategies/creators.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-017-integrationmessagingconsumersstrategiescreatorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-017 — integration/messaging/consumers/strategies/creators.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-018-integrationmessagingconsumersbasepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-018 — integration/messaging/consumers/base.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-019-integrationmessagingconsumersstrategiesconsumptionprotocolpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-019 — integration/messaging/consumers/strategies/consumption/protocol.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-020-integrationmessagingconsumersprocessorscreatorspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-020 — integration/messaging/consumers/processors/creators.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-021-integrationmessagingconsumersstrategiesorchestrationprotocolpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-021 — integration/messaging/consumers/strategies/orchestration/protocol.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-022-integrationmessagingconsumersstrategiesorchestrationprovidersorderedpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-022 — integration/messaging/consumers/strategies/orchestration/providers/ordered.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-023-integrationmessagingconsumersstrategiesorchestrationprovidersdirectpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-023 — integration/messaging/consumers/strategies/orchestration/providers/direct.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2-acceptable-patterns-not-violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2 — Acceptable Patterns (NOT violations)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P2 — Acceptable Patterns (NOT violations)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-024-aifeaturestensorsproviderstorch_backendpy-optional-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-024 — ai/features/tensors/providers/torch_backend.py — optional dependency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p1-within-aifeatures-type_checking-forward-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — Within ai/features TYPE_CHECKING Forward References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P1 — Within ai/features TYPE_CHECKING Forward References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-027-aifeaturesgraphtracingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-027 — ai/features/graph/tracing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-028-aifeaturestensorsfactorypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-028 — ai/features/tensors/factory.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-029-aifeaturestensorsproviderstorch_backendpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-029 — ai/features/tensors/providers/torch_backend.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p0-observability-importing-domain-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0 — observability/ Importing Domain Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P0 — observability/ Importing Domain Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-030-observabilitymetricsprobesredis_health_probepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-030 — observability/metrics/probes/redis_health_probe.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-031-observabilitymetricsprobesoutbox_probepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-031 — observability/metrics/probes/outbox_probe.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-032-observabilitymetricsqualitybaseline_servicepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-032 — observability/metrics/quality/baseline_service.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-033-observabilitytracingenrichersusage_enricherpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-033 — observability/tracing/enrichers/usage_enricher.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-034-observabilitytelemetryadaptersmessaging_adapterpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-034 — observability/telemetry/adapters/messaging_adapter.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p1-configschemas-importing-service-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — config/schemas Importing Service Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P1 — config/schemas Importing Service Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-035-configschemaslivepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-035 — config/schemas/live.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p1-database-importing-from-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — database/ Importing from resilience/
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="P1 — database/ Importing from resilience/">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v-024-databasemigrationsrunnerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-024 — database/migrations/runner.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-025-databasemigrationsfactorypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-025 — database/migrations/factory.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v-026-databasekvstorefallbackread_strategypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V-026 — database/kvstore/fallback/read_strategy.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-grouping-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix Grouping Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="solid-violations-backlog">SOLID Violations Backlog</h1>
+<blockquote>
+<p>All violations of the rules defined in <code>docs/guides/architecture/solid-rules.md</code>.
+Every item here must be fixed. No new <code>TYPE_CHECKING</code> imports may be added.</p>
+</blockquote>
+<hr />
+<h2 id="priority-levels">Priority Levels</h2>
+<ul>
+<li><strong>P0 — Critical:</strong> Cross-layer DIP violations (high layer imported by low layer). Fix immediately.</li>
+<li><strong>P1 — High:</strong> Within-package circular imports papered over with TYPE_CHECKING. Fix before next release.</li>
+<li><strong>P2 — Acceptable:</strong> Optional external dependencies (try/except import pattern). Not a violation.</li>
+</ul>
+<hr />
+<h2 id="p0-cross-layer-dip-violations-critical">P0 — Cross-Layer DIP Violations (CRITICAL)</h2>
+<h3 id="v-001-observability-importing-ai-fixed">V-001 — <code>observability/</code> importing <code>ai/</code> ✅ FIXED</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/observability/metrics/usage/ai/features/feature_metrics.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from nala.athomic.ai.features.quality.protocol import DriftBaselineProtocol</code></td>
+</tr>
+<tr>
+<td>Type</td>
+<td>DIP — low layer (observability) importing from high layer (ai)</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Moved <code>record_output_distribution</code> to <code>ai/features/encoders/telemetry.py</code>. Removed <code>DriftStatsProvider</code> workaround. <code>feature_metrics.py</code> now contains ONLY metric definitions.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>✅ Fixed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-002-plugins-importing-facade">V-002 — <code>plugins/</code> importing <code>facade/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/plugins/hooks.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from nala.athomic.facade import Athomic</code></td>
+</tr>
+<tr>
+<td>Type</td>
+<td>DIP — plugins must not depend on the composition root</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Define <code>AthomicProtocol</code> in <code>src/nala/athomic/interfaces/athomic.py</code>. <code>facade.Athomic</code> implements it. <code>hooks.py</code> imports the Protocol.</td>
+</tr>
+<tr>
+<td>Effort</td>
+<td>Small — 1 new file + update 2 import sites</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-003-pluginsinterfacespy-importing-facade">V-003 — <code>plugins/interfaces.py</code> importing <code>facade/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/plugins/interfaces.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from nala.athomic.facade import Athomic</code></td>
+</tr>
+<tr>
+<td>Type</td>
+<td>DIP — same package as V-002, same root cause</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-002 — use <code>AthomicProtocol</code> from <code>interfaces/</code></td>
+</tr>
+<tr>
+<td>Effort</td>
+<td>Resolved together with V-002</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="p1-within-package-circular-import-violations">P1 — Within-Package Circular Import Violations</h2>
+<p>These are circular imports within the same Athomic module, worked around with <code>TYPE_CHECKING</code> instead of fixing the architecture.</p>
+<h3 id="v-004-resilienceadaptive_concurrencyadmissionqueuepy">V-004 — <code>resilience/adaptive_concurrency/admission/queue.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/resilience/adaptive_concurrency/admission/queue.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..discipline.protocol import QueueDisciplineProtocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td><code>admission</code> and <code>discipline</code> are mutually dependent</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Move <code>QueueDisciplineProtocol</code> to a new <code>resilience/adaptive_concurrency/protocols.py</code> that both packages import</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-005-resilienceadaptive_concurrencyalgorithmstelemetrypy">V-005 — <code>resilience/adaptive_concurrency/algorithms/telemetry.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/resilience/adaptive_concurrency/algorithms/telemetry.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING:</code> importing from <code>feedback.circuit_breaker</code>, <code>feedback.error</code>, <code>feedback.throughput</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular between <code>algorithms</code> and <code>feedback</code> sub-packages</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Extract shared feedback types to <code>resilience/adaptive_concurrency/feedback/types.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-006-resilienceadaptive_concurrencypoliciescontextpy">V-006 — <code>resilience/adaptive_concurrency/policies/context.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/resilience/adaptive_concurrency/policies/context.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..feedback.error import ...</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Same circular between <code>policies</code> and <code>feedback</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-005 — use shared <code>feedback/types.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-007-resilienceadaptive_concurrencyfairnessdrfpy">V-007 — <code>resilience/adaptive_concurrency/fairness/drf.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/resilience/adaptive_concurrency/fairness/drf.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..admission.queue import ...</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular between <code>fairness</code> and <code>admission</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Use Protocol defined in shared <code>protocols.py</code> (same file as V-004)</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-008-resilienceadaptive_concurrencyslotslotpy">V-008 — <code>resilience/adaptive_concurrency/slot/slot.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/resilience/adaptive_concurrency/slot/slot.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..feedback.error_protocol import ...</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular between <code>slot</code> and <code>feedback</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same shared <code>feedback/types.py</code> from V-005</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-009-integrationmessagingproducersstrategiesprotocolpy">V-009 — <code>integration/messaging/producers/strategies/protocol.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/producers/strategies/protocol.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..base import BaseProducer</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular between <code>strategies</code> and <code>producers</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Extract <code>ProducerBase</code> abstract type to <code>producers/types.py</code>; both import from there</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-010-integrationmessagingproducersstrategiesdirectpy">V-010 — <code>integration/messaging/producers/strategies/direct.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/producers/strategies/direct.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td>Same as V-009</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-009</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-011-integrationmessagingproducersstrategiesdelayedpy">V-011 — <code>integration/messaging/producers/strategies/delayed.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/producers/strategies/delayed.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td>Same as V-009</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-009</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-012-integrationmessagingretryprocessor_servicepy">V-012 — <code>integration/messaging/retry/processor_service.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/retry/processor_service.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..consumers import BaseConsumer</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular between <code>retry</code> and <code>consumers</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Extract <code>ConsumerBase</code> Protocol to <code>messaging/protocols.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-013-integrationmessagingproviderslocalstrategiessinglepy">V-013 — <code>integration/messaging/providers/local/strategies/single.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/providers/local/strategies/single.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING:</code> importing from <code>consumers.base</code>, <code>consumers.processors.protocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Provider layer depending on consumer layer implementation</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Use Protocols from shared <code>messaging/protocols.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-014-integrationmessagingproviderslocalstrategiesbatchpy">V-014 — <code>integration/messaging/providers/local/strategies/batch.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/providers/local/strategies/batch.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td>Same as V-013</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-013</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-015-integrationmessagingproviderskafkastrategiessinglepy">V-015 — <code>integration/messaging/providers/kafka/strategies/single.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/providers/kafka/strategies/single.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING:</code> importing <code>consumers.base</code>, <code>consumers.processors.protocol</code>, <code>raw_message</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same shared <code>messaging/protocols.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-016-integrationmessagingproviderslocalstrategiescreatorspy">V-016 — <code>integration/messaging/providers/local/strategies/creators.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/providers/local/strategies/creators.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..consumers.strategies.consumption.protocol import ...</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Use Protocol from shared <code>messaging/protocols.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-017-integrationmessagingconsumersstrategiescreatorspy">V-017 — <code>integration/messaging/consumers/strategies/creators.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/strategies/creators.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from .consumption.protocol import ConsumptionStrategyProtocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular within <code>strategies</code> sub-package</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Move <code>ConsumptionStrategyProtocol</code> out of <code>consumption/</code> into <code>strategies/protocol.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-018-integrationmessagingconsumersbasepy">V-018 — <code>integration/messaging/consumers/base.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/base.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING:</code> importing <code>processors.protocol</code>, <code>raw_message</code>, <code>strategies.consumption</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular within <code>consumers</code> package</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Extract all shared types to <code>consumers/types.py</code>; base imports only from <code>types.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-019-integrationmessagingconsumersstrategiesconsumptionprotocolpy">V-019 — <code>integration/messaging/consumers/strategies/consumption/protocol.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/strategies/consumption/protocol.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ..consumers.base import BaseConsumer; from ..processors.protocol import ...</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular between <code>consumption/protocol</code> and <code>consumers/base</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Use shared <code>consumers/types.py</code> (same as V-018)</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-020-integrationmessagingconsumersprocessorscreatorspy">V-020 — <code>integration/messaging/consumers/processors/creators.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/processors/creators.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING:</code> importing <code>config</code>, <code>database.ConnectionManager</code>, <code>integration.messaging.decorators</code>, <code>serializer.protocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td><code>processors/creators</code> has too many dependencies — SRP violation too</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Split into smaller creators; each imports only what it directly needs at runtime</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-021-integrationmessagingconsumersstrategiesorchestrationprotocolpy">V-021 — <code>integration/messaging/consumers/strategies/orchestration/protocol.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/strategies/orchestration/protocol.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ...causality.vector_clock import VectorClock</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td><code>VectorClock</code> should be a Protocol or ABC in <code>causality/types.py</code>; import the type, not the implementation</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-022-integrationmessagingconsumersstrategiesorchestrationprovidersorderedpy">V-022 — <code>integration/messaging/consumers/strategies/orchestration/providers/ordered.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/strategies/orchestration/providers/ordered.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from ....causality.vector_clock import VectorClock</code></td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-021</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-023-integrationmessagingconsumersstrategiesorchestrationprovidersdirectpy">V-023 — <code>integration/messaging/consumers/strategies/orchestration/providers/direct.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/integration/messaging/consumers/strategies/orchestration/providers/direct.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td>Same as V-021</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Same as V-021</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="p2-acceptable-patterns-not-violations">P2 — Acceptable Patterns (NOT violations)</h2>
+<h3 id="v-024-aifeaturestensorsproviderstorch_backendpy-optional-dependency">V-024 — <code>ai/features/tensors/providers/torch_backend.py</code> — optional dependency</h3>
+<pre><code class="language-python">try:
+    import torch
+    _TORCH_AVAILABLE = True
+except ImportError:
+    _TORCH_AVAILABLE = False
+</code></pre>
+<p>This is the correct pattern for optional external dependencies. Not a violation.</p>
+<hr />
+<h2 id="p1-within-aifeatures-type_checking-forward-references">P1 — Within ai/features TYPE_CHECKING Forward References</h2>
+<h3 id="v-027-aifeaturesgraphtracingpy">V-027 — <code>ai/features/graph/tracing.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/ai/features/graph/tracing.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from config.schemas.ai.features.feature_settings import FeatureDefinitionSettings</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Used only as annotation; causes forward-ref circular at import time</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Add <code>from __future__ import annotations</code> at top; remove <code>TYPE_CHECKING</code> block</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-028-aifeaturestensorsfactorypy">V-028 — <code>ai/features/tensors/factory.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/ai/features/tensors/factory.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: from .feature_tensor import FeatureTensor; from .registry import TensorBackendRegistry</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Circular within <code>tensors/</code> sub-package</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Extract shared abstract types to <code>ai/features/tensors/types.py</code>; both <code>factory.py</code> and <code>feature_tensor.py</code> import from <code>types.py</code></td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-029-aifeaturestensorsproviderstorch_backendpy">V-029 — <code>ai/features/tensors/providers/torch_backend.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/ai/features/tensors/providers/torch_backend.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>if TYPE_CHECKING: import torch</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Torch is optional; TYPE_CHECKING used so mypy can resolve <code>torch.Tensor</code> type annotations</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Add <code>from __future__ import annotations</code> (PEP 563); removes need for TYPE_CHECKING block while keeping mypy compatibility</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="p0-observability-importing-domain-layers">P0 — observability/ Importing Domain Layers</h2>
+<h3 id="v-030-observabilitymetricsprobesredis_health_probepy">V-030 — <code>observability/metrics/probes/redis_health_probe.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/observability/metrics/probes/redis_health_probe.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.performance.cache import cache</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Health probe using a performance-layer decorator — wrong layer for this code</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Move this probe OUT of observability into a <code>performance/health/</code> module or use a local caching pattern (functools.lru_cache)</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-031-observabilitymetricsprobesoutbox_probepy">V-031 — <code>observability/metrics/probes/outbox_probe.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/observability/metrics/probes/outbox_probe.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.database.outbox.factory import OutboxStorageFactory</code> + <code>OutboxStorageProtocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Domain-specific probe living in the observability layer</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Move to <code>database/outbox/health.py</code> or <code>api/health/outbox_probe.py</code>; register at facade level</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-032-observabilitymetricsqualitybaseline_servicepy">V-032 — <code>observability/metrics/quality/baseline_service.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/observability/metrics/quality/baseline_service.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.database.kvstore.protocol import KVStoreProtocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Quality baseline service (domain concern) placed inside observability infrastructure</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Define a local <code>StateStoreProtocol(Protocol)</code> with just <code>get/set</code> in this file; any KVStore satisfies it structurally</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-033-observabilitytracingenrichersusage_enricherpy">V-033 — <code>observability/tracing/enrichers/usage_enricher.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/observability/tracing/enrichers/usage_enricher.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.usage.domain.events import UsageEvent</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Tracing enricher importing a domain event type</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Define local <code>UsageEventProtocol(Protocol)</code> with only the fields the enricher reads; <code>UsageEvent</code> satisfies it structurally</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-034-observabilitytelemetryadaptersmessaging_adapterpy">V-034 — <code>observability/telemetry/adapters/messaging_adapter.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/observability/telemetry/adapters/messaging_adapter.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.integration.messaging.headers import MessageHeaders</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Telemetry adapter depending on messaging layer headers</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Define local <code>MessageHeadersProtocol(Protocol)</code> with only the fields accessed; or move adapter UP to <code>integration/messaging/</code> where it belongs</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="p1-configschemas-importing-service-layers">P1 — config/schemas Importing Service Layers</h2>
+<h3 id="v-035-configschemaslivepy">V-035 — <code>config/schemas/live.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/config/schemas/live.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.control.live_settings import LiveSettingsFactory</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Config schema importing a factory from the control layer (inverted dependency)</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Move <code>LiveSettingsFactory</code> usage OUT of the schema; define a Protocol or move the factory call to the caller (e.g., facade or lifecycle)</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="p1-database-importing-from-resilience">P1 — database/ Importing from resilience/</h2>
+<h3 id="v-024-databasemigrationsrunnerpy">V-024 — <code>database/migrations/runner.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/database/migrations/runner.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.resilience.locking.protocol import LockingProtocol</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Database migrations importing locking from resilience (cross-layer)</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Define local <code>MigrationLockProtocol(Protocol)</code> in <code>database/migrations/</code>; resilience locking satisfies it structurally</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-025-databasemigrationsfactorypy">V-025 — <code>database/migrations/factory.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/database/migrations/factory.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.resilience.locking.factory import LockingFactory</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Same as V-024; factory depends on resilience factory</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Accept a <code>MigrationLockProtocol</code> instance via constructor injection; caller (facade) wires the concrete locking</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="v-026-databasekvstorefallbackread_strategypy">V-026 — <code>database/kvstore/fallback/read_strategy.py</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File</td>
+<td><code>src/nala/athomic/database/kvstore/fallback/read_strategy.py</code></td>
+</tr>
+<tr>
+<td>Violation</td>
+<td><code>from nala.athomic.resilience.fallback import FallbackError, FallbackLogicHandler</code></td>
+</tr>
+<tr>
+<td>Root cause</td>
+<td>Database fallback strategy depending on resilience module</td>
+</tr>
+<tr>
+<td>Fix</td>
+<td>Define <code>FallbackHandler(Protocol)</code> locally or move the fallback logic UP into the resilience layer and have database receive the result</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>❌ Open</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fix-grouping-strategy">Fix Grouping Strategy</h2>
+<p>When fixing P1 violations, group by package to avoid multiple PRs touching the same files:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Violations</th>
+<th>Fix approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1 — resilience/adaptive_concurrency</td>
+<td>V-004–V-008</td>
+<td><code>resilience/adaptive_concurrency/protocols.py</code> + <code>feedback/types.py</code></td>
+</tr>
+<tr>
+<td>G2 — integration/producers</td>
+<td>V-009–V-011</td>
+<td><code>integration/messaging/producers/types.py</code></td>
+</tr>
+<tr>
+<td>G3 — integration/consumers</td>
+<td>V-012–V-020</td>
+<td><code>integration/messaging/consumers/types.py</code> + <code>messaging/protocols.py</code></td>
+</tr>
+<tr>
+<td>G4 — integration/orchestration</td>
+<td>V-021–V-023</td>
+<td><code>integration/messaging/causality/types.py</code></td>
+</tr>
+<tr>
+<td>G5 — plugins/facade</td>
+<td>V-002, V-003</td>
+<td><code>nala/athomic/interfaces/athomic.py</code></td>
+</tr>
+<tr>
+<td>G6 — database/resilience</td>
+<td>V-024–V-026</td>
+<td>Local Protocols in <code>database/migrations/</code> + <code>database/kvstore/</code></td>
+</tr>
+<tr>
+<td>G7 — observability domain probes</td>
+<td>V-030–V-034</td>
+<td>Move probes UP to domain layer; use local Protocols</td>
+</tr>
+<tr>
+<td>G8 — ai/features forward refs</td>
+<td>V-027–V-029</td>
+<td><code>from __future__ import annotations</code> + <code>tensors/types.py</code></td>
+</tr>
+<tr>
+<td>G9 — config/schemas/control</td>
+<td>V-035</td>
+<td>Move factory call to facade; schema stays pure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="detection">Detection</h2>
+<p>The pre-commit hook at <code>scripts/check_solid.py</code> catches new violations automatically.
+Run manually: <code>python scripts/check_solid.py</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Nalaminds
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

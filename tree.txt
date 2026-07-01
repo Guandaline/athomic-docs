@@ -1,0 +1,421 @@
+.
+├── 404.html
+├── README-onboarding
+│   └── index.html
+├── architecture
+│   ├── athomic-layer
+│   │   └── index.html
+│   ├── dependency-injection
+│   │   └── index.html
+│   ├── domain-layer
+│   │   └── index.html
+│   ├── index.html
+│   ├── runtime-vs-messaging-vs-outbox
+│   │   └── index.html
+│   └── scorecard
+│       └── index.html
+├── assets
+│   ├── _mkdocstrings.css
+│   ├── images
+│   │   └── favicon.png
+│   ├── javascripts
+│   │   ├── bundle.e71a0d61.min.js
+│   │   ├── bundle.e71a0d61.min.js.map
+│   │   ├── lunr
+│   │   │   ├── min
+│   │   │   │   ├── lunr.ar.min.js
+│   │   │   │   ├── lunr.da.min.js
+│   │   │   │   ├── lunr.de.min.js
+│   │   │   │   ├── lunr.du.min.js
+│   │   │   │   ├── lunr.el.min.js
+│   │   │   │   ├── lunr.es.min.js
+│   │   │   │   ├── lunr.fi.min.js
+│   │   │   │   ├── lunr.fr.min.js
+│   │   │   │   ├── lunr.he.min.js
+│   │   │   │   ├── lunr.hi.min.js
+│   │   │   │   ├── lunr.hu.min.js
+│   │   │   │   ├── lunr.hy.min.js
+│   │   │   │   ├── lunr.it.min.js
+│   │   │   │   ├── lunr.ja.min.js
+│   │   │   │   ├── lunr.jp.min.js
+│   │   │   │   ├── lunr.kn.min.js
+│   │   │   │   ├── lunr.ko.min.js
+│   │   │   │   ├── lunr.multi.min.js
+│   │   │   │   ├── lunr.nl.min.js
+│   │   │   │   ├── lunr.no.min.js
+│   │   │   │   ├── lunr.pt.min.js
+│   │   │   │   ├── lunr.ro.min.js
+│   │   │   │   ├── lunr.ru.min.js
+│   │   │   │   ├── lunr.sa.min.js
+│   │   │   │   ├── lunr.stemmer.support.min.js
+│   │   │   │   ├── lunr.sv.min.js
+│   │   │   │   ├── lunr.ta.min.js
+│   │   │   │   ├── lunr.te.min.js
+│   │   │   │   ├── lunr.th.min.js
+│   │   │   │   ├── lunr.tr.min.js
+│   │   │   │   ├── lunr.vi.min.js
+│   │   │   │   └── lunr.zh.min.js
+│   │   │   ├── tinyseg.js
+│   │   │   └── wordcut.js
+│   │   └── workers
+│   │       ├── search.7a47a382.min.js
+│   │       └── search.7a47a382.min.js.map
+│   └── stylesheets
+│       ├── main.618322db.min.css
+│       ├── main.618322db.min.css.map
+│       ├── palette.ab4e12ef.min.css
+│       └── palette.ab4e12ef.min.css.map
+├── athomic
+│   ├── ai
+│   │   ├── ade-rl
+│   │   │   └── index.html
+│   │   ├── agents
+│   │   │   ├── index.html
+│   │   │   └── persistence
+│   │   │       └── index.html
+│   │   ├── cognitive
+│   │   │   └── index.html
+│   │   ├── context
+│   │   │   └── index.html
+│   │   ├── documents
+│   │   │   └── index.html
+│   │   ├── embeddings
+│   │   │   └── index.html
+│   │   ├── governance
+│   │   │   └── index.html
+│   │   ├── graph
+│   │   │   └── index.html
+│   │   ├── llm
+│   │   │   └── index.html
+│   │   ├── memory
+│   │   │   └── index.html
+│   │   ├── qa_evaluation
+│   │   │   └── index.html
+│   │   ├── rag
+│   │   │   └── index.html
+│   │   ├── rl
+│   │   │   └── index.html
+│   │   ├── sandbox
+│   │   │   └── index.html
+│   │   ├── semantic_cache
+│   │   │   └── index.html
+│   │   └── workflow
+│   │       └── index.html
+│   ├── cloud_native_mesh_mode
+│   │   └── index.html
+│   ├── compression
+│   │   └── index.html
+│   ├── config
+│   │   ├── index.html
+│   │   └── schemas
+│   │       └── index.html
+│   ├── context
+│   │   └── index.html
+│   ├── control
+│   │   ├── feature_flags
+│   │   │   └── index.html
+│   │   ├── live_settings
+│   │   │   └── index.html
+│   │   └── scheduler
+│   │       └── index.html
+│   ├── credentials
+│   │   └── index.html
+│   ├── database
+│   │   ├── documents
+│   │   │   └── index.html
+│   │   ├── graph
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── kvstore
+│   │   │   └── index.html
+│   │   ├── migrations
+│   │   │   └── index.html
+│   │   ├── outbox
+│   │   │   └── index.html
+│   │   └── vector
+│   │       └── index.html
+│   ├── events
+│   │   └── index.html
+│   ├── http
+│   │   └── index.html
+│   ├── integration
+│   │   ├── config_providers
+│   │   │   └── index.html
+│   │   ├── consul
+│   │   │   └── index.html
+│   │   ├── discovery
+│   │   │   └── index.html
+│   │   ├── messaging
+│   │   │   ├── advanced
+│   │   │   │   └── index.html
+│   │   │   ├── consumer
+│   │   │   │   └── index.html
+│   │   │   ├── context-propagation
+│   │   │   │   └── index.html
+│   │   │   ├── decorators
+│   │   │   │   └── index.html
+│   │   │   ├── delay
+│   │   │   │   └── index.html
+│   │   │   ├── index.html
+│   │   │   ├── internals
+│   │   │   │   └── index.html
+│   │   │   ├── producer
+│   │   │   │   └── index.html
+│   │   │   └── retry-dlq
+│   │   │       └── index.html
+│   │   ├── openlineage
+│   │   │   └── index.html
+│   │   ├── outbox_publisher
+│   │   │   └── index.html
+│   │   └── tasks
+│   │       └── index.html
+│   ├── lifecycle
+│   │   └── index.html
+│   ├── lineage
+│   │   └── index.html
+│   ├── notification
+│   │   └── index.html
+│   ├── observability
+│   │   ├── health
+│   │   │   └── index.html
+│   │   ├── log
+│   │   │   └── index.html
+│   │   ├── metrics
+│   │   │   └── index.html
+│   │   └── tracing
+│   │       └── index.html
+│   ├── payload
+│   │   └── index.html
+│   ├── performance
+│   │   ├── bootstrap
+│   │   │   └── index.html
+│   │   ├── cache
+│   │   │   └── index.html
+│   │   └── compression_middleware
+│   │       └── index.html
+│   ├── plugins
+│   │   └── index.html
+│   ├── resilience
+│   │   ├── adaptive_throttling
+│   │   │   └── index.html
+│   │   ├── backoff
+│   │   │   └── index.html
+│   │   ├── backpressure
+│   │   │   └── index.html
+│   │   ├── bulkhead
+│   │   │   └── index.html
+│   │   ├── circuit_breaker
+│   │   │   └── index.html
+│   │   ├── fallback
+│   │   │   └── index.html
+│   │   ├── idempotency
+│   │   │   └── index.html
+│   │   ├── leasing
+│   │   │   └── index.html
+│   │   ├── locking
+│   │   │   └── index.html
+│   │   ├── rate_limiter
+│   │   │   └── index.html
+│   │   ├── retry
+│   │   │   └── index.html
+│   │   ├── sagas
+│   │   │   └── index.html
+│   │   ├── sharding
+│   │   │   └── index.html
+│   │   └── timeout
+│   │       └── index.html
+│   ├── router
+│   │   └── index.html
+│   ├── security
+│   │   ├── auth
+│   │   │   └── index.html
+│   │   ├── crypto
+│   │   │   └── index.html
+│   │   └── secrets
+│   │       └── index.html
+│   ├── serializer
+│   │   └── index.html
+│   ├── services
+│   │   └── index.html
+│   ├── session
+│   │   └── index.html
+│   └── storage
+│       └── index.html
+├── backlog
+│   ├── TASK-TEMPLATE
+│   │   └── index.html
+│   ├── _ice-box
+│   │   ├── agentic-rag
+│   │   │   └── index.html
+│   │   └── future-backlog
+│   │       └── index.html
+│   ├── done
+│   │   ├── TASK-database-relational-tenant-isolation
+│   │   │   └── index.html
+│   │   ├── TASK-resilience-hedging
+│   │   │   └── index.html
+│   │   ├── TASK-resilience-saga-hardening
+│   │   │   └── index.html
+│   │   ├── TASK-security-authorization-providers
+│   │   │   └── index.html
+│   │   ├── active-versioning
+│   │   │   └── index.html
+│   │   ├── adaptive_concurrency_backlog-v2
+│   │   │   └── index.html
+│   │   ├── ade-rl-improvement
+│   │   │   └── index.html
+│   │   ├── architecture-scorecard
+│   │   │   └── index.html
+│   │   ├── archscore-debt-ai-features
+│   │   │   └── index.html
+│   │   ├── backfill-recompute
+│   │   │   └── index.html
+│   │   ├── features-encode-minmax-range-bug
+│   │   │   └── index.html
+│   │   ├── features-integration-tests
+│   │   │   └── index.html
+│   │   ├── guardian-v2-deferred
+│   │   │   └── index.html
+│   │   ├── online-feature-serving
+│   │   │   └── index.html
+│   │   ├── skew-free-training-generator
+│   │   │   └── index.html
+│   │   ├── sota-roadmap
+│   │   │   └── index.html
+│   │   ├── version-health-gating
+│   │   │   └── index.html
+│   │   └── windowing-state-manager-typing
+│   │       └── index.html
+│   ├── research
+│   │   ├── archscore
+│   │   │   └── architecture-scorecard-refinements
+│   │   │       └── index.html
+│   │   └── distributed-adaptive-resource-scheduler
+│   │       ├── Athomic-Research-Dossier-v0_1
+│   │       │   └── index.html
+│   │       ├── deep-research-report
+│   │       │   └── index.html
+│   │       └── research-proposal-and-experimental-roadmap
+│   │           └── index.html
+│   └── todo
+│       ├── TASK-008-outbox-webhook-executor
+│       │   └── index.html
+│       ├── TASK-009-outbox-task-executor
+│       │   └── index.html
+│       ├── TASK-athomic-docs-audit
+│       │   └── index.html
+│       ├── TASK-auth-context-population-ordering
+│       │   └── index.html
+│       ├── TASK-guardian-dossiers-idempotency
+│       │   └── index.html
+│       ├── TASK-idempotency-http-middleware
+│       │   └── index.html
+│       ├── TASK-importlinter-http-layer
+│       │   └── index.html
+│       ├── TASK-migrations
+│       │   └── index.html
+│       ├── TASK-security-mfa-totp
+│       │   └── index.html
+│       ├── TASK-security-password-hashing
+│       │   └── index.html
+│       ├── TASK-security-user-sessions
+│       │   └── index.html
+│       ├── adaptive-concurrency-hardening
+│       │   └── index.html
+│       ├── adaptive-decision-engine
+│       │   └── index.html
+│       ├── ade-module
+│       │   └── index.html
+│       ├── admission-control-module-extraction
+│       │   └── index.html
+│       ├── ai-ml-procudt-backlog
+│       │   └── index.html
+│       ├── ai-patform-runtime
+│       │   └── index.html
+│       ├── cache
+│       │   └── index.html
+│       ├── circuit-breaker
+│       │   └── index.html
+│       ├── circular-imports-violations
+│       │   └── index.html
+│       ├── compiled-plan-repository
+│       │   └── index.html
+│       ├── context
+│       │   └── index.html
+│       ├── dependency-injection
+│       │   └── index.html
+│       ├── duplication-cleanup
+│       │   └── index.html
+│       ├── factories-pattern-standardization
+│       │   └── index.html
+│       ├── features-any-typing
+│       │   └── index.html
+│       ├── features-evolution
+│       │   └── index.html
+│       ├── futher-improves
+│       │   └── index.html
+│       ├── lifecycle_plugins
+│       │   └── index.html
+│       ├── messaging-module-architecture-cleanup
+│       │   └── index.html
+│       ├── multi-tenancy-features
+│       │   └── index.html
+│       ├── observability
+│       │   └── index.html
+│       ├── open-core-package-split-readiness
+│       │   └── index.html
+│       ├── patform-runtime
+│       │   └── index.html
+│       ├── rbac-authorization
+│       │   └── index.html
+│       ├── repo-wide-mypy-remediation
+│       │   └── index.html
+│       ├── resilience
+│       │   └── index.html
+│       ├── solid-violations
+│       │   └── index.html
+│       ├── sota-roadmap-adaptive-concurrency
+│       │   └── index.html
+│       └── strategic-evaluation
+│           └── index.html
+├── docs
+│   └── README.md
+├── guides
+│   ├── ai
+│   │   ├── ai_guide
+│   │   │   └── index.html
+│   │   ├── feature_platform_runbook
+│   │   │   └── index.html
+│   │   └── qa_evaluation
+│   │       └── index.html
+│   ├── architecture
+│   │   ├── athomic-capability-map
+│   │   │   └── index.html
+│   │   ├── circular-imports-rules
+│   │   │   └── index.html
+│   │   ├── code-smells
+│   │   │   └── index.html
+│   │   ├── design-patterns
+│   │   │   └── index.html
+│   │   └── solid-rules
+│   │       └── index.html
+│   ├── database
+│   │   ├── graph
+│   │   │   └── index.html
+│   │   └── vector
+│   │       └── index.html
+│   ├── testing
+│   │   └── test-conventions
+│   │       └── index.html
+│   └── workflows
+│       └── getting-started
+│           └── index.html
+├── index.html
+├── objects.inv
+├── search
+│   └── search_index.json
+├── sitemap.xml
+├── sitemap.xml.gz
+└── tree.txt
+
+199 directories, 220 files
