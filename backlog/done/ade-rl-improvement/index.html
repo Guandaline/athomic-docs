@@ -1,0 +1,4524 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Robust IDP for building resilient, observable, and scalable microservices in Python.">
+      
+      
+        <meta name="author" content="Nalaminds">
+      
+      
+        <link rel="canonical" href="https://guandaline.github.io/nala-core-api/backlog/done/ade-rl-improvement/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>RL Improvement Backlog - Nala Core API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rl-improvement-backlog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Nala Core API" class="md-header__button md-logo" aria-label="Nala Core API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nala Core API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RL Improvement Backlog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/guandaline/nala-core-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/nala-core-api
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../athomic/ai/agents/" class="md-tabs__link">
+          
+  
+  
+  Athomic Layer
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Nala Core API" class="md-nav__button md-logo" aria-label="Nala Core API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nala Core API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/guandaline/nala-core-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/nala-core-api
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/athomic-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/domain-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Athomic Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embeddings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/semantic_cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/qa_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA & Evaluation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/ai/feature_platform_runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Platform Runbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core & Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core & Lifecycle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Settings & Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/config/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/live_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/credentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credential Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Persistence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & Persistence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connection Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/kvstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key-Value Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/outbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactional Outbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/cloud_native_mesh_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud-Native & Service Mesh Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication & Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/crypto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structured Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Tracing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health & Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/lineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Lineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting Concerns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting Concerns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/serializer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serializer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/payload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/compression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/notification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Event Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/feature_flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Flags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Performance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/compression_middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/bootstrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap (uvloop)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11_1" id="__nav_3_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messaging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Messaging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/producer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Producer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consumer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/retry-dlq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry & DLQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/delay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delayed Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/context-propagation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Propagation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/outbox_publisher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbox Publisher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/consul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consul Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/settings_providers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Settings Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/openlineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenLineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resilience Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resilience Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/retry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/circuit_breaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuit Breaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/rate_limiter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeout & Cancellation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/bulkhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bulkhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/fallback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/locking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Locking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/idempotency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Idempotency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/leasing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Leasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/sharding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workload Sharding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/backpressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backpressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/backoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exponential Backoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/sagas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sagas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/adaptive_throttling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Throttling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-review-findings-branch-rl-2026-06-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review Findings — branch rl (2026-06-26)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Review Findings — branch rl (2026-06-26)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cr-bug-01-kv_vector_connect-nunca-conecta-o-vector_store-alta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-BUG-01] kv_vector._connect() nunca conecta o vector_store ⚠️ Alta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-bug-02-action_index-recebe-any-sem-validacao-alta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-BUG-02] action_index recebe Any sem validação ⚠️ Alta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-design-01-inmemorymemoryprovider-reutiliza-max_tracked_models-com-semantica-errada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-DESIGN-01] InMemoryMemoryProvider reutiliza max_tracked_models com semântica errada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-arch-01-rlmemoryfactory-service-locator-ocp-violation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-ARCH-01] RLMemoryFactory: Service Locator + OCP violation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-type-01-_strategies-dict-sem-tipo-em-rewardengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-TYPE-01] _strategies: dict sem tipo em RewardEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-type-02-state_vector-list-sem-parametro-em-rltrainingplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-TYPE-02] state_vector: list sem parâmetro em RLTrainingPlane
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-quality-01-train_offline-duplicado-nos-dois-providers-de-trainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-QUALITY-01] train_offline duplicado nos dois providers de trainer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-quality-02-_flush_model-usa-loop-sequencial-em-vez-de-asynciogather" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-QUALITY-02] _flush_model usa loop sequencial em vez de asyncio.gather
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-obs-01-otel-span-names-renomeados-sem-documentacao-resolvido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-OBS-01] OTel span names renomeados sem documentação ✅ RESOLVIDO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-obs-02-metricas-per-model-de-bandit-cumulative-reward-exploration-ratio-resolvido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-OBS-02] Métricas per-model de bandit (cumulative reward, exploration ratio) ✅ RESOLVIDO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cr-arch-02-_last_known_states-process-local-quebra-sampling-distribuido-resolvido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [CR-ARCH-02] _last_known_states process-local quebra sampling distribuído ✅ RESOLVIDO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-gap-rewardengineprocess_event-sem-testes-unitarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage gap — RewardEngine.process_event() sem testes unitários
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-mathematical-precision-adaptive-jitter-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Mathematical Precision: Adaptive Jitter Normalization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-distributed-stability-weights-mutex-distributed-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Distributed Stability: Weights Mutex (Distributed Lock)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-telemetry-standardized-reward-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Telemetry: Standardized Reward Correlation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-performance-batch-vector-operations-done-2026-06-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Performance: Batch Vector Operations ✅ DONE (2026-06-30)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-type-safety-action-schema-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Type Safety: Action Schema Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rl-improvement-backlog">RL Improvement Backlog</h1>
+<p>Status: <strong>DONE</strong> (2026-06-30) · Module: <code>src/nala/athomic/ai/rl</code></p>
+<p>Every item is delivered and merged to <code>main</code>: the 2026-06-26 code-review findings
+(CR-<em>), RL-001 through RL-008, the RL-007 automated rollback trigger (both seams —
+pre-promote eval gate #279 + post-deploy reward monitor #280), and the Issue 1–5
+performance/type items including Issue-4 (#283). The only item intentionally not
+done is the repo-wide CR-TYPE-03 mypy sweep, investigated and </em><em>declined</em>* as
+net-zero churn (see its section). Per-item status is recorded inline below.</p>
+<p>Delivery PRs: weight versioning #276 · weights schema #278 · eval gate #279 ·
+reward monitor #280 · numpy batched prediction #283 (+ earlier RL-001..006 /
+CR-WIRE-01 PRs noted in their sections).</p>
+<hr />
+<h2 id="code-review-findings-branch-rl-2026-06-26">Code Review Findings — branch <code>rl</code> (2026-06-26)</h2>
+<p>Items identificados na code review do PR atual. Executar na ordem abaixo (dependências respeitadas).</p>
+<h3 id="cr-bug-01-kv_vector_connect-nunca-conecta-o-vector_store-alta">[CR-BUG-01] <code>kv_vector._connect()</code> nunca conecta o vector_store ⚠️ Alta</h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/memory/providers/kv_vector.py:53</code></p>
+<p>O <code>_connect()</code> conecta só o <code>kv_store</code> e chama <code>set_ready()</code>. O <code>vector_store</code> não é conectado.
+Em qualquer injeção com store não-pronto (testes, multi-tenant, wiring manual), <code>store_experience</code>
+e <code>sample_experiences</code> falham silenciosamente após o provider se declarar pronto.</p>
+<p><strong>Fix:</strong> Adicionar antes de <code>set_ready()</code>:</p>
+<pre><code class="language-python">if not self.vector_store.is_ready():
+    await self.vector_store.connect()
+    await self.vector_store.wait_ready()
+</code></pre>
+<p><strong>Teste:</strong> <code>test_unity_memory_service.py</code> — injetar <code>mock_vector</code> com <code>is_ready=False</code> e verificar
+que <code>connect()</code> + <code>wait_ready()</code> são chamados durante <code>_connect()</code>.</p>
+<hr />
+<h3 id="cr-bug-02-action_index-recebe-any-sem-validacao-alta">[CR-BUG-02] <code>action_index</code> recebe <code>Any</code> sem validação ⚠️ Alta</h3>
+<p><strong>Arquivos:</strong> <code>src/nala/athomic/ai/rl/reward/engine.py:150</code>,
+<code>src/nala/athomic/ai/rl/reward/aggregation.py:56,94</code></p>
+<p><code>DecisionResult.selected_action: Any</code> (confirmado em <code>src/nala/athomic/ai/decision/types.py:46</code>).
+Valor não-int traversa o buffer silenciosamente e explode só na hora do flush.</p>
+<p><strong>Fix:</strong>
+1. <code>engine.py:150</code> → <code>action=int(original_decision.selected_action)</code> antes de <code>add_signal</code>
+2. <code>aggregation.py:56</code> → assinatura <code>add_signal(action: int)</code> (em vez de <code>Any</code>)</p>
+<p><strong>Teste:</strong> <code>test_unity_reward_aggregation.py</code> — passar <code>selected_action</code> string e verificar que
+<code>TypeError</code> é levantado antes de chegar ao flush.</p>
+<hr />
+<h3 id="cr-design-01-inmemorymemoryprovider-reutiliza-max_tracked_models-com-semantica-errada">[CR-DESIGN-01] <code>InMemoryMemoryProvider</code> reutiliza <code>max_tracked_models</code> com semântica errada</h3>
+<p><strong>Arquivos:</strong> <code>src/nala/athomic/ai/rl/memory/providers/in_memory.py:21</code>,
+<code>src/nala/athomic/config/schemas/ai/rl/rl_settings.py</code></p>
+<p><code>max_tracked_models</code> limita IDs de modelo no LRU cache. O provider usa o mesmo valor como
+<code>maxlen</code> da deque de experiências — semânticas diferentes. Com <code>max_tracked_models=100</code>, cada
+modelo fica limitado a 100 transições de replay.</p>
+<p><strong>Fix:</strong> Adicionar campo em <code>RLMemorySettings</code>:</p>
+<pre><code class="language-python">max_experiences_per_model: int = Field(default=500, ge=1, alias=&quot;MAX_EXPERIENCES_PER_MODEL&quot;,
+    description=&quot;Max experience tuples per model in the in-memory replay buffer.&quot;)
+</code></pre>
+<p>Trocar <code>settings.max_tracked_models</code> por <code>settings.max_experiences_per_model</code> no provider.</p>
+<hr />
+<h3 id="cr-arch-01-rlmemoryfactory-service-locator-ocp-violation">[CR-ARCH-01] <code>RLMemoryFactory</code>: Service Locator + OCP violation</h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/memory/factory.py:41,54</code></p>
+<p>Duas violações interligadas:
+- <strong>Service Locator:</strong> <code>connection_manager_factory.create()</code> chamado internamente — viola Factory
+  Rule 1 do CLAUDE.md. Bloqueia duas instâncias com CMs diferentes no mesmo processo.
+- <strong>OCP:</strong> branch <code>if provider_name == "kv_vector"</code> — todo provider novo que precise de stores
+  injetados exige modificação da factory.</p>
+<p><strong>Fix em 3 passos:</strong></p>
+<p><strong>A)</strong> Mover lógica de construção para <code>KVVectorMemoryProvider.build(cls, settings, connection_manager=None, **kwargs)</code>.</p>
+<p><strong>B)</strong> Factory faz dispatch genérico:</p>
+<pre><code class="language-python">builder = getattr(provider_cls, &quot;build&quot;, None)
+if builder is not None:
+    return builder(settings=settings, **kwargs)
+return provider_cls(settings=settings, **kwargs)
+</code></pre>
+<p><strong>C)</strong> Propagar <code>connection_manager</code> via <code>**kwargs</code> pela chain <code>ReinforcementLearningFactory →
+RLMemoryFactory</code>. Ponto de injeção: <code>src/nala/athomic/lifecycle/register_services.py:72</code>.</p>
+<p><strong>Teste:</strong> <code>RLMemoryFactory.create()</code> com <code>connection_manager=mock_cm</code> — verificar que
+<code>connection_manager_factory</code> não é chamado.</p>
+<hr />
+<h3 id="cr-type-01-_strategies-dict-sem-tipo-em-rewardengine">[CR-TYPE-01] <code>_strategies: dict</code> sem tipo em <code>RewardEngine</code></h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/reward/engine.py:59</code></p>
+<p><code>bare dict</code> = <code>dict[Any, Any]</code>, viola <code>disallow_any_generics</code>. Tipo real:
+<code>Dict[str, BaseRewardStrategy]</code> (retorno de <code>RewardStrategyFactory.create_map()</code>).</p>
+<p><strong>Fix:</strong> <code>self._strategies: Dict[str, BaseRewardStrategy] = {}</code></p>
+<hr />
+<h3 id="cr-type-02-state_vector-list-sem-parametro-em-rltrainingplane">[CR-TYPE-02] <code>state_vector: list</code> sem parâmetro em <code>RLTrainingPlane</code></h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/training_plane.py:29,32</code></p>
+<p><code>bare list</code> viola <code>disallow_any_generics</code>. O Protocol <code>RLTrainingStrategy</code> declara <code>List[float]</code>.</p>
+<p><strong>Fix:</strong> <code>state_vector: List[float]</code>, <code>next_state_vector: Optional[List[float]] = None</code></p>
+<hr />
+<h3 id="cr-quality-01-train_offline-duplicado-nos-dois-providers-de-trainer">[CR-QUALITY-01] <code>train_offline</code> duplicado nos dois providers de trainer</h3>
+<p><strong>Arquivos:</strong> <code>src/nala/athomic/ai/rl/trainers/providers/batch.py:59</code>,
+<code>src/nala/athomic/ai/rl/trainers/providers/online.py:73</code></p>
+<p>Implementações idênticas: sample → load_weights → update loop → save_weights.</p>
+<p><strong>Fix:</strong> Novo <code>src/nala/athomic/ai/rl/trainers/base.py</code> com <code>BaseTrainingStrategy(RLTrainingStrategy)</code>
+implementando <code>train_offline</code> uma vez. Ambos os providers herdam dela.</p>
+<hr />
+<h3 id="cr-quality-02-_flush_model-usa-loop-sequencial-em-vez-de-asynciogather">[CR-QUALITY-02] <code>_flush_model</code> usa loop sequencial em vez de <code>asyncio.gather</code></h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/reward/aggregation.py:90</code></p>
+<p>Com <code>batch_size=50</code>, flush latency = Σ de 50 round-trips sequenciais.</p>
+<p><strong>Fix:</strong></p>
+<pre><code class="language-python">await asyncio.gather(*[
+    self._rl_service.process_feedback(model_id=model_id, state_vector=r[&quot;state_vector&quot;],
+        action_index=r[&quot;action&quot;], reward=r[&quot;reward&quot;])
+    for r in rewards_batch
+])
+</code></pre>
+<hr />
+<h3 id="cr-obs-01-otel-span-names-renomeados-sem-documentacao-resolvido">[CR-OBS-01] OTel span names renomeados sem documentação ✅ RESOLVIDO</h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/service.py:54</code></p>
+<p><code>rl.orchestrator.*</code> → <code>rl.serving.*</code> / <code>rl.training.*</code>. Alertas keyed nos nomes antigos silenciam.</p>
+<p><strong>Resolução:</strong> Documentado em <a href="../../../adr/ADR-139-rl-serving-training-plane-split-and-contextual-bandit-scoping/">ADR-139</a>
+(seção 2, com tabela de migração old→new e a ação operacional de repontar dashboards/alertas).
+O CHANGELOG é gerado pelo semantic-release, portanto a decisão vive no ADR, não no CHANGELOG manual.</p>
+<hr />
+<h3 id="cr-obs-02-metricas-per-model-de-bandit-cumulative-reward-exploration-ratio-resolvido">[CR-OBS-02] Métricas per-model de bandit (cumulative reward, exploration ratio) ✅ RESOLVIDO</h3>
+<p><strong>Arquivos:</strong> <code>observability/metrics/usage/ai/rl_metrics.py</code>, <code>serving_plane.py</code>, <code>training_plane.py</code></p>
+<p>Adicionadas no <em>seam</em> que conhece <code>model_id</code> (planes), mantendo o core de algoritmo model-agnostic:
+- <code>ai_rl_model_decisions_total{model_id, outcome}</code> — exploration ratio per model (serving plane).
+- <code>ai_rl_model_reward{model_id}</code> — cumulative reward (<code>_sum</code>), moving average (<code>rate</code>), variance (buckets) (training plane).</p>
+<p><strong>Cumulative regret NÃO foi emitido</strong> (exige baseline da política ótima — shadow mode, RL-006).
+Decisão registrada em <a href="../../../adr/ADR-139-rl-serving-training-plane-split-and-contextual-bandit-scoping/">ADR-139</a> seções 3–4.</p>
+<hr />
+<h3 id="cr-arch-02-_last_known_states-process-local-quebra-sampling-distribuido-resolvido">[CR-ARCH-02] <code>_last_known_states</code> process-local quebra sampling distribuído ✅ RESOLVIDO</h3>
+<p><strong>Arquivo:</strong> <code>src/nala/athomic/ai/rl/memory/providers/kv_vector.py</code></p>
+<p>Em deployment horizontalizado cada pod tinha uma âncora diferente → <code>sample_experiences()</code>
+não-determinístico entre pods. Corrigido com cache de duas camadas (L1 OrderedDict local + L2 KV
+compartilhado), espelhando o padrão temporal L1/L2 existente. Escopo maior de replay (max-age,
+uniform/reservoir/prioritized) permanece em RL-004. Ver <a href="../../../adr/ADR-139-rl-serving-training-plane-split-and-contextual-bandit-scoping/">ADR-139</a> seção 5.</p>
+<hr />
+<h3 id="coverage-gap-rewardengineprocess_event-sem-testes-unitarios">Coverage gap — <code>RewardEngine.process_event()</code> sem testes unitários</h3>
+<p>Criar <code>tests/unit/nala/athomic/ai/rl/reward/test_unity_reward_engine.py</code> cobrindo:
+- evento correlacionado com sucesso → <code>List[RewardSignal]</code> retornada
+- <code>session_id</code> não encontrado → lista vazia, status <code>dropped</code>
+- sem mappings → lista vazia, status <code>ignored</code>
+- <code>encoded_state</code> ausente no metadata → <code>processing_status = "error"</code>
+- engine disabled → lista vazia imediata</p>
+<hr />
+<h2 id="1-mathematical-precision-adaptive-jitter-normalization">1. Mathematical Precision: Adaptive Jitter Normalization</h2>
+<p><strong>Location:</strong> <code>nala/athomic/ai/rl/memory/service.py</code> -&gt; <code>sample_experiences</code>
+<strong>Issue:</strong> The current jitter constant of <code>0.05</code> is arbitrary and doesn't account for state vector dimensions with different scales (e.g., categorical vs. continuous features).
+<strong>Requirement:</strong> Implement a normalization strategy or calculate variance-based jitter to ensure semantic search remains effective regardless of feature scale.</p>
+<pre><code class="language-python"># Conceptual implementation target
+async def sample_experiences(self, model_id: str, batch_size: int):
+    # Calculate adaptive jitter based on historical standard deviation
+    # to avoid noise overwhelming low-variance dimensions.
+</code></pre>
+<hr />
+<h2 id="2-distributed-stability-weights-mutex-distributed-lock">2. Distributed Stability: Weights Mutex (Distributed Lock)</h2>
+<p><strong>Location:</strong> <code>nala/athomic/ai/rl/trainers/batch.py</code> -&gt; <code>train_offline</code> and <code>nala/athomic/ai/rl/trainers/online.py</code> -&gt; <code>process_experience</code>
+<strong>Issue:</strong> In multi-tenant/multi-node deployments, concurrent training cycles for the same <code>model_id</code> (both online and offline) will cause a Race Condition during the "Load -&gt; Update -&gt; Save" cycle, leading to weight corruption.
+<strong>Requirement:</strong> Integrate a distributed lock (Redlock pattern) via the existing <code>ConnectionManager</code> in <strong>both</strong> trainers to ensure training atomicity.</p>
+<pre><code class="language-python"># Requirement (applies to both OnlineTrainingStrategy and BatchTrainingStrategy)
+async with self.lock_manager.acquire(f&quot;lock:rl:weights:{model_id}&quot;):
+    weights = await memory.load_weights(model_id)
+    # ... update logic ...
+    await memory.save_weights(model_id, updated_weights)
+</code></pre>
+<hr />
+<h2 id="3-telemetry-standardized-reward-correlation">3. Telemetry: Standardized Reward Correlation</h2>
+<p><strong>Location:</strong> <code>nala/athomic/ai/rl/service.py</code> -&gt; <code>process_feedback</code>
+<strong>Issue:</strong> RL rewards are often delayed. The system lacks a formal structure to correlate late feedback with the original state/action snapshot.
+<strong>Requirement:</strong> Enhance the metadata in <code>get_action</code> to return a <code>decision_id</code> and implement a lookup mechanism in <code>process_feedback</code> to fetch the state snapshot if not provided by the caller.</p>
+<hr />
+<h2 id="4-performance-batch-vector-operations-done-2026-06-30">4. Performance: Batch Vector Operations ✅ DONE (2026-06-30)</h2>
+<p><strong>Location:</strong> <code>nala/athomic/ai/rl/algorithms/contextual_bandit.py</code>
+<strong>Issue:</strong> The <code>_dot_product</code> and weight updates use raw Python loops (<code>sum(a * b for a, b in zip...)</code>).
+<strong>Requirement:</strong> If state dimensions grow, transition to <code>numpy</code> or vectorized operations to reduce CPU overhead during high-frequency inference, while maintaining the stateless interface.</p>
+<p><strong>Resolution (benchmark-driven, adaptive):</strong> A benchmark first disproved the naive
+fix — swapping the <em>single</em> <code>_dot_product</code> to <code>np.dot</code> is a <strong>net loss at every
+realistic dimension</strong> (pure Python beat NumPy through 8192 dims) because the
+per-call <code>list -&gt; ndarray</code> conversion outweighs the BLAS speedup for list-stored
+weights. The real lever is <strong>batching across actions</strong>: computing all per-action
+Q-values as one <code>action_matrix @ state_vector</code> matmul amortizes the conversion and
+wins from ~16 actions × 64 dims upward (e.g. 256×256: 2004µs → 1374µs).</p>
+<p>Delivered:
+- <code>_predict_impl</code> now assembles the per-action weight matrix and computes all
+  Q-values <strong>once</strong> via <code>_batch_dot</code> (also removing the old double-computation of
+  dot products on the exploit path). <code>_batch_dot</code> is <strong>adaptive</strong>: a NumPy matmul
+  above <code>numpy_batch_threshold</code> total multiply-adds (<code>num_actions × state_dim</code>),
+  the Python loop below; returns plain <code>float</code>s either way (no NumPy scalar leaks
+  through the port).
+- <code>_dot_product</code> stays pure Python (documented) — fastest for a single dot, used
+  by <code>_prediction_error</code> (RL-007) and the small-batch fallback.
+- <code>RLAlgorithmSettings.numpy_batch_threshold</code> (default 256, configurable) governs
+  the switch.
+- Tests: <code>algorithms/test_unity_contextual_bandit.py::TestContextualBanditBatchedPrediction</code>
+  (NumPy/Python equivalence, correctness, no-mutation on the NumPy path).</p>
+<hr />
+<h2 id="5-type-safety-action-schema-validation">5. Type Safety: Action Schema Validation</h2>
+<p><strong>Location:</strong> <code>nala/athomic/ai/decision/types.py</code> -&gt; <code>DecisionResult</code>
+<strong>Issue:</strong> <code>selected_action</code> is currently typed as <code>Any</code>.
+<strong>Requirement:</strong> Introduce a Generic type or a Pydantic validation step to ensure that the action returned by RL algorithms strictly adheres to the schema expected by the <code>ActionProvider</code>.</p>
+<h1 id="rl-module-technical-backlog">RL Module Technical Backlog</h1>
+<h2 id="phase-1-core-resilience-concurrency">Phase 1: Core Resilience &amp; Concurrency</h2>
+<p>Priority: High | Goal: Ensure data integrity in high-traffic environments.</p>
+<h3 id="rl-001-distributed-locking-for-trainers-resolvido">[RL-001] Distributed Locking for Trainers ✅ RESOLVIDO</h3>
+<blockquote>
+<p>Consolidated with Issue 2 above. See <code>nala/athomic/ai/rl/trainers/batch.py</code> and <code>online.py</code>.</p>
+</blockquote>
+<p><strong>Resolução:</strong> O ciclo <code>load → update → save</code> de pesos é guardado por um lock
+distribuído sob a chave <code>lock:rl:weights:{model_id}</code> em ambos os trainers:
+<code>BaseTrainingStrategy.train_offline</code> (herdado por batch + online) e
+<code>OnlineTrainingStrategy.process_experience</code>. <code>BatchTrainingStrategy.process_experience</code>
+só grava experiência (chave distinta, sem mutação de pesos) → não trava.</p>
+<p>Design (DIP, conforme CLAUDE.md): o <code>LockingProtocol</code> é <strong>injetado</strong> via
+construtor — não o decorator <code>@distributed_lock</code>, que esconde um Service Locator
+(<code>LockingFactory.create()</code> interno, viola Factory Rule 1). A cadeia de injeção é
+<code>lifecycle.register_lifecycle</code> (composition root resolve <code>LockingFactory.create()</code>)
+→ <code>ReinforcementLearningFactory.create(..., lock_provider=...)</code>
+→ <code>RLTrainerFactory.create(..., lock_provider=...)</code> → registry → trainer.
+<code>lock_provider=None</code> → fallback single-process (no-op) com warning explícito; o
+<code>store_experience</code> do online fica <strong>fora</strong> da seção crítica para minimizar o hold.
+Cobertura: <code>tests/unit/.../trainers/test_unity_locking.py</code> (chave, ordering
+acquire→load→save→release, batch sem lock, fallback sem provider).</p>
+<h3 id="rl-002-exponential-backoff-for-persistence-failures-resolvido">[RL-002] Exponential Backoff for Persistence Failures ✅ RESOLVIDO</h3>
+<blockquote>
+<p>Ver <code>nala/athomic/ai/rl/memory/providers/kv_vector.py</code> +
+<code>nala/athomic/resilience/orchestrator_factory.py</code>.</p>
+</blockquote>
+<p><strong>Resolução:</strong> Toda ida ao backend em <code>KVVectorMemoryProvider</code> —
+<code>save_weights</code> (KV <code>set</code>), <code>load_weights</code> (KV <code>get</code>), <code>store_experience</code>
+(Vector <code>upsert</code>) e <code>sample_experiences</code> (Vector <code>search</code>) — passa por
+<code>self._run(orchestrator, op)</code>, que executa a chamada dentro do
+<code>ResilienceOrchestrator</code> (<strong>circuit breaker → retry com backoff exponencial</strong>
+via <code>wait_random_exponential</code>). Retry sozinho contra um backend caído é o
+anti-pattern de <em>retry storm</em>; o circuit breaker abre e falha rápido, deixando
+o backend se recuperar. O <code>op</code> embrulha <strong>apenas</strong> o round-trip de rede; a
+construção de id/payload (ex.: o <code>record_id</code> do experience) fica <strong>fora</strong> do
+retry, de modo que uma tentativa já bem-sucedida server-side não é duplicada.</p>
+<p><strong>Isolamento de falhas:</strong> KV (pesos) e Vector (experiências) recebem
+orchestrators/circuitos <strong>distintos</strong> (<code>rl_memory_kv</code> / <code>rl_memory_vector</code>),
+então uma indisponibilidade de um backend abre só o circuito dele e nunca
+bloqueia o outro.</p>
+<p><strong>Ajuste na resiliência (DRY):</strong> o <code>ResilienceOrchestrator</code> não tinha factory —
+o <code>http/factory</code> montava retry+CB inline na mão. Extraí
+<code>ResilienceOrchestratorFactory.create(settings=, circuit_name=, ...)</code>
+(<code>settings</code> injetado, sem <code>get_settings()</code> interno — Factory Rule 1; sem
+Registry, composição única) para centralizar essa montagem. O módulo <code>backoff/</code>
+foi avaliado e <strong>descartado</strong>: é um sequenciador de delay com estado
+(<code>wait()</code>/<code>reset()</code>) para loops de polling/consumo, não um wrapper de chamada.</p>
+<p>A cadeia espelha RL-001 mas roteia para a <em>memória</em>:
+<code>lifecycle._build_memory_resilience</code> (composition root chama a factory por
+backend) → <code>ReinforcementLearningFactory.create(..., kv_resilience=,
+vector_resilience=)</code> via <code>**kwargs</code> (diferente de <code>lock_provider</code>, explícito
+porque vai ao trainer) → <code>RLMemoryFactory.create</code> → <code>KVVectorMemoryProvider.build</code>.
+Orchestrators <code>None</code> (retry+CB desabilitados/ausentes) → fallback "roda uma vez"
+com warning explícito. Cobertura:
+<code>memory/providers/test_unity_kv_vector_resilience.py</code> (roteamento KV vs Vector,
+fallback, retry real em falha transitória, estabilidade do <code>record_id</code>),
+<code>resilience/test_unity_orchestrator_factory.py</code> (montagem da factory) +
+asserts de wiring em <code>test_unity_lifecycle.py</code>.</p>
+<hr />
+<h2 id="phase-2-algorithm-optimization">Phase 2: Algorithm Optimization</h2>
+<p>Priority: Medium | Goal: Improve convergence and numerical stability.</p>
+<h3 id="rl-003-standardized-feature-normalization-resolvido">[RL-003] Standardized Feature Normalization ✅ RESOLVIDO</h3>
+<blockquote>
+<p>Ver <code>ai/normalization/</code> (capacidade reutilizável) + <code>ai/decision/features/normalizing_encoder.py</code> (decorator).</p>
+</blockquote>
+<p><strong>Resolução:</strong> Nova capacidade reutilizável <code>ai/normalization/</code> normaliza o vetor
+de observação já codificado (<code>List[float]</code>), independente da plataforma AOT de
+features (que opera em <code>FeatureDict</code>/<code>FeatureTensor</code> por coluna — peça errada
+aqui). Componentes:
+- <code>OnlineStatsAccumulator</code> — estatísticas em streaming via <strong>Welford</strong>
+  (mean/variance numericamente estáveis) + extrema (min/max) por dimensão;
+  congela em <code>freeze_after</code> ou adapta para sempre (<code>None</code>).
+- <code>ObservationNormalizer</code> (Strategy + Registry, &gt;1 provider ⇒ Registry):
+  <code>zscore</code> (StandardScaler) e <code>minmax</code> (com clip). Um único <code>NormalizationState</code>
+  alimenta os dois — trocar <code>method</code> não descarta estatística aprendida.
+- <code>NormalizationStateStore</code> (port neutro) + <code>build_seed_state</code> (seed estático
+  via config).</p>
+<p><strong>Modos (um só código, escolhido por config):</strong> online adaptativo
+(<code>freeze_after=None</code>), online-então-congela (<code>freeze_after=N ≥ warmup_obs</code>), e
+estático puro (seeds <code>static_*</code> → estado congelado desde o nascimento).</p>
+<p><strong>Decorator</strong> <code>NormalizingFeatureEncoder</code> (sobre <code>FeatureEncoderProtocol</code>):
+normaliza <strong>uma vez</strong> no <em>seam</em> do encoder — o mesmo vetor normalizado é
+snapshotado em <code>metadata["encoded_state"]</code> e replayado no treino, então serving
+e training ficam em lockstep (zero train/serve skew). L1 in-proc autoritativo no
+hot path + write-behind L2 (cadência <code>persist_every_n</code> + no freeze transition),
+espelhando os padrões temporal/anchor. Warmup faz passthrough até <code>warmup_obs</code>
+(discontinuidade documentada; encurtável via seed estático).</p>
+<p><strong>Persistência por <code>model_id</code> (escolha do stakeholder):</strong> <code>RLMemoryProtocol</code>
+estendido com <code>save_norm_stats</code>/<code>load_norm_stats</code> (impl. em <code>kv_vector</code> —
+resilience-wrapped, chave <code>{weights_namespace}:norm:{model_id}</code> — e <code>in_memory</code>);
+<code>RLMemoryNormalizationStore</code> faz o adapter <code>NormalizationStateStore →
+RLMemoryProtocol</code> (DIP — o decorator nunca conhece o backend RL).</p>
+<p><strong>Wiring:</strong> <code>DecisionPolicyFactory</code> (branch <code>rl</code>) embrulha o encoder quando
+<code>DecisionSettings.normalization.enabled</code> e um <code>norm_store</code> são injetados pelo
+composition root (opt-in estrito). Config: <code>FeatureNormalizationSettings</code> em
+<code>DecisionSettings.normalization</code>.</p>
+<blockquote>
+<p>⚠️ <strong>Ativação depende de CR-WIRE-01.</strong> Hoje o caminho vivo de construção de
+políticas é o stub <code>decision/graph/manager.py:62</code> (<code>policy_registry.get(name)</code>
+devolve a <em>classe</em>, sem injetar <code>rl_service</code>/<code>feature_encoder</code> — não constrói
+sequer um <code>RLPolicyProvider</code>). O hook de normalização vive em
+<code>DecisionPolicyFactory.create</code> (o <em>seam</em> de montagem correto). Enquanto
+CR-WIRE-01 não rotear o graph manager pela factory + instanciar
+<code>RLMemoryNormalizationStore(memory=...)</code> e injetar
+<code>normalization_settings</code>/<code>norm_store</code>, ligar <code>NORMALIZATION.ENABLED=true</code> é
+inócuo em produção (o módulo ADE inteiro está dormente, só exercitado por
+testes). Ao fechar CR-WIRE-01, adicionar teste de integração que dirige uma
+decisão pelo graph real e afirma que o vetor sai normalizado. Cobertura: <code>tests/unit/.../ai/normalization/*</code>
+(stats Welford vs referência, strategies, factory/seed, settings validation),
+<code>.../decision/features/test_unity_normalizing_encoder.py</code> (warmup, cadência,
+freeze-persist, cold-start hydrate, L2-fail degrade, seed estático, isolamento
+por model), <code>.../decision/policies/test_unity_policy_factory_normalization.py</code>
+(opt-in wiring), <code>.../ai/rl/memory/test_unity_normalization_store.py</code> (adapter +
+cold start). Linha adicionada ao capability map.</p>
+</blockquote>
+<h3 id="rl-004-experience-replay-buffer-management">[RL-004] Experience Replay Buffer Management</h3>
+<p>Improve <code>sample_experiences</code> in <code>RLMemoryService</code>. Currently, it relies on semantic similarity.</p>
+<ul>
+<li><strong>Task:</strong> Add a "Maximum Age" filter to avoid training on stale policy data.</li>
+<li><strong>Task:</strong> Implement prioritized experience replay (sampling transitions with higher prediction error).</li>
+</ul>
+<hr />
+<h2 id="phase-3-observability-evalops">Phase 3: Observability &amp; EvalOps</h2>
+<p>Priority: Medium | Goal: Monitor model performance and drift.</p>
+<h3 id="rl-005-model-performance-telemetry-resolved">[RL-005] Model Performance Telemetry ✅ RESOLVED</h3>
+<p>Per-model RL metrics to Prometheus, emitted at the seam that knows <code>model_id</code>
+while the math core stays model-agnostic:</p>
+<ul>
+<li><strong>Cumulative Reward</strong> ✅ — <code>ai_rl_model_reward</code> histogram (<code>_sum</code> = cumulative,
+  <code>rate(_sum)/rate(_count)</code> = moving average), emitted by the training plane
+  (CR-OBS-02).</li>
+<li><strong>Exploration vs. Exploitation Ratio</strong> ✅ — <code>ai_rl_model_decisions_total{outcome}</code>
+  counter at the serving plane (CR-OBS-02).</li>
+<li><strong>Weight Magnitude / Gradient Health</strong> ✅ (2026-06-29) — <code>WeightHealth</code>
+  (<code>ai/rl/algorithms/health.py</code>): the algorithm computes a structure-aware
+  snapshot (<code>l2_norm</code> / <code>max_abs</code> / <code>param_count</code>) of its <strong>learnable</strong>
+  parameters only (epsilon-greedy excludes <code>action_counts</code>), via the
+  <code>RLAlgorithmProtocol.weight_health</code> contract (abstract in <code>BaseRLAlgorithm</code> so
+  a new algorithm cannot silently mis-report). <code>BaseTrainingStrategy</code> attaches
+  the <code>model_id</code> and exports it after each weight update on both paths
+  (online <code>process_experience</code> + <code>train_offline</code>):</li>
+<li><code>ai_rl_model_weight_l2_norm</code> (gauge) — vanishing→~0 / exploding→unbounded</li>
+<li><code>ai_rl_model_weight_max_abs</code> (gauge) — sharper single-parameter explosion detector</li>
+<li><code>ai_rl_model_weight_param_count</code> (gauge) — weight-table bloat / action-space growth</li>
+<li><code>ai_rl_model_td_error</code> (histogram) — |TD-error| per update = gradient-health /
+    learning-signal magnitude (sustained ~0 = converged/stalled; sustained large = unstable)</li>
+</ul>
+<p>Coverage: <code>algorithms/test_unity_weight_health.py</code> (value object + per-algorithm
+  snapshots incl. <code>action_counts</code> exclusion), <code>trainers/test_unity_weight_health_metrics.py</code>
+  (online + offline emission read back from the registry).</p>
+<h3 id="rl-006-shadow-mode-execution-resolved-2026-06-29">[RL-006] Shadow Mode Execution ✅ RESOLVED (2026-06-29)</h3>
+<p>The ADE runs a secondary "shadow" policy (typically RL) alongside the primary
+decision, records its outcome + divergence, but returns only the primary — so a
+candidate model is validated against live traffic before it controls anything.</p>
+<ul>
+<li><strong>Config:</strong> <code>DecisionSettings.shadow: Optional[ShadowPolicySettings]</code>
+  (<code>enabled</code>, <code>policy_name="rl"</code>), mounted like <code>reward</code>/<code>governance</code>.</li>
+<li><strong>Wiring:</strong> <code>DecisionEngineFactory._build_shadow_policy</code> builds it via
+  <code>DecisionPolicyFactory</code> with the same RL/encoder/normalization deps as the live
+  RL policy but <strong>no fallback</strong> — a candidate's failures must surface (recorded
+  as a shadow error) rather than silently degrading. Injected into
+  <code>DecisionGraphManager(shadow_policy=…, shadow_policy_name=…)</code>.</li>
+<li><strong>Execution:</strong> <code>DecisionGraphManager.execute</code> runs the primary graph and the
+  shadow policy <strong>concurrently</strong> (<code>asyncio.gather</code>, ~max not sum latency). The
+  shadow branch is fully isolated (<code>_evaluate_shadow</code> never raises — captures the
+  error into the outcome), so primary exceptions propagate unchanged.</li>
+<li><strong>Result:</strong> typed <code>DecisionResult.shadow: Optional[ShadowOutcome]</code>
+  (<code>selected_action</code>, <code>policy_name</code>, <code>confidence</code>, <code>diverged</code>, <code>error</code>) — flows
+  into the existing audit via <code>model_dump()</code>. Observation-only.</li>
+<li><strong>Metric:</strong> <code>ai_decision_shadow_decisions_total{graph_id, outcome}</code> where
+  outcome ∈ <code>agree</code> / <code>diverged</code> / <code>error</code>. Divergence rate gauges promotion
+  readiness.</li>
+<li>Coverage: <code>tests/unit/.../ai/decision/test_shadow_wiring.py</code> (divergence,
+  agreement, isolated failure, disabled/unconfigured no-op).</li>
+</ul>
+<hr />
+<h2 id="phase-4-developer-experience-refinement">Phase 4: Developer Experience &amp; Refinement</h2>
+<p>Priority: Low | Goal: Ease of use and configuration.</p>
+<h3 id="rl-007-automated-weight-versioning-mechanism-done-2026-06-30-auto-trigger-deferred">[RL-007] Automated Weight Versioning ✅ MECHANISM DONE (2026-06-30); auto-trigger deferred</h3>
+<p>Weight versioning + rollback, mirroring the ai/features Release plane's pointer model.</p>
+<ul>
+<li><strong>Value objects:</strong> <code>memory/version.py</code> — <code>WeightVersionInfo</code> (version/created_at/metadata)</li>
+<li><code>WeightReleaseState</code> (current/previous/counter/versions, newest-first).</li>
+<li><strong>Protocol + both providers:</strong> <code>RLMemoryProtocol</code> gains <code>snapshot_weights</code>,
+  <code>list_weight_versions</code>, <code>get_current_version</code>, <code>rollback_weights(version=None →
+  previous)</code>. <code>in_memory</code> (deep-copied blobs) and <code>kv_vector</code> (version blob at
+  <code>{ns}:wver:{model_id}:{v}</code> + release pointer <code>{ns}:wrel:{model_id}</code>,
+  resilience-wrapped, best-effort eviction). Retention via <code>max_weight_versions</code>
+  (default 5; 0 disables → snapshot is a no-op).</li>
+<li><strong>Automatic snapshot:</strong> <code>BaseTrainingStrategy.train_offline</code> snapshots the
+  post-batch weights (metadata <code>trigger=offline_batch</code>, <code>batch_size</code>).</li>
+<li><strong>Release plane:</strong> <code>service.releases</code> (<code>RLReleasePlane</code>) — <code>list_versions</code> /
+  <code>current_version</code> / <code>rollback</code>, with metrics <code>ai_rl_weight_snapshots_total</code>,
+  <code>ai_rl_weight_rollbacks_total</code>, <code>ai_rl_weight_versions</code>.</li>
+<li>Coverage: <code>memory/providers/test_unity_weight_versioning.py</code> (both backends:
+  monotonic ids, immutable copies, retention/eviction, rollback to previous/
+  specific/unknown/none, disabled no-op), <code>test_unity_release_plane.py</code> (plane +
+  trainer snapshot-after-batch).</li>
+</ul>
+<p><strong>Automated rollback-on-drop trigger (stakeholder 2026-06-30: build BOTH seams).</strong>
+Decomposed into two independent PRs:</p>
+<ul>
+<li><strong>✅ Seam A — pre-promote eval gate (deterministic) — DONE (2026-06-30).</strong> After
+  an offline batch produces candidate weights, they are scored against the
+  pre-training baseline on a held-out batch and only promoted (saved as active +
+  snapshotted) when they don't regress beyond a tolerance; a regressing candidate
+  is rejected and the baseline keeps serving. No bad weights ever reach traffic.</li>
+<li><strong>Offline evaluator (algorithm-owned):</strong> <code>RLAlgorithmProtocol.evaluate(weights,
+    transitions) -&gt; float</code> (higher=better; negative mean absolute prediction
+    error). <code>BaseRLAlgorithm</code> aggregates; each algorithm implements the read-only
+    <code>_prediction_error</code> (epsilon: Q-lookup; contextual: per-action dot product).</li>
+<li><strong>Gate:</strong> <code>ai/rl/promotion_gate.py</code> — <code>WeightPromotionGate</code> (pure decision
+    object) + <code>PromotionDecision</code>. Promote iff <code>candidate ≥ baseline − tolerance</code>;
+    promotes unjudged when held-out samples &lt; <code>eval_min_samples</code>.</li>
+<li><strong>Settings:</strong> <code>RLPromotionGateSettings</code> (enabled / eval_batch_size /
+    eval_min_samples / max_regression_tolerance) on <code>RLSettings.promotion_gate</code>;
+    built in <code>RLTrainerFactory</code> and injected into the trainer (off by default).</li>
+<li><strong>Wiring:</strong> <code>train_offline</code> captures the baseline, runs the gate before
+    save/snapshot, keeps the baseline + skips snapshot on rejection (priority
+    writes still happen). Metrics <code>ai_rl_promotion_gate_decisions_total{outcome}</code><ul>
+<li><code>ai_rl_promotion_gate_score{kind}</code>; also now emits the previously-orphaned
+<code>ai_rl_weight_snapshots_total</code> on a real snapshot.</li>
+</ul>
+</li>
+<li><strong>Refactor:</strong> shared <code>Transition</code> moved to neutral <code>ai/rl/types.py</code> so the
+    algorithm (math) layer no longer imports the memory (persistence) layer.</li>
+<li>Tests: <code>algorithms/test_unity_evaluate.py</code>, <code>test_unity_promotion_gate.py</code>,
+    <code>trainers/test_unity_eval_gate.py</code>.</li>
+<li><strong>✅ Seam B — post-deploy reward monitor (reactive) — DONE (2026-06-30).</strong> A
+  rolling per-model reward window watches live feedback and auto-rolls-back a
+  model whose post-promotion reward degrades.</li>
+<li><strong><code>ai/rl/reward_monitor.py</code></strong> — <code>RLRewardMonitor</code> + a <code>RollbackPort</code> Protocol
+    (DIP; satisfied by <code>RLReleasePlane</code>). Bounded per-model <code>_RewardWindow</code>
+    (LRU). <code>observe(model_id, reward)</code> records + (when armed and enough
+    post-promotion samples) compares the window mean against the baseline and
+    rolls back through the port if it dropped below <code>baseline - max_reward_drop</code>,
+    then disarms (one rollback per promotion). <code>mark_promotion(model_id)</code>
+    captures the pre-promotion mean as the baseline and clears the window.</li>
+<li><strong>Settings:</strong> <code>RLRewardMonitorSettings</code> (enabled / window_size / min_samples
+    / max_reward_drop / max_tracked_models) on <code>RLSettings.reward_monitor</code>, off
+    by default.</li>
+<li><strong>Wiring:</strong> built in <code>ReinforcementLearningService</code> (rollback port =
+    <code>self.releases</code>) and injected into <code>RLTrainingPlane</code>; <code>process_feedback</code>
+    calls <code>observe</code> after learning, <code>trigger_offline_training</code> calls
+    <code>mark_promotion</code> when the cycle promoted (<code>train_offline</code> now returns <code>bool</code>).</li>
+<li><strong>Metrics:</strong> <code>ai_rl_reward_monitor_rollbacks_total{model_id}</code> (auto-only) +
+    <code>ai_rl_reward_monitor_reward_mean{model_id, kind=baseline|current}</code>.</li>
+<li>State is per-pod (like the replay priority overlay): each pod judges the
+    reward it observes; the rollback writes shared KV so the effect is global.</li>
+<li>Tests: <code>test_unity_reward_monitor.py</code>, <code>test_unity_training_plane_monitor.py</code>.</li>
+</ul>
+<p><strong>RL-007 COMPLETE</strong> — both the deterministic pre-promote gate (Seam A) and the
+reactive post-deploy monitor (Seam B) are in place; operators retain the manual
+<code>service.releases.rollback</code>.</p>
+<p><strong>Known debt (tracked):</strong> the weights blob is still <code>Dict[str, Any]</code> in the older
+<code>predict</code>/<code>update</code>/<code>validate_weights</code>/<code>weight_health</code> signatures; new RL-007 code
+uses <code>Dict[str, object]</code> (opaque-JSON rule) + isinstance narrowing. Migrating the
+older signatures is low-value (the math paths reintroduce <code>Any</code> at depth via
+<code>dict(...)</code>) and is deferred. Separately, the <code>ai/rl/__init__</code> package-init import
+cycle degrades intra-package symbols to <code>Any</code> under mypy (the pre-existing
+<code>service</code>/<code>kv_vector</code>/<code>reward</code> no-any-return source); not fixed here.</p>
+<h3 id="rl-008-pydantic-validation-for-weights-schema-done-2026-06-30">[RL-008] Pydantic Validation for Weights Schema ✅ DONE (2026-06-30)</h3>
+<p>Weights flow as opaque <code>Dict[str, Any]</code> JSON blobs through the KV store; nothing
+guarded their structural integrity across (de)serialization.</p>
+<ul>
+<li><strong>Task:</strong> Use <code>TypeAdapter</code> or structured Pydantic models for algorithm weights to ensure internal structural integrity during serializations.</li>
+<li><strong>Delivered:</strong></li>
+<li><code>algorithms/weights.py</code> — Pydantic schemas <code>EpsilonGreedyWeights</code>
+    (<code>q_table: Dict[str, float]</code>, <code>action_counts: Dict[str, int]</code>) and
+    <code>ContextualBanditWeights</code> (<code>bandit_weights: Dict[str, List[float]]</code>, with a
+    <code>model_validator</code> rejecting ragged per-action vectors), plus
+    <code>WeightSchemaError(ValueError)</code>. <code>extra="allow"</code> preserves the sibling keys
+    the <code>_update_impl</code>s carry forward (<code>{**weights, ...}</code>).</li>
+<li><code>RLAlgorithmProtocol.validate_weights(weights) -&gt; Dict[str, Any]</code> — new
+    contract method, owned by the algorithm (mirrors <code>weight_health</code>: the
+    algorithm is the only component that knows its weight layout). <code>BaseRLAlgorithm</code>
+    ships a single concrete implementation driven by a <code>_weights_model</code> ClassVar
+    (<code>None</code> → safe passthrough); both providers declare their model.</li>
+<li>Wired into the trainer load→update→save cycle (<code>trainers/base.train_offline</code>,
+    <code>trainers/providers/online.process_experience</code>): the deserialized blob is
+    validated on load and the post-update blob is normalized before save/snapshot.
+    The serving predict hot path is intentionally left unvalidated (read-only,
+    self-heals missing keys; per-request Pydantic validation would tax inference).</li>
+</ul>
+<hr />
+<h1 id="avaliacao-de-modulo-follow-up-2026-06-26">Avaliação de módulo — follow-up (2026-06-26)</h1>
+<p>Releitura completa do módulo <code>ai/rl</code> no HEAD da branch <code>rl</code> (commit <code>773d06f</code>).
+Esta seção <strong>reconcilia o status</strong> dos CR-<em> acima e adiciona os achados que
+ainda não estavam capturados, fechando com um </em><em>plano de implementação faseado</em>*.</p>
+<h2 id="0-reconciliacao-de-status-o-que-ja-esta-no-head">0. Reconciliação de status (o que já está no HEAD)</h2>
+<p>Vários CR-* da review de 2026-06-26 já estão implementados mas seguiam sem
+marcação. Confirmado por leitura do código atual:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Status atual</th>
+<th>Evidência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CR-BUG-01 (vector_store não conectava)</td>
+<td>✅ Resolvido</td>
+<td><code>kv_vector.py:93-95</code> conecta o vector_store antes de <code>set_ready()</code></td>
+</tr>
+<tr>
+<td>CR-BUG-02 (<code>action_index: Any</code>)</td>
+<td>✅ Resolvido</td>
+<td><code>engine.py:151</code> faz <code>int(original_decision.selected_action)</code></td>
+</tr>
+<tr>
+<td>CR-DESIGN-01 (<code>max_tracked_models</code> reusado)</td>
+<td>✅ Resolvido</td>
+<td><code>rl_settings.py:74</code> tem <code>max_experiences_per_model</code>; <code>in_memory.py:21</code> usa-o</td>
+</tr>
+<tr>
+<td>CR-TYPE-01 (<code>_strategies</code> sem tipo)</td>
+<td>✅ Resolvido</td>
+<td><code>engine.py:60</code> <code>Dict[str, BaseRewardStrategy]</code></td>
+</tr>
+<tr>
+<td>CR-TYPE-02 (<code>state_vector: list</code>)</td>
+<td>✅ Resolvido</td>
+<td><code>training_plane.py</code> usa <code>List[float]</code></td>
+</tr>
+<tr>
+<td>CR-QUALITY-01 (<code>train_offline</code> duplicado)</td>
+<td>✅ Resolvido</td>
+<td><code>trainers/base.py</code> centraliza</td>
+</tr>
+<tr>
+<td>CR-QUALITY-02 (flush sequencial)</td>
+<td>✅ Resolvido</td>
+<td><code>aggregation.py:90</code> usa <code>asyncio.gather</code></td>
+</tr>
+<tr>
+<td>CR-OBS-01 / CR-OBS-02 / CR-ARCH-02</td>
+<td>✅ Resolvido</td>
+<td>já marcados no doc</td>
+</tr>
+<tr>
+<td><strong>CR-ARCH-01 (Service Locator + OCP)</strong></td>
+<td>✅ Resolvido</td>
+<td>passos A+B+C completos — <code>ReinforcementLearningFactory.create(settings, **kwargs)</code> propaga <code>connection_manager</code> → <code>RLMemoryFactory</code> → <code>build()</code> (ver <code>factory.py</code>/<code>lifecycle.py</code>); ver CR-ARCH-03</td>
+</tr>
+<tr>
+<td><strong>CR-ARCH-03 (montável com default <code>kv_vector</code>)</strong></td>
+<td>✅ Resolvido</td>
+<td><code>lifecycle.register_lifecycle</code> thread o <code>connection_manager</code> pela chain; serviço monta sem <code>RuntimeError</code> (PR #254/#255/#257)</td>
+</tr>
+<tr>
+<td><strong>CR-WIRE-01 (composition root)</strong></td>
+<td>✅ Resolvido</td>
+<td><code>ai/rl/lifecycle.py::register_lifecycle</code> registra o serviço (priority 110, gating <code>ai.rl.enabled</code>); reward/decision wired (PR #254/#255/#257)</td>
+</tr>
+<tr>
+<td><strong>Issue 2 / RL-001 (lock distribuído)</strong></td>
+<td>✅ Resolvido</td>
+<td><code>LockingProtocol</code> injetado nos trainers; lock em <code>train_offline</code> + <code>online.process_experience</code> (chave <code>lock:rl:weights:{model_id}</code>)</td>
+</tr>
+<tr>
+<td><strong>RL-002 (backoff exponencial)</strong></td>
+<td>✅ Resolvido</td>
+<td><code>ResilienceOrchestrator</code> (CB→retry) por backend injetado no <code>KVVectorMemoryProvider</code>; nova <code>ResilienceOrchestratorFactory</code> centraliza a montagem retry+CB (PR #250)</td>
+</tr>
+<tr>
+<td><strong>RL-003 (normalização de features)</strong></td>
+<td>✅ Resolvido</td>
+<td><code>ai/normalization/</code> + <code>NormalizingFeatureEncoder</code> (PR #251); ativado pelo wiring CR-WIRE-01</td>
+</tr>
+<tr>
+<td><strong>RL-004 (experience replay buffer)</strong></td>
+<td>✅ Resolvido</td>
+<td><code>StoredExperience</code> + <code>memory/sampling/</code> (uniform/prioritized/semantic), filtro max-age, TD-error feedback (PR #263/#264)</td>
+</tr>
+<tr>
+<td>Coverage gap (<code>RewardEngine.process_event</code>)</td>
+<td>✅ Resolvido</td>
+<td><code>test_unity_reward_engine.py</code> + e2e Kafka (PR #265)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-achados-novos-ainda-abertos">1. Achados novos / ainda abertos</h2>
+<h3 id="cr-arch-03-servico-nao-e-montavel-com-o-default-kv_vector-passo-c-do-cr-arch-01-bloqueante">[CR-ARCH-03] Serviço não é montável com o default <code>kv_vector</code> (passo C do CR-ARCH-01) ⛔ Bloqueante</h3>
+<p><strong>Arquivos:</strong> <code>src/nala/athomic/ai/rl/factory.py:41-44</code>, <code>src/nala/athomic/ai/rl/memory/providers/kv_vector.py:64-73</code></p>
+<p><code>ReinforcementLearningFactory.create()</code> chama <code>RLMemoryFactory.create(settings.memory, provider_name)</code>
+<strong>sem repassar</strong> <code>connection_manager</code>/<code>kv_store</code>/<code>vector_store</code>. Para o provider default
+(<code>kv_vector</code>), <code>KVVectorMemoryProvider.build()</code> levanta <code>RuntimeError("requires either
+(kv_store + vector_store) or a connection_manager")</code>. <strong>Montar o serviço com config default estoura.</strong>
+O teste de integração cai exatamente nisso (<code>test_int_rl_flow.py:119</code> passa só <code>settings</code>,
+não o <code>db_manager</code>) e o bug fica <strong>mascarado</strong> pelo skip <code>infra_available</code>.</p>
+<p><strong>Fix:</strong> completar o passo C do CR-ARCH-01 — propagar <code>connection_manager</code> pela chain
+<code>ReinforcementLearningFactory.create(settings, connection_manager=...)</code> →
+<code>RLMemoryFactory.create(..., connection_manager=...)</code> → <code>build()</code>.
+<strong>Teste:</strong> desbloquear <code>test_int_rl_flow.py</code> passando o <code>db_manager</code> ao factory; cobrir em unit
+que <code>ReinforcementLearningFactory.create(settings, connection_manager=mock_cm)</code> monta o <code>kv_vector</code> sem erro.</p>
+<hr />
+<h3 id="cr-wire-01-rl-reward-decision-nao-estao-no-composition-root-bloqueante">[CR-WIRE-01] RL / Reward / Decision não estão no composition root ⛔ Bloqueante</h3>
+<p><strong>Arquivos:</strong> <code>src/nala/athomic/lifecycle/register_services.py</code> (sem nenhum <code>register_*</code> de <code>ai/</code>),
+<code>src/nala/athomic/ai/decision/policies/factory.py:48</code></p>
+<p><code>register_athomic_infra_services()</code> não registra nenhum lifecycle do closed-loop ADE.
+Nada constrói/injeta o <code>rl_service</code> em produção: a policy RL e a <code>ModelMetadataAction</code> recebem
+<code>rl_service=None</code> e os guards levantam (<code>"requires an active ReinforcementLearningService"</code>).
+<strong>O módulo está dormente ponta-a-ponta</strong> — só é exercitado por testes.</p>
+<p><strong>Fix:</strong> criar <code>register_lifecycle(registry, settings, connection_manager)</code> colocado com o domínio
+(<code>ai/rl/lifecycle.py</code>, espelhando o padrão dos demais domínios), que monta o <code>ReinforcementLearningService</code>
+(via CR-ARCH-03) e os serviços de Reward/Decision, e registrá-lo em <code>register_athomic_infra_services</code>
+no Level 100. Decidir o gating por <code>settings.ai.rl.enabled</code>.
+<strong>Teste:</strong> integração de bootstrap verificando que o <code>rl_service</code> fica <code>ready</code> e que a policy RL resolve.</p>
+<hr />
+<h3 id="cr-design-02-semantica-de-sampling-divergente-entre-providers-lsp-resolvido-rl-004-pr-263264">[CR-DESIGN-02] Semântica de sampling divergente entre providers (LSP) ✅ RESOLVIDO (RL-004, PR #263/#264)</h3>
+<p><strong>Resolução:</strong> Amostragem <strong>uniforme i.i.d.</strong> é agora o contrato explícito do
+<code>RLMemoryProtocol.sample_experiences</code> (documentado em <code>memory/protocol.py</code>).
+Ambos os providers (<code>kv_vector</code>, <code>in_memory</code>) defaultam para uniforme via
+<code>replay_sampling_registry</code> e honram o filtro <code>max_experience_age_seconds</code>. O modo
+<strong><code>semantic</code></strong> (busca ancorada por similaridade + jitter) virou estratégia
+<strong>opt-in</strong> via <code>RLMemorySettings.sampling_mode</code> — nunca o default silencioso; o
+<code>in_memory</code> degrada <code>semantic</code> → uniforme com warning. O modo <code>prioritized</code> (PER)
+também é opt-in. Issue 1 (adaptive jitter) só se aplica quando <code>semantic</code> está
+ligado e fica registrada lá.</p>
+<hr />
+<h3 id="cr-design-03-next_state_vector-discount_factor-seam-reservado-decidido-2026-06-29-manter-ambos">[CR-DESIGN-03] <code>next_state_vector</code> + <code>discount_factor</code> — seam reservado 🟦 DECIDIDO 2026-06-29: manter ambos</h3>
+<p><strong>Arquivos:</strong> <code>algorithms/protocol.py</code>, <code>rl_settings.py</code>, chain de <code>next_state_vector</code></p>
+<p>Nem <code>contextual_bandit</code> nem <code>epsilon_greedy</code> usam <code>next_state</code> ou <code>gamma</code> (correto
+para bandits). A recomendação original (remover até existir consumidor) <strong>precede
+RL-004</strong>, que converteu o replay buffer num store de transições: <code>StoredExperience</code>
+agora persiste <code>next_state</code> como o <code>s'</code> do registro canônico <code>(s, a, r, s')</code>, e
+<code>algorithm.update</code> recebe a transição completa.</p>
+<p><strong>Decisão (stakeholder, 2026-06-29): manter ambos como seam reservado.</strong> <code>next_state</code>
+é o <code>s'</code> canônico do replay record — base, não generalidade especulativa; removê-lo
+gutaria o propósito do buffer e exigiria re-plumbing + re-coleta de experiência
+quando o algoritmo TD chegasse ("needed yesterday"). <code>discount_factor</code> (gamma) é o
+parâmetro de bootstrapping do mesmo algoritmo TD futuro. Em vez de remover, o seam
+foi <strong>documentado</strong> explicitamente: <code>rl_settings.discount_factor</code> (description +
+comentário) e <code>RLAlgorithmProtocol.update</code>'s <code>next_state_vector</code> docstring marcam
+que são consumidos por um learner TD e ignorados pelos bandits atuais.</p>
+<hr />
+<h3 id="cr-bug-03-mutacao-in-place-num-_predict_impl-documentado-como-stateless-resolvido-2026-06-29">[CR-BUG-03] Mutação in-place num <code>_predict_impl</code> documentado como stateless ✅ RESOLVIDO 2026-06-29</h3>
+<p><strong>Arquivos:</strong> <code>algorithms/providers/contextual_bandit.py</code>, <code>algorithms/providers/epsilon_greedy.py</code></p>
+<p><strong>Resolução:</strong> <code>_predict_impl</code> agora copia o sub-mapa de pesos
+(<code>dict(weights.get(...))</code>) antes de semear zero-vectors p/ ações novas — nunca
+muta o dict recebido. <code>_update_impl</code> copia o mapa <strong>e</strong> o vetor da ação mutada
+(contextual) / ambos sub-mapas (epsilon) e retorna <code>{**weights, ...}</code>, preservando
+chaves irmãs (ex.: estado de normalização) em vez de descartá-las. Update agora é
+stateless em relação ao input.</p>
+<hr />
+<h3 id="cr-bug-04-ancora-l1-atualizada-antes-do-try-de-persistencia-resolvido-2026-06-29">[CR-BUG-04] Âncora L1 atualizada antes do try de persistência ✅ RESOLVIDO 2026-06-29</h3>
+<p><strong>Arquivo:</strong> <code>memory/providers/kv_vector.py</code></p>
+<p><strong>Resolução:</strong> A atualização do cache L1 do anchor (<code>_last_known_states</code>) foi movida
+de antes do bloco <code>try</code> para <strong>depois</strong> do upsert bem-sucedido, junto do
+<code>_persist_anchor</code> (L2). Se o <code>vector_store.upsert</code> falhar, a âncora não avança e o
+sampling semântico não fica enviesado para um estado cuja experiência não foi gravada.</p>
+<hr />
+<h3 id="cr-quality-03-shims-de-back-compat-prematuros-__init__-vazio-resolvido-2026-06-29">[CR-QUALITY-03] Shims de back-compat prematuros + <code>__init__</code> vazio ✅ RESOLVIDO 2026-06-29</h3>
+<p><strong>Arquivos:</strong> <code>algorithms/contextual_bandit.py</code>, <code>algorithms/epsilon_greedy.py</code>, <code>trainers/batch.py</code>,
+<code>trainers/online.py</code>, <code>memory/service.py</code>, <code>ai/rl/__init__.py</code></p>
+<p><strong>Resolução:</strong> Removidos os 5 shims de re-export (<code>algorithms/{contextual_bandit,
+epsilon_greedy}.py</code>, <code>trainers/{batch,online}.py</code>, <code>memory/service.py</code> com o alias
+<code>RLMemoryService</code>). As registries já importavam dos paths <code>...providers.*</code>; os únicos
+consumidores eram testes, repontados para <code>...providers.*</code>. O <code>ai/rl/__init__.py</code>
+(antes vazio) foi curado com a API pública mínima do módulo:
+<code>ReinforcementLearningService</code>, <code>ReinforcementLearningFactory</code>, <code>register_lifecycle</code>.</p>
+<hr />
+<h2 id="2-plano-de-implementacao">2. Plano de Implementação</h2>
+<p>Ordenado por dependência. <strong>Fase 0 é pré-requisito</strong> para o módulo rodar em produção;
+nada além de testes exercita o código hoje.</p>
+<h3 id="fase-0-desbloqueio-o-modulo-nao-funciona-sem-isto-completa-pr-254255257">Fase 0 — Desbloqueio (o módulo não funciona sem isto) ✅ COMPLETA (PR #254/#255/#257)</h3>
+<ol>
+<li><strong>[CR-ARCH-03]</strong> ✅ Propagar <code>connection_manager</code> pela chain de factories (passo C do CR-ARCH-01).</li>
+<li><strong>[CR-WIRE-01]</strong> ✅ <code>ai/rl/lifecycle.py::register_lifecycle</code> registra o closed-loop (priority 110), com gating por <code>ai.rl.enabled</code>.</li>
+<li>✅ <code>test_int_rl_flow.py</code> desbloqueado (factory recebe o <code>connection_manager</code>).</li>
+</ol>
+<blockquote>
+<p><strong>Saída da Fase 0:</strong> <code>ReinforcementLearningFactory.create(settings, connection_manager)</code> monta o
+<code>kv_vector</code>, o serviço fica <code>ready</code> no bootstrap, e a policy RL resolve no decision engine.</p>
+</blockquote>
+<h3 id="fase-1-integridade-sob-concorrencia-antes-de-qualquer-trafego-real-completa">Fase 1 — Integridade sob concorrência (antes de qualquer tráfego real) ✅ COMPLETA</h3>
+<ol>
+<li><strong>[RL-001 / Issue 2]</strong> ✅ Lock distribuído no ciclo load→update→save de <strong>ambos</strong> os trainers (<code>online.process_experience</code>, <code>base.train_offline</code>). Implementado via injeção de <code>LockingProtocol</code> (não o decorator <code>@distributed_lock</code>, que viola DIP/Factory Rule 1). Chave: <code>lock:rl:weights:{model_id}</code>. Ver detalhe na seção RL-001 acima.</li>
+<li><strong>[RL-002]</strong> ✅ Retry com backoff exponencial nas falhas de persistência (KV/Vector) — PR #250.</li>
+</ol>
+<h3 id="fase-2-correcao-semantica-contrato-completa">Fase 2 — Correção semântica / contrato ✅ COMPLETA</h3>
+<ol>
+<li><strong>[CR-DESIGN-02 + RL-004]</strong> ✅ Amostragem uniforme é o contrato; <code>semantic</code>/<code>prioritized</code> opt-in; filtro max-age (PR #263/#264).</li>
+<li><strong>[CR-BUG-03]</strong> ✅ Cópia local no predict + preservar chaves no update (2026-06-29).</li>
+<li><strong>[CR-BUG-04]</strong> ✅ Atualização do anchor L1 reordenada para pós-upsert (2026-06-29).</li>
+<li><strong>[CR-DESIGN-03]</strong> ✅ Decidido (stakeholder): manter <code>next_state_vector</code>/<code>discount_factor</code> como seam reservado para o algoritmo TD; seam documentado (2026-06-29).</li>
+</ol>
+<h3 id="fase-3-qualidade-dx">Fase 3 — Qualidade / DX</h3>
+<ol>
+<li><strong>[CR-QUALITY-03]</strong> ✅ Shims removidos; <code>__init__.py</code> curado (2026-06-29).</li>
+<li><strong>Coverage gap</strong> ✅ <code>RewardEngine.process_event()</code> coberto (PR #265).</li>
+<li><strong>[dup #16]</strong> ✅ <code>process_experience</code> (span+except) + chamada <code>store_experience</code> deduplicados em <code>BaseTrainingStrategy._traced_step</code>/<code>_store_experience</code> (2026-06-29) — último item do backlog de duplicação.</li>
+<li><strong>[RL-008 / Issue 5]</strong> ✅ Pydantic para o schema de weights (<code>q_table</code>/<code>bandit_weights</code>/<code>action_counts</code>) — <code>algorithms/weights.py</code> + <code>RLAlgorithmProtocol.validate_weights</code>, validado no ciclo load→update→save dos trainers. Ver seção RL-008 acima. (2026-06-30)</li>
+</ol>
+<h2 id="3-type-safety-cleanup-2026-06-26">3. Type-safety cleanup (2026-06-26)</h2>
+<p>Contexto: <code>make mypy</code> está <strong>globalmente vermelho (~3690 erros)</strong> e não é gate hoje
+(comentado do alvo <code>fix</code>). A esmagadora maioria é sistêmica: <code>get_logger()</code> (loguru)
+retorna logger não-tipado → <code>Call to untyped function "debug/info/..." [no-untyped-call]</code>
+em todo módulo que loga. Isso é repo-wide, não específico do RL, e fora de escopo aqui.
+Filtrando esse ruído, os erros <strong>genuínos</strong> do RL eram 13.</p>
+<h3 id="cr-type-03-generics-duplos-typetype-nas-registries-instanciacao-nos-factories-resolvido">[CR-TYPE-03] Generics duplos <code>type[type[...]]</code> nas registries + instanciação nos factories ✅ RESOLVIDO</h3>
+<p><strong>Arquivos:</strong> <code>algorithms/</code>, <code>trainers/</code>, <code>memory/</code>, <code>reward/</code> (registry.py + factory.py)</p>
+<p>As 4 registries declaravam <code>BaseRegistry[Type[X]]</code>, mas <code>BaseRegistry(Generic[T])</code> já
+guarda <code>Dict[str, Type[T]]</code> — então <code>T</code> deve ser o <strong>protocolo</strong>, não <code>Type[protocolo]</code>.
+Com <code>Type[X]</code> o registry virava <code>Type[Type[X]]</code>, quebrando <code>register()</code> e fazendo os
+factories darem <code>Cannot instantiate type[type[...]]</code> + <code>Returning Any</code>.</p>
+<p><strong>Fix aplicado:</strong>
+- Registries passam a <code>BaseRegistry[X]</code> (alinhado aos 10+ registries canônicos do repo).
+  Reward usa <code>BaseRegistry[BaseRewardStrategy]</code> (tipo de retorno do seu factory).
+- Factories instanciam via o seam sancionado <code>registry.create(name, settings=...)</code>
+  (o <code>cast</code> vive no framework — dentro da regra do CLAUDE.md), em vez de
+  <code>registry.get(name)(settings=...)</code> manual.
+- <code>memory/factory.py</code>: dispatch do <code>build</code> classmethod tipado via Protocol
+  <code>_SupportsBuild</code> (narrowing por <code>isinstance</code>, sem <code>cast</code>/<code>Any</code>).</p>
+<p>Resultado: 13 → 6 erros genuínos do RL; runtime validado (smoke + 92 unit tests).</p>
+<p><strong>Extensão (PR #251, rl-f3):</strong> <code>DecisionPolicyRegistry</code> tinha a mesma falha
+(<code>BaseRegistry[Type[DecisionPolicyProtocol]]</code>) → 6 erros mypy no
+<code>policies/factory.py</code> (arquivo já tocado pelo RL-003). Corrigido pelo mesmo
+padrão (registry → <code>BaseRegistry[DecisionPolicyProtocol]</code>; factory via
+<code>policy_registry.create(...)</code>).</p>
+<blockquote>
+<p>🔭 <strong>Backlog dedicado (CR-TYPE-03 repo-wide).</strong> A varredura revelou que o
+anti-pattern <code>BaseRegistry[Type[X]]</code> é <strong>repo-wide: 44 registries</strong> (não só as
+4 do RL + 1 da policy já corrigidas). Restam <strong>6 no módulo decision</strong>
+(<code>graph/routing</code>, <code>safety</code>, <code>safety/creators</code>, <code>safety/rules</code>, <code>actions</code>,
+<code>governance</code>) + ~37 fora dele (database, serializer, security, integration,
+resilience, ai/{llm,rag,embeddings,...}, router, etc.). Cada um exige
+registry → <code>BaseRegistry[X]</code> <strong>e</strong> a factory consumidora migrar de
+<code>registry.get(name)(...)</code> para <code>registry.create(...)</code> (senão troca
+<code>instantiate type[type[...]]</code> por <code>instantiate protocol class</code>). Fica como PR
+próprio — não misturar refactor de 80+ arquivos no PR de feature.</p>
+</blockquote>
+<h3 id="cr-bug-05-rewardsettings-e-schema-orfao-handler_is_reward_enabled-le-caminho-inexistente-resolvido-cr-wire-01-pr-257">[CR-BUG-05] <code>RewardSettings</code> é schema órfão → <code>handler._is_reward_enabled</code> lê caminho inexistente ✅ RESOLVIDO (CR-WIRE-01, PR #257)</h3>
+<p><strong>Arquivos:</strong> <code>reward/handler.py</code>, <code>config/schemas/ai/decision/decision_setting.py</code></p>
+<p><strong>Resolução:</strong> <code>DecisionSettings.reward: Optional[RewardSettings]</code> foi montado na árvore
+de config (<code>decision_setting.py</code>), e <code>_is_reward_enabled</code> reescrito com narrowing
+explícito de <code>None</code> — lê <code>decision.reward.enabled</code> só quando ambos existem, retornando
+<code>False</code> quando o bloco <code>reward</code> está ausente (em vez do <code>except</code> que deixava reward
+permanentemente off). Os 6 erros <code>union-attr</code> de mypy sumiram (bug real corrigido, não
+silenciado).</p>
+<h3 id="backlog-de-produto-sem-ordem-rigida-depende-de-fase-01">Backlog de produto (sem ordem rígida; depende de Fase 0–1)</h3>
+<ul>
+<li><strong>[RL-003]</strong> ✅ Normalização de features (MinMax / Z-Score) com persistência por <code>model_id</code> (PR #251).</li>
+<li><strong>[RL-005]</strong> ✅ Telemetria de performance — weight magnitude / gradient health (2026-06-29); cumulative reward + exploration ratio já em CR-OBS-02.</li>
+<li><strong>[RL-006]</strong> ✅ Shadow mode (valida política RL sem controlar tráfego real) — 2026-06-29.</li>
+<li><strong>[RL-007]</strong> ✅ Versionamento/rollback de weights (mecanismo) — 2026-06-30; trigger automático de rollback-on-drop deferido p/ follow-up.</li>
+<li><strong>[RL-008 / Issue 5]</strong> ✅ Schema de weights (Pydantic) para <code>q_table</code>/<code>bandit_weights</code>/<code>action_counts</code> — 2026-06-30.</li>
+<li><strong>[#4]</strong> ✅ Vetorização NumPy — batched matmul adaptativo em <code>_predict_impl</code> (não no single <code>_dot_product</code>, que o benchmark provou ser pior em NumPy); 2026-06-30.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Nalaminds
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4571 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Robust IDP for building resilient, observable, and scalable microservices in Python.">
+      
+      
+        <meta name="author" content="Nalaminds">
+      
+      
+        <link rel="canonical" href="https://guandaline.github.io/nala-core-api/backlog/research/distributed-adaptive-resource-scheduler/Athomic-Research-Dossier-v0_1/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Athomic Research Dossier v0.1 - Nala Core API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#athomic-research-dossier-v01" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Nala Core API" class="md-header__button md-logo" aria-label="Nala Core API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nala Core API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Athomic Research Dossier v0.1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/guandaline/nala-core-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/nala-core-api
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../athomic/ai/agents/" class="md-tabs__link">
+          
+  
+  
+  Athomic Layer
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Nala Core API" class="md-nav__button md-logo" aria-label="Nala Core API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nala Core API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/guandaline/nala-core-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/nala-core-api
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/athomic-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/domain-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Athomic Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embeddings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/semantic_cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/ai/qa_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA & Evaluation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/ai/feature_platform_runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Platform Runbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core & Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core & Lifecycle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Settings & Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/config/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/control/live_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/credentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credential Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Persistence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & Persistence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connection Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/kvstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key-Value Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/outbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactional Outbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/database/migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/cloud_native_mesh_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud-Native & Service Mesh Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/security/secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/security/auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication & Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/security/crypto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/observability/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structured Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/observability/tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Tracing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/observability/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/observability/health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health & Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/lineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Lineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting Concerns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting Concerns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/serializer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serializer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/payload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/compression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/notification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Event Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/control/feature_flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Flags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/control/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Performance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/performance/cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/performance/compression_middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/performance/bootstrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap (uvloop)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11_1" id="__nav_3_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messaging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Messaging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/producer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Producer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consumer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/retry-dlq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry & DLQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/delay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delayed Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/context-propagation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Propagation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/messaging/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/outbox_publisher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbox Publisher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/consul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consul Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/settings_providers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Settings Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/integration/openlineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenLineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resilience Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resilience Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/retry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/circuit_breaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuit Breaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/rate_limiter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeout & Cancellation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/bulkhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bulkhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/fallback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/locking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Locking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/idempotency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Idempotency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/leasing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Leasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/sharding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workload Sharding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/backpressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backpressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/backoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exponential Backoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/sagas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sagas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../athomic/resilience/adaptive_throttling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Throttling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#athomic-a-distributed-self-adaptive-scheduler-for-modern-ai-serving-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Athomic: A Distributed Self-Adaptive Scheduler for Modern AI Serving Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Athomic: A Distributed Self-Adaptive Scheduler for Modern AI Serving Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-venues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended Venues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="athomic-research-dossier-v01">Athomic Research Dossier v0.1</h1>
+<h2 id="athomic-a-distributed-self-adaptive-scheduler-for-modern-ai-serving-systems">Athomic: A Distributed Self-Adaptive Scheduler for Modern AI Serving Systems</h2>
+<hr />
+<h3 id="authors">Authors</h3>
+<p>Valter Hugo Guandaline</p>
+<h3 id="status">Status</h3>
+<p>Active Research Proposal</p>
+<h3 id="intended-venues">Intended Venues</h3>
+<ul>
+<li>ACM Middleware</li>
+<li>ACM Symposium on Cloud Computing (SoCC)</li>
+<li>USENIX Annual Technical Conference (ATC)</li>
+</ul>
+<hr />
+<h1 id="executive-summary">Executive Summary</h1>
+<p>Athomic is an ongoing research effort investigating whether adaptive concurrency control, workload learning, fairness mechanisms, distributed coordination, and Service Level Objective (SLO) preservation can coexist within a unified scheduling architecture.</p>
+<p>Existing systems typically optimize one scheduling objective in isolation. Adaptive concurrency controllers preserve latency under overload conditions, fair schedulers improve resource allocation among tenants, AI-oriented schedulers focus on placement decisions and GPU utilization, while learned resource managers attempt to infer workload characteristics through historical observations.</p>
+<p>Athomic explores an alternative perspective.</p>
+<p>Rather than treating these concerns as independent subsystems, Athomic models them as components of a single decision-making pipeline capable of continuously adapting scheduling behavior according to workload characteristics, runtime telemetry, fairness constraints, and fleet-wide conditions.</p>
+<p>This document presents the scientific motivation, architectural evolution, experimental methodology, and publication strategy guiding the project.</p>
+<hr />
+<h1 id="1-introduction">1. Introduction</h1>
+<h2 id="11-motivation">1.1 Motivation</h2>
+<p>Modern AI-serving platforms are becoming increasingly difficult to operate efficiently.</p>
+<p>Unlike traditional web services, AI workloads exhibit highly heterogeneous execution patterns. Two requests targeting the same model may differ by several orders of magnitude in execution time, memory footprint, GPU consumption, token generation rate, and throughput requirements. Such variability challenges assumptions embedded in many existing scheduling and admission control systems.</p>
+<p>Adaptive concurrency controllers such as Netflix Concurrency Limits were designed primarily to preserve latency under overload conditions. Cluster schedulers such as Mesos, Ray, and Volcano focus on fair resource allocation, placement decisions, and distributed execution. More recent systems optimized for machine learning workloads introduce mechanisms for gang scheduling, GPU awareness, and workload-specific optimizations.</p>
+<p>These solutions are highly effective within their respective domains. However, modern AI-serving environments increasingly require several of these capabilities simultaneously.</p>
+<blockquote>
+<p><strong>Expected Outcome</strong></p>
+<p>Establish whether assumptions made by traditional schedulers remain valid for modern heterogeneous AI workloads.</p>
+</blockquote>
+<hr />
+<h2 id="12-problem-statement">1.2 Problem Statement</h2>
+<p>Consider a multi-tenant platform simultaneously offering embedding generation, Retrieval-Augmented Generation pipelines, autonomous agents, and language model inference.</p>
+<p>Such a platform must answer questions spanning multiple disciplines.</p>
+<p><em>Can another request be safely admitted?</em></p>
+<p><em>Will this request violate a latency objective?</em></p>
+<p><em>Is a tenant consuming more than its fair share of resources?</em></p>
+<p><em>Has the workload profile changed enough to justify reducing concurrency?</em></p>
+<p><em>Are neighboring replicas already under pressure?</em></p>
+<p><em>Would delaying execution improve global fleet efficiency?</em></p>
+<p>Current systems typically address only a subset of these questions.</p>
+<p>Adaptive concurrency controllers preserve latency.</p>
+<p>Fair schedulers preserve equity.</p>
+<p>AI-oriented schedulers optimize placement.</p>
+<p>Learned resource managers estimate workload behavior.</p>
+<p>Distributed orchestrators improve cluster-wide coordination.</p>
+<p>Unfortunately, these mechanisms are usually implemented independently and optimized according to different objectives.</p>
+<p>This raises an open research question.</p>
+<blockquote>
+<p><strong>Open Research Question</strong></p>
+<p>Can adaptive concurrency, workload learning, fairness, and distributed coordination coexist within a single scheduling framework without introducing prohibitive complexity or unacceptable throughput degradation?</p>
+</blockquote>
+<hr />
+<h2 id="13-why-existing-systems-are-not-enough">1.3 Why Existing Systems Are Not Enough</h2>
+<p>Existing systems evolved in response to very different operational constraints.</p>
+<p>Netflix Concurrency Limits emerged from latency-sensitive microservices.</p>
+<p>Mesos and Dominant Resource Fairness were designed to improve fairness in large-scale datacenters.</p>
+<p>Volcano addresses GPU-intensive workloads and gang scheduling.</p>
+<p>Ray focuses on distributed execution for machine learning applications.</p>
+<p>DeepRM and Decima investigate whether scheduling policies themselves can become trainable.</p>
+<p>These systems rarely interact. Each optimizes a specific scheduling objective while assuming other concerns are handled elsewhere in the stack.</p>
+<p>Modern AI platforms challenge this decomposition.</p>
+<p>A single inference endpoint may simultaneously require latency preservation, fairness among tenants, workload-aware admission control, memory-aware scheduling, fleet-wide coordination, and graceful degradation mechanisms.</p>
+<p>Athomic emerged from the observation that these requirements are no longer independent.</p>
+<blockquote>
+<p><strong>Impact on Athomic</strong></p>
+<p>If these assumptions prove invalid for AI-serving workloads, admission control may need to evolve into a broader resource scheduling problem.</p>
+</blockquote>
+<hr />
+<h1 id="2-research-vision">2. Research Vision</h1>
+<h2 id="21-long-term-objective">2.1 Long-Term Objective</h2>
+<p>The long-term objective of Athomic is not merely to become another concurrency limiter.</p>
+<p>Instead, the project seeks to investigate whether adaptive concurrency control, fairness, workload characterization, distributed coordination, and Service Level Objective preservation can coexist within a single scheduling architecture.</p>
+<p>If successful, Athomic may occupy a design space situated between adaptive admission controllers and AI-oriented resource schedulers.</p>
+<p>More importantly, Athomic may provide empirical evidence that workload learning and fairness should become first-class scheduling primitives for modern AI-serving systems.</p>
+<hr />
+<h2 id="22-research-narrative">2.2 Research Narrative</h2>
+<p>Athomic did not originate as a scheduler.</p>
+<p>It emerged as an adaptive concurrency controller inspired primarily by Netflix Concurrency Limits and Gradient2.</p>
+<p>As new operational requirements appeared, additional mechanisms were progressively incorporated.</p>
+<p>Memory-aware admission control was introduced to reduce oversubscription events.</p>
+<p>Learned cost estimation reduced the need for manually declared workload profiles.</p>
+<p>Queue intelligence and fairness mechanisms were added to prevent starvation.</p>
+<p>Distributed budgets, fleet pressure sharing, and cooperative dampening extended scheduling decisions beyond the boundaries of a single process.</p>
+<p>More recently, Dominant Resource Fairness concepts were incorporated to improve equitable resource sharing among competing workloads.</p>
+<p>At its current stage, Athomic no longer behaves as a traditional admission controller.</p>
+<p>Instead, it increasingly resembles a distributed resource scheduler operating inside application runtimes.</p>
+<p>This observation motivates the central question of this research.</p>
+<blockquote>
+<p><strong>Research Narrative</strong></p>
+<p>Can a scheduler emerging organically from adaptive concurrency principles provide measurable advantages over systems specifically optimized for only one scheduling objective?</p>
+</blockquote>
+<hr />
+<h2 id="23-research-hypothesis">2.3 Research Hypothesis</h2>
+<p>Most existing adaptive admission controllers optimize decisions using isolated feedback signals such as latency, CPU utilization, or queue depth.</p>
+<p>This approach is often insufficient for AI-serving environments, where workloads exhibit unpredictable behavior, resource requirements are difficult to estimate, and multiple tenants compete for limited computational capacity.</p>
+<p>We hypothesize that integrating <strong>learned cost estimation</strong>, <strong>multi-resource fairness</strong>, <strong>queue intelligence</strong>, <strong>distributed coordination</strong>, and <strong>multi-signal adaptive admission control</strong> into a unified framework can optimize systemic trade-offs between resource efficiency and service quality.</p>
+<p>More specifically, we expect Athomic to simultaneously improve resource utilization, fairness, SLO preservation, failure recovery, and tail latency stability while maintaining throughput within an acceptable degradation range.</p>
+<hr />
+<h2 id="24-positioning-statement">2.4 Positioning Statement</h2>
+<p>Athomic is a <strong>distributed self-adaptive scheduler designed for heterogeneous AI-serving workloads</strong>.</p>
+<p>Rather than treating admission control, fairness, workload estimation, and distributed coordination as independent concerns, Athomic models them as components of a unified decision-making process.</p>
+<p>This positioning motivates the broader scientific objective of the project.</p>
+<p>To investigate whether scheduling mechanisms historically developed in isolation can be combined into a coherent architecture capable of outperforming specialized solutions under modern AI-serving conditions.</p>
+<hr />
+<h1 id="3-positioning-within-existing-literature">3. Positioning Within Existing Literature</h1>
+<p>Athomic occupies an unusual position within the current scheduling landscape.</p>
+<p>Most scheduling systems were designed to optimize a single objective and were developed within relatively isolated research communities. Adaptive concurrency controllers emerged from latency-sensitive microservice architectures. Fair schedulers evolved primarily from resource management problems in shared clusters and datacenters. AI-oriented schedulers appeared much later, driven by GPU-intensive workloads, large-scale training pipelines, and distributed inference services. More recently, learned resource management systems introduced the idea that scheduling policies themselves may become trainable components.</p>
+<p>Athomic attempts to bridge these traditionally disconnected domains.</p>
+<p>Rather than optimizing a single scheduling objective, Athomic investigates whether mechanisms such as adaptive admission control, workload learning, fairness, queue intelligence, and distributed coordination can be modeled as components of a common scheduling abstraction.</p>
+<p>This positioning naturally raises a broader question.</p>
+<p>Are these mechanisms fundamentally independent, or do they represent different manifestations of a larger scheduling problem emerging from the increasing complexity of AI-serving systems?</p>
+<h2 id="31-positioning-athomic-within-the-scheduling-design-space">3.1 Positioning Athomic Within the Scheduling Design Space</h2>
+<p><strong>Figure 1. Athomic Positioning Within the Adaptive Scheduling Design Space</strong></p>
+<p>```mermaid</p>
+<p>flowchart TB</p>
+<p>subgraph AC["Adaptive Concurrency"]</p>
+<p>NCL["Netflix<br/>Concurrency Limits"]</p>
+<p>ENV["Envoy Adaptive<br/>Concurrency"]</p>
+<p>end</p>
+<p>subgraph FS["Fair Scheduling"]</p>
+<p>MESOS["Mesos<br/>DRF"]</p>
+<p>APF["Kubernetes<br/>APF"]</p>
+<p>end</p>
+<p>subgraph AIS["AI-oriented Scheduling"]</p>
+<p>VOL["Volcano"]</p>
+<p>RAY["Ray"]</p>
+<p>end</p>
+<p>subgraph LR["Learned Resource Management"]</p>
+<p>DEEPRM["DeepRM"]</p>
+<p>DECIMA["Decima"]</p>
+<p>end</p>
+<p>ATHOMIC["Athomic"]</p>
+<p>subgraph CAP["Athomic Capabilities"]</p>
+<p>ACM["Adaptive Admission"]</p>
+<p>FAIR["Fairness"]</p>
+<p>LEARN["Learned Cost Estimation"]</p>
+<p>QUEUE["Queue Intelligence"]</p>
+<p>DIST["Distributed Coordination"]</p>
+<p>SLO["SLO Preservation"]</p>
+<p>end</p>
+<p>NCL --&gt; ATHOMIC
+ENV --&gt; ATHOMIC</p>
+<p>MESOS --&gt; ATHOMIC
+APF --&gt; ATHOMIC</p>
+<p>VOL --&gt; ATHOMIC
+RAY --&gt; ATHOMIC</p>
+<p>DEEPRM --&gt; ATHOMIC
+DECIMA --&gt; ATHOMIC</p>
+<p>ATHOMIC --&gt; ACM
+ATHOMIC --&gt; FAIR
+ATHOMIC --&gt; LEARN
+ATHOMIC --&gt; QUEUE
+ATHOMIC --&gt; DIST
+ATHOMIC --&gt; SLO</p>
+<p>style ATHOMIC fill:#2563eb,color:#ffffff,stroke:#1e40af,stroke-width:3px</p>
+<p>style ACM fill:#16a34a,color:#ffffff
+style FAIR fill:#16a34a,color:#ffffff
+style LEARN fill:#16a34a,color:#ffffff
+style QUEUE fill:#16a34a,color:#ffffff
+style DIST fill:#16a34a,color:#ffffff
+style SLO fill:#16a34a,color:#ffffff</p>
+<p>```</p>
+<p>Figure 1 illustrates an important observation.</p>
+<p>Athomic was not explicitly designed by selecting features from existing systems. Its architecture evolved organically as new operational requirements emerged during the development of adaptive concurrency mechanisms.</p>
+<p>Nevertheless, this evolution progressively incorporated concepts commonly associated with fairness-oriented schedulers, AI-native execution frameworks, and learned resource management systems.</p>
+<p>This convergence motivates one of the central hypotheses explored in this work.</p>
+<p>It may be possible that modern AI-serving platforms no longer require independent mechanisms for admission control, fairness, and workload characterization, but rather a single adaptive scheduler capable of continuously balancing these competing objectives.</p>
+<blockquote>
+<p><strong>Expected Outcome</strong></p>
+<p>Determine whether adaptive concurrency, fairness, workload learning and distributed coordination naturally converge toward a broader scheduling abstraction.</p>
+</blockquote>
+<hr />
+<h2 id="32-what-existing-systems-optimize">3.2 What Existing Systems Optimize</h2>
+<p>Most production scheduling systems optimize only a subset of the dimensions relevant to AI-serving workloads.</p>
+<p>Adaptive concurrency controllers primarily attempt to preserve latency and maintain throughput under overload conditions.</p>
+<p>Fair schedulers attempt to maximize equitable resource sharing while avoiding starvation.</p>
+<p>AI-native schedulers focus on placement decisions, GPU allocation, and gang scheduling.</p>
+<p>Learned resource managers attempt to infer workload behavior and optimize scheduling policies through historical observations.</p>
+<p>Athomic differs from these approaches by attempting to optimize several of these dimensions simultaneously.</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Admission</th>
+<th>Fairness</th>
+<th>Learning</th>
+<th>Distribution</th>
+<th>AI-aware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Netflix CL</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Envoy</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Mesos</td>
+<td>✗</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Kubernetes APF</td>
+<td>Partial</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Volcano</td>
+<td>✗</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Ray</td>
+<td>Partial</td>
+<td>Partial</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>DeepRM</td>
+<td>✗</td>
+<td>Partial</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Decima</td>
+<td>✗</td>
+<td>Partial</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Athomic</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Although this comparison is necessarily simplified, it highlights an important characteristic of Athomic.</p>
+<p>Rather than competing directly against any individual system, Athomic investigates whether concepts that historically evolved independently can coexist within a unified scheduling architecture.</p>
+<blockquote>
+<p><strong>Open Question</strong></p>
+<p>Does integrating these capabilities into a single scheduler introduce unacceptable complexity, or can learning mechanisms and adaptive control compensate for the additional decision space?</p>
+</blockquote>
+<hr />
+<h1 id="4-research-landscape">4. Research Landscape</h1>
+<p>The objective of this chapter is not simply to summarize previous work.</p>
+<p>Instead, we seek to understand the assumptions embedded within existing systems, determine whether those assumptions remain valid for modern AI-serving environments, and precisely position Athomic relative to the current state of the art.</p>
+<p>At the conclusion of this investigation, we expect to answer four questions.</p>
+<p><em>How do existing systems detect congestion?</em></p>
+<p><em>How do they distribute resources fairly?</em></p>
+<p><em>How do they model workload uncertainty?</em></p>
+<p><em>Which capabilities remain largely unexplored?</em></p>
+<hr />
+<h2 id="41-adaptive-concurrency-systems">4.1 Adaptive Concurrency Systems</h2>
+<h3 id="motivation">Motivation</h3>
+<p>Adaptive concurrency mechanisms represent the intellectual foundation upon which Athomic was originally built.</p>
+<p>These systems are primarily concerned with preserving latency under overload conditions while maximizing throughput. Most of them assume that latency degradation is an adequate proxy for resource saturation and rely on feedback loops to dynamically adjust concurrency levels.</p>
+<h3 id="systems-under-investigation">Systems Under Investigation</h3>
+<p>Netflix Concurrency Limits will be studied primarily because of Gradient2, Vegas, and latency-driven adaptation strategies.</p>
+<p>Envoy Adaptive Concurrency provides an alternative perspective centered around service meshes and request-level congestion avoidance.</p>
+<p>Additional mechanisms inspired by networking congestion control algorithms may also be investigated.</p>
+<h3 id="expected-outcome">Expected Outcome</h3>
+<p>At the conclusion of this investigation, we expect to determine whether Athomic's current adaptation mechanisms already approximate the state of the art or whether stronger control-theoretic approaches should be considered.</p>
+<blockquote>
+<p><strong>Impact on Athomic</strong></p>
+<p>A deeper understanding of convergence properties and stability guarantees may motivate replacing heuristic adaptation mechanisms with more formally grounded controllers.</p>
+</blockquote>
+<hr />
+<h2 id="42-fair-scheduling">4.2 Fair Scheduling</h2>
+<h3 id="motivation_1">Motivation</h3>
+<p>As Athomic evolved, admission decisions became increasingly influenced by fairness considerations.</p>
+<p>At this point, the system no longer decides only whether a request should execute.</p>
+<p>It also attempts to determine which request deserves access to scarce resources.</p>
+<h3 id="systems-under-investigation_1">Systems Under Investigation</h3>
+<p>Dominant Resource Fairness remains the most influential work in this area and will be studied extensively.</p>
+<p>Mesos provides a practical implementation of DRF.</p>
+<p>Kubernetes API Priority and Fairness introduces ideas related to tenant isolation, quota management, and hierarchical prioritization.</p>
+<p>Tromino extends DRF by incorporating queue demand into scheduling decisions.</p>
+<h3 id="expected-outcome_1">Expected Outcome</h3>
+<p>This investigation should reveal whether Athomic's current fairness mechanisms already approximate existing models or whether stronger mathematical guarantees can be achieved.</p>
+<blockquote>
+<p><strong>Future Investigation</strong></p>
+<p>Explore fleet-wide implementations of Dominant Resource Fairness capable of operating under eventually consistent distributed environments.</p>
+</blockquote>
+<hr />
+<h2 id="43-ai-oriented-scheduling">4.3 AI-oriented Scheduling</h2>
+<h3 id="motivation_2">Motivation</h3>
+<p>Artificial Intelligence workloads introduce challenges that are rarely encountered in traditional cloud applications.</p>
+<p>Resource consumption becomes highly variable, GPUs emerge as first-class scheduling constraints, and tasks may require coordinated execution across multiple devices.</p>
+<p>Inference requests, embedding generation, fine-tuning jobs, and autonomous agents frequently compete for the same infrastructure.</p>
+<h3 id="systems-under-investigation_2">Systems Under Investigation</h3>
+<p>Ray will be analyzed because of its resource-aware execution model and placement groups.</p>
+<p>Volcano offers insights into hierarchical queues, gang scheduling, and GPU-aware resource allocation.</p>
+<p>Pollux, Gandiva, and Tiresias provide alternative approaches designed specifically for machine learning clusters.</p>
+<h3 id="expected-outcome_2">Expected Outcome</h3>
+<p>At the end of this study, we expect to determine whether Athomic should remain an adaptive scheduler embedded inside application runtimes or gradually evolve toward cluster-wide orchestration.</p>
+<hr />
+<h1 id="5-research-questions">5. Research Questions</h1>
+<p>The experimental campaign described in this document is guided by four complementary questions.</p>
+<p>Together, these questions attempt to determine whether Athomic should continue evolving as an adaptive concurrency framework or whether it already behaves as a new category of scheduler.</p>
+<h2 id="51-multi-signal-adaptation">5.1 Multi-signal Adaptation</h2>
+<p>Adaptive admission controllers usually rely on one or two feedback signals.</p>
+<p>Latency-based algorithms monitor response times.</p>
+<p>Memory-aware systems observe resource consumption.</p>
+<p>Queue managers focus primarily on waiting time.</p>
+<p>Athomic proposes an alternative approach by simultaneously incorporating latency, throughput, queue pressure, workload costs, error rates, fleet-wide congestion signals, and fairness indicators.</p>
+<p>The first research question investigates whether combining these signals leads to more effective scheduling decisions.</p>
+<blockquote>
+<p><strong>RQ1</strong></p>
+<p>Can multi-signal adaptive admission control improve SLO preservation under heterogeneous AI workloads?</p>
+</blockquote>
+<hr />
+<h2 id="52-learning-resource-consumption">5.2 Learning Resource Consumption</h2>
+<p>Most schedulers assume that workloads already know how much CPU, memory, or GPU capacity they require.</p>
+<p>This assumption rarely holds in AI-serving environments.</p>
+<p>Two requests sent to the same model may consume drastically different amounts of memory and execution time.</p>
+<p>Athomic attempts to learn workload characteristics dynamically and use these estimates to influence future admission decisions.</p>
+<blockquote>
+<p><strong>RQ2</strong></p>
+<p>Can online cost estimation reduce oversubscription while improving resource utilization?</p>
+</blockquote>
+<hr />
+<h2 id="53-fairness-beyond-local-decisions">5.3 Fairness Beyond Local Decisions</h2>
+<p>Traditional adaptive concurrency controllers are largely agnostic to fairness.</p>
+<p>Conversely, fairness-oriented schedulers generally ignore latency preservation.</p>
+<p>Athomic attempts to bridge these worlds.</p>
+<p>Distributed budgets, fleet pressure sharing, and Dominant Resource Fairness mechanisms introduce notions of fairness into an otherwise latency-sensitive scheduler.</p>
+<blockquote>
+<p><strong>RQ3</strong></p>
+<p>Can distributed fairness mechanisms preserve equitable resource allocation without sacrificing throughput?</p>
+</blockquote>
+<hr />
+<h2 id="54-unifying-scheduling-objectives">5.4 Unifying Scheduling Objectives</h2>
+<p>Perhaps the most ambitious aspect of this work is the assumption that scheduling objectives traditionally optimized independently may coexist within a single architecture.</p>
+<p>This assumption remains largely unexplored in current literature.</p>
+<p>Athomic provides an opportunity to experimentally evaluate this hypothesis.</p>
+<blockquote>
+<p><strong>RQ4</strong></p>
+<p>Can a unified scheduling framework outperform specialized systems targeting only concurrency control, fairness, or overload protection?</p>
+</blockquote>
+<hr />
+<h1 id="6-athomic-architecture">6. Athomic Architecture</h1>
+<p>This chapter describes Athomic not merely as a software artifact, but as a scheduling strategy.</p>
+<p>At its current stage, Athomic can be understood as a distributed self-adaptive scheduler whose behavior emerges from the interaction between workload characterization, adaptive feedback loops, fairness mechanisms, and distributed coordination.</p>
+<p>Unlike traditional schedulers, Athomic does not assume that workloads explicitly declare their resource requirements. Instead, it continuously refines workload estimations and incorporates these observations into subsequent scheduling decisions.</p>
+<p>This perspective shifts scheduling from a static allocation problem toward a continuously evolving decision-making process.</p>
+<hr />
+<h2 id="61-design-principles">6.1 Design Principles</h2>
+<p>Athomic was not designed around a predefined theoretical framework.</p>
+<p>Its architecture evolved incrementally as new operational challenges emerged.</p>
+<p>Nevertheless, several design principles gradually became apparent and now serve as the conceptual foundation of the scheduler.</p>
+<h3 id="unified-decision-making">Unified Decision Making</h3>
+<p>Scheduling decisions should emerge from a single decision pipeline.</p>
+<p>Latency adaptation, fairness mechanisms, workload characterization, queue disciplines, and fleet coordination should not independently admit or reject requests.</p>
+<p>Instead, these components should act as evidence providers contributing to a common scheduling decision.</p>
+<h3 id="progressive-adaptation">Progressive Adaptation</h3>
+<p>Resource consumption patterns should improve over time without requiring manually declared workload profiles.</p>
+<p>The scheduler is expected to become increasingly accurate as it accumulates execution history.</p>
+<p>This principle is particularly important for AI-serving systems, where requests targeting the same model may exhibit dramatically different execution characteristics.</p>
+<h3 id="distributed-awareness">Distributed Awareness</h3>
+<p>Scheduling decisions should incorporate information originating from neighboring replicas whenever possible.</p>
+<p>Schedulers operating in distributed environments should avoid behaving as isolated processes competing for resources without visibility into fleet-wide conditions.</p>
+<h3 id="extensibility">Extensibility</h3>
+<p>Algorithms, fairness mechanisms, queue disciplines, and workload estimators should remain pluggable.</p>
+<p>Experimentation should not require invasive architectural modifications.</p>
+<p>This requirement is especially relevant for research environments where multiple scheduling strategies may coexist simultaneously.</p>
+<h3 id="slo-centric-optimization">SLO-centric Optimization</h3>
+<p>Athomic prioritizes Service Level Objective preservation over raw resource utilization.</p>
+<p>Although maximizing utilization remains desirable, preserving latency objectives is considered the primary optimization target.</p>
+<blockquote>
+<p><strong>Design Tradeoff</strong></p>
+<p>Distributed coordination improves fairness and fleet-wide utilization, but introduces synchronization overhead, increased implementation complexity, and potential consistency challenges.</p>
+</blockquote>
+<hr />
+<h2 id="62-scheduling-decision-pipeline">6.2 Scheduling Decision Pipeline</h2>
+<p>Athomic models scheduling as a decision-making process.</p>
+<p>Requests are not immediately admitted or rejected.</p>
+<p>Instead, they progressively accumulate contextual information until enough evidence exists to make an informed decision.</p>
+<h3 id="figure-2-athomic-scheduling-decision-pipeline">Figure 2 — Athomic Scheduling Decision Pipeline</h3>
+<p>```mermaid</p>
+<p>flowchart LR</p>
+<p>REQ["Incoming Request"]</p>
+<p>CL["Cost Learner"]</p>
+<p>PRESS["Pressure Fusion"]</p>
+<p>QUEUE["Queue Discipline"]</p>
+<p>DRF["Fairness Tracker"]</p>
+<p>FLEET["Fleet Pressure"]</p>
+<p>ALG["Adaptive Controller<br/>Gradient2 / AIMD / SLO"]</p>
+<p>DEC["Admission Decision"]</p>
+<p>REQ --&gt; CL</p>
+<p>CL --&gt; PRESS</p>
+<p>PRESS --&gt; DRF</p>
+<p>PRESS --&gt; ALG</p>
+<p>QUEUE --&gt; DRF</p>
+<p>FLEET --&gt; ALG</p>
+<p>DRF --&gt; DEC</p>
+<p>ALG --&gt; DEC</p>
+<p>DEC --&gt;|"Admit"| RUN["Execute"]</p>
+<p>DEC --&gt;|"Delay"| WAIT["Queue"]</p>
+<p>DEC --&gt;|"Reject"| DROP["Load Shed"]</p>
+<p>style DEC fill:#2563eb,color:#ffffff</p>
+<p>style RUN fill:#16a34a,color:#ffffff</p>
+<p>style WAIT fill:#f59e0b,color:#ffffff</p>
+<p>style DROP fill:#dc2626,color:#ffffff</p>
+<p>```</p>
+<p><strong>Figure 2. Athomic Scheduling Decision Pipeline</strong></p>
+<p>Figure 2 illustrates an important observation.</p>
+<p>Athomic no longer behaves as a traditional concurrency limiter.</p>
+<p>Instead, it resembles a decision engine whose primary objective is determining whether a request should execute immediately, wait for additional capacity, or be gracefully rejected.</p>
+<p>This distinction may appear subtle, but it fundamentally changes the role of scheduling within application runtimes.</p>
+<p>Traditional concurrency controllers optimize concurrency.</p>
+<p>Athomic attempts to optimize decisions.</p>
+<blockquote>
+<p><strong>Architectural Observation</strong></p>
+<p>Individual subsystems should not make scheduling decisions independently.</p>
+<p>Their role is to provide evidence that contributes to a final admission decision.</p>
+</blockquote>
+<hr />
+<h2 id="63-architectural-components">6.3 Architectural Components</h2>
+<p>Athomic currently consists of several cooperating subsystems.</p>
+<p>Although each subsystem addresses a different aspect of scheduling, none of them is intended to operate autonomously.</p>
+<h3 id="adaptive-controller">Adaptive Controller</h3>
+<p>The adaptive controller adjusts concurrency limits according to latency, throughput, and pressure signals.</p>
+<p>Multiple adaptation strategies may coexist, including Gradient2, AIMD-inspired algorithms, and SLO-oriented controllers.</p>
+<h3 id="cost-learner">Cost Learner</h3>
+<p>The Cost Learner continuously refines workload estimations based on historical execution behavior.</p>
+<p>Rather than requiring users to manually specify resource profiles, Athomic attempts to infer these characteristics through observation.</p>
+<p>Over time, this component is expected to reduce oversubscription events and improve admission accuracy.</p>
+<h3 id="pressure-fusion">Pressure Fusion</h3>
+<p>Pressure Fusion aggregates multiple telemetry streams into a unified congestion indicator.</p>
+<p>Potential signals include latency trends, queue depth, throughput degradation, memory pressure, and error rates.</p>
+<p>Combining these signals enables scheduling decisions to react to systemic behavior rather than isolated metrics.</p>
+<h3 id="queue-intelligence">Queue Intelligence</h3>
+<p>Queue Intelligence determines execution ordering and starvation prevention strategies.</p>
+<p>Different queue disciplines may coexist, including FIFO, LIFO, fairness-aware policies, and deadline-sensitive approaches.</p>
+<h3 id="fairness-tracker">Fairness Tracker</h3>
+<p>Fairness mechanisms attempt to preserve equitable resource allocation while remaining compatible with latency-sensitive adaptation policies.</p>
+<p>Current implementations are inspired by Dominant Resource Fairness, although stronger guarantees may be explored in future iterations.</p>
+<h3 id="distributed-coordination">Distributed Coordination</h3>
+<p>Distributed Coordination mechanisms share budgets, workload profiles, and fleet pressure information among replicas.</p>
+<p>This information enables schedulers to make decisions based on fleet-wide conditions rather than local observations.</p>
+<blockquote>
+<p><strong>Research Opportunity</strong></p>
+<p>Investigate whether fleet-wide implementations of Dominant Resource Fairness can preserve global fairness guarantees under eventually consistent environments.</p>
+</blockquote>
+<hr />
+<h2 id="64-scheduling-lifecycle">6.4 Scheduling Lifecycle</h2>
+<p>Scheduling decisions inside Athomic can be interpreted as a cyclic process.</p>
+<h3 id="admission">Admission</h3>
+<p>A request arrives and is characterized according to previously learned workload profiles.</p>
+<h3 id="evaluation">Evaluation</h3>
+<p>Pressure signals, fairness constraints, queue state, and fleet-wide conditions are evaluated.</p>
+<h3 id="decision">Decision</h3>
+<p>The scheduler determines whether the request should execute immediately, wait for additional capacity, or be gracefully rejected.</p>
+<h3 id="execution">Execution</h3>
+<p>Accepted requests execute normally while telemetry is continuously collected.</p>
+<h3 id="learning">Learning</h3>
+<p>Observed behavior is incorporated into workload estimations and adaptation mechanisms.</p>
+<h3 id="synchronization">Synchronization</h3>
+<p>Selected information is propagated to neighboring replicas to improve future decisions.</p>
+<p>This lifecycle transforms scheduling into a continuously evolving feedback loop rather than a static admission problem.</p>
+<hr />
+<h2 id="65-comparison-with-existing-systems">6.5 Comparison with Existing Systems</h2>
+<p>Athomic does not attempt to replace existing schedulers.</p>
+<p>Instead, it occupies a previously underexplored region of the scheduling design space.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Netflix</th>
+<th>Mesos</th>
+<th>Volcano</th>
+<th>Ray</th>
+<th>Athomic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adaptive Admission</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>Partial</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+<td>Partial</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Workload Learning</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Queue Intelligence</td>
+<td>Partial</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Distributed Awareness</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>SLO Preservation</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>Partial</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>AI-aware Scheduling</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Although simplified, this comparison illustrates an important point.</p>
+<p>Athomic does not outperform existing systems because it implements better versions of their algorithms.</p>
+<p>Instead, its contribution lies in exploring whether concepts traditionally developed in isolation can coexist within a coherent scheduling architecture.</p>
+<hr />
+<h1 id="7-experimental-methodology">7. Experimental Methodology</h1>
+<p>The purpose of the experimental campaign is not simply to demonstrate that Athomic achieves higher throughput or lower latency.</p>
+<p>Instead, experiments are designed to investigate whether a unified scheduling architecture can simultaneously preserve Service Level Objectives, improve fairness, reduce oversubscription events, and maintain stability under heterogeneous AI-serving workloads.</p>
+<p>Athomic should therefore be evaluated not merely as a software implementation, but as a scheduling strategy.</p>
+<hr />
+<h2 id="70-evaluation-strategy">7.0 Evaluation Strategy</h2>
+<p>The evaluation methodology is organized around four complementary hypotheses.</p>
+<p>First, Athomic should preserve latency objectives more effectively than traditional adaptive concurrency controllers under heterogeneous workloads.</p>
+<p>Second, workload learning mechanisms should reduce oversubscription events while improving overall resource utilization.</p>
+<p>Third, fairness mechanisms should remain effective after introducing distributed coordination.</p>
+<p>Finally, integrating multiple scheduling objectives into a single architecture should provide measurable benefits compared to systems optimizing only one dimension.</p>
+<p>These hypotheses directly correspond to the research questions introduced earlier and provide a clear mapping between scientific objectives and experimental outcomes.</p>
+<hr />
+<h2 id="figure-3-experimental-evaluation-methodology">Figure 3 — Experimental Evaluation Methodology</h2>
+<p>```mermaid</p>
+<p>flowchart TB</p>
+<p>subgraph SYN["Synthetic Workloads"]</p>
+<p>HEAVY["Heavy-tail Distribution"]</p>
+<p>BURST["Traffic Bursts"]</p>
+<p>CHAOS["Failure Injection"]</p>
+<p>end</p>
+<p>subgraph AI["AI-serving Workloads"]</p>
+<p>EMB["Embeddings"]</p>
+<p>RAG["RAG Pipelines"]</p>
+<p>LLM["LLM Inference"]</p>
+<p>AGENT["Agent Execution"]</p>
+<p>end</p>
+<p>subgraph EXEC["Benchmark Harness"]</p>
+<p>ATH["Athomic"]</p>
+<p>BASE["Baselines"]</p>
+<p>end</p>
+<p>subgraph MET["Metrics Collection"]</p>
+<p>PROM["Prometheus"]</p>
+<p>CSV["Raw Datasets"]</p>
+<p>end</p>
+<p>subgraph ANAL["Statistical Analysis"]</p>
+<p>CI["Confidence Intervals"]</p>
+<p>ANOVA["ANOVA"]</p>
+<p>MW["Mann–Whitney U"]</p>
+<p>EFF["Effect Size"]</p>
+<p>end</p>
+<p>subgraph OUT["Research Artifacts"]</p>
+<p>FIG["Figures"]</p>
+<p>TAB["Tables"]</p>
+<p>PAPER["Paper Draft"]</p>
+<p>ART["Artifact Package"]</p>
+<p>end</p>
+<p>HEAVY --&gt; ATH
+BURST --&gt; ATH
+CHAOS --&gt; ATH</p>
+<p>EMB --&gt; ATH
+RAG --&gt; ATH
+LLM --&gt; ATH
+AGENT --&gt; ATH</p>
+<p>ATH --&gt; PROM
+BASE --&gt; PROM</p>
+<p>PROM --&gt; CSV</p>
+<p>CSV --&gt; CI
+CSV --&gt; ANOVA
+CSV --&gt; MW
+CSV --&gt; EFF</p>
+<p>CI --&gt; FIG
+ANOVA --&gt; TAB
+MW --&gt; PAPER
+EFF --&gt; ART</p>
+<p>style ATH fill:#2563eb,color:#ffffff
+style PAPER fill:#16a34a,color:#ffffff
+style ART fill:#16a34a,color:#ffffff</p>
+<p>```</p>
+<p><strong>Figure 3. Experimental Evaluation Methodology</strong></p>
+<p>Figure 3 summarizes the complete evaluation pipeline.</p>
+<p>Synthetic workloads provide precise control over workload distributions and saturation points.</p>
+<p>Realistic AI-serving scenarios expose the scheduler to execution patterns commonly observed in production environments.</p>
+<p>Collected telemetry is exported to Prometheus, transformed into datasets, and analyzed using statistical methods commonly adopted in systems research.</p>
+<hr />
+<h2 id="71-experimental-philosophy">7.1 Experimental Philosophy</h2>
+<p>Modern schedulers are frequently evaluated under highly simplified conditions.</p>
+<p>Experiments often assume homogeneous workloads, static resource profiles, and isolated deployments.</p>
+<p>These assumptions rarely hold in production AI environments.</p>
+<p>Inference requests may vary significantly in duration, memory footprint, token generation rates, and GPU utilization.</p>
+<p>Production systems are also expected to operate under failures, traffic bursts, noisy neighbors, and resource contention.</p>
+<p>For this reason, the evaluation methodology proposed in this document intentionally combines synthetic workloads, realistic AI-serving scenarios, and fault injection experiments.</p>
+<hr />
+<h2 id="72-benchmark-categories">7.2 Benchmark Categories</h2>
+<p>Experiments will be organized into three complementary categories.</p>
+<h3 id="synthetic-workloads">Synthetic Workloads</h3>
+<p>Synthetic experiments allow precise control over workload distributions, traffic patterns, and failure conditions.</p>
+<p>A representative workload may consist of eighty percent short requests, fifteen percent medium requests, and five percent extremely expensive requests.</p>
+<p>Arrival rates will gradually increase until saturation occurs.</p>
+<h3 id="ai-serving-workloads">AI-serving Workloads</h3>
+<p>Several realistic services will be deployed and stressed under representative request distributions.</p>
+<table>
+<thead>
+<tr>
+<th>Workload</th>
+<th>Representative Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embeddings</td>
+<td>SentenceTransformers</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>FAISS + Small LLM</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>Qwen 3B / Mistral 7B</td>
+</tr>
+<tr>
+<td>Agents</td>
+<td>Multi-step Agent Pipelines</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chaos-engineering">Chaos Engineering</h3>
+<p>Failures will be intentionally introduced during execution.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memory Pressure</td>
+<td>Artificially reduce available memory</td>
+</tr>
+<tr>
+<td>Traffic Burst</td>
+<td>Sudden increase in arrival rates</td>
+</tr>
+<tr>
+<td>Node Failure</td>
+<td>Replica shutdown during execution</td>
+</tr>
+<tr>
+<td>Latency Injection</td>
+<td>Introduce network delays</td>
+</tr>
+<tr>
+<td>GPU OOM</td>
+<td>Simulate GPU exhaustion</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Design Principle</strong></p>
+<p>Schedulers should not be evaluated exclusively under ideal operating conditions.</p>
+</blockquote>
+<hr />
+<h2 id="73-baselines">7.3 Baselines</h2>
+<p>Athomic will be compared against systems representing different scheduling philosophies.</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Scheduling Philosophy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed Semaphore</td>
+<td>Static Concurrency</td>
+</tr>
+<tr>
+<td>Gradient2</td>
+<td>Adaptive Concurrency</td>
+</tr>
+<tr>
+<td>Envoy Adaptive Concurrency</td>
+<td>Congestion Avoidance</td>
+</tr>
+<tr>
+<td>Mesos DRF</td>
+<td>Fair Scheduling</td>
+</tr>
+<tr>
+<td>Kubernetes APF</td>
+<td>Multi-tenant Fairness</td>
+</tr>
+<tr>
+<td>Ray Scheduler</td>
+<td>AI-native Scheduling</td>
+</tr>
+</tbody>
+</table>
+<p>Comparisons against these systems should help determine whether Athomic truly occupies a previously unexplored region of the scheduling design space.</p>
+<hr />
+<h2 id="74-metrics-collected">7.4 Metrics Collected</h2>
+<p>Metrics should characterize not only efficiency, but also service quality, fairness, stability, and resilience.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Metrics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Throughput</td>
+<td>Requests/s, Tokens/s</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>P50, P95, P99</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>Jain Index, Dominant Share</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>Queue Wait, Oversubscription</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>Recovery Time, Error Rate</td>
+</tr>
+<tr>
+<td>Efficiency</td>
+<td>CPU, RAM and GPU Utilization</td>
+</tr>
+</tbody>
+</table>
+<p>Metrics will be continuously exported to Prometheus and stored for later statistical analysis.</p>
+<hr />
+<h2 id="75-statistical-methodology">7.5 Statistical Methodology</h2>
+<p>Each experimental configuration will be executed at least thirty times.</p>
+<p>Collected measurements will be analyzed using confidence intervals, effect size calculations, ANOVA, and non-parametric tests whenever distributional assumptions cannot be satisfied.</p>
+<p>Effect sizes should always be reported alongside p-values.</p>
+<p>Statistical significance alone does not guarantee practical relevance.</p>
+<hr />
+<h2 id="76-reproducibility-strategy">7.6 Reproducibility Strategy</h2>
+<p>Experiments should be reproducible by independent researchers.</p>
+<p>All workload generators, benchmark harnesses, scheduling configurations, dashboards, datasets, and analysis notebooks will be published.</p>
+<p>Whenever possible, experiments should be executable through a single command.</p>
+<p>Docker Compose and Kubernetes manifests will be provided to simplify deployment.</p>
+<p>Statistical analyses and figure generation scripts will also be released to facilitate independent verification.</p>
+<hr />
+<h1 id="8-expected-contributions">8. Expected Contributions</h1>
+<p>Athomic aims to contribute along four complementary dimensions.</p>
+<h3 id="architectural-contribution">Architectural Contribution</h3>
+<p>Athomic proposes a scheduling architecture capable of combining mechanisms traditionally scattered across overload protection systems, distributed schedulers, and workload learning frameworks.</p>
+<h3 id="experimental-contribution">Experimental Contribution</h3>
+<p>The benchmark suite developed for this project may become a reusable methodology for evaluating adaptive schedulers targeting AI applications.</p>
+<h3 id="scientific-contribution">Scientific Contribution</h3>
+<p>This work seeks to provide empirical evidence regarding the advantages and limitations of integrating fairness, workload learning, distributed coordination, and adaptive admission control into a unified scheduling framework.</p>
+<h3 id="methodological-contribution">Methodological Contribution</h3>
+<p>The evaluation framework itself may become a reusable artifact for future scheduling research.</p>
+<hr />
+<h1 id="9-future-research-directions">9. Future Research Directions</h1>
+<p>Although Athomic already incorporates adaptive concurrency mechanisms, distributed fairness, workload learning, and fleet-aware coordination, several opportunities remain unexplored.</p>
+<h3 id="fleet-wide-dominant-resource-fairness">Fleet-wide Dominant Resource Fairness</h3>
+<p>Current fairness mechanisms primarily operate within a single scheduler instance.</p>
+<p>Extending DRF semantics to fleet-wide scheduling decisions may enable stronger fairness guarantees for multi-tenant deployments.</p>
+<h3 id="predictive-admission-control">Predictive Admission Control</h3>
+<p>Athomic currently reacts to observed pressure signals.</p>
+<p>Future iterations may investigate forecasting techniques capable of predicting congestion before saturation occurs.</p>
+<h3 id="hierarchical-scheduling">Hierarchical Scheduling</h3>
+<p>Quota hierarchies and organizational resource boundaries may improve support for large-scale enterprise environments.</p>
+<h3 id="reinforcement-learning-assisted-scheduling">Reinforcement Learning Assisted Scheduling</h3>
+<p>Learning-based schedulers such as Decima suggest that adaptive policies themselves may become trainable components.</p>
+<p>Investigating whether reinforcement learning can improve admission decisions without sacrificing stability remains an open research question.</p>
+<h3 id="placement-aware-scheduling">Placement-aware Scheduling</h3>
+<p>Future work may investigate affinity constraints, GPU locality, and topology-aware scheduling strategies.</p>
+<hr />
+<h1 id="10-threats-to-validity">10. Threats to Validity</h1>
+<h2 id="internal-validity">Internal Validity</h2>
+<p>Synthetic workloads may not accurately represent production traffic patterns.</p>
+<p>Although realistic AI-serving scenarios will be included, some behaviors observed in industrial environments may remain underrepresented.</p>
+<h2 id="external-validity">External Validity</h2>
+<p>Experiments will primarily be executed using small and medium-sized language models.</p>
+<p>Conclusions obtained from these evaluations may not generalize to deployments involving hundreds of GPUs.</p>
+<h2 id="construct-validity">Construct Validity</h2>
+<p>Metrics such as Jain Fairness Index, throughput, and latency percentiles capture important scheduling properties, but may not fully represent user-perceived quality of service.</p>
+<h2 id="reproducibility">Reproducibility</h2>
+<p>All benchmark harnesses, workload generators, configuration files, and result datasets should be released publicly.</p>
+<hr />
+<h1 id="11-publication-strategy">11. Publication Strategy</h1>
+<p>Athomic naturally aligns with research communities interested in distributed systems, cloud computing, and adaptive resource management.</p>
+<p>ACM Middleware appears particularly attractive because of its emphasis on reusable middleware systems and practical implementations.</p>
+<p>ACM SoCC represents another strong candidate due to its focus on cloud-native architectures and scheduling problems.</p>
+<p>USENIX ATC remains an aspirational target and would likely require stronger theoretical analysis and larger-scale experiments.</p>
+<hr />
+<h1 id="12-execution-timeline">12. Execution Timeline</h1>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Duration</th>
+<th>Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Literature Review</td>
+<td>2 weeks</td>
+<td>Annotated Bibliography</td>
+</tr>
+<tr>
+<td>Experimental Infrastructure</td>
+<td>3 weeks</td>
+<td>Benchmark Harness</td>
+</tr>
+<tr>
+<td>Experimental Campaign</td>
+<td>4 weeks</td>
+<td>Datasets and Figures</td>
+</tr>
+<tr>
+<td>Paper Writing</td>
+<td>2 weeks</td>
+<td>Submission-ready Manuscript</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="appendix-a-annotated-bibliography">Appendix A — Annotated Bibliography</h1>
+<p>(To be completed)</p>
+<h1 id="appendix-b-artifact-checklist">Appendix B — Artifact Checklist</h1>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark Harness</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Workload Generator</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Prometheus Dashboards</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Grafana Dashboards</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Raw Datasets</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Statistical Scripts</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Figures</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Reproduction Guide</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<h1 id="appendix-c-research-backlog">Appendix C — Research Backlog</h1>
+<p>This appendix intentionally remains open-ended and will evolve as new research directions emerge.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Nalaminds
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

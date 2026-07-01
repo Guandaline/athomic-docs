@@ -5,8 +5,6 @@
 [![License](https://img.shields.io/github/license/guandaline/athomic-docs)](https://github.com/guandaline/athomic-docs/blob/main/LICENSE)
 [![Python Version](https://img.shields.io/pypi/pyversions/athomic-docs.svg)](https://pypi.org/project/athomic-docs/)
 
-**Docs here** https://guandaline.github.io/athomic-docs/
-
 **Athomic** is an opinionated, production-ready engine for building resilient, observable, and scalable microservices in Python. It provides a robust foundation—the **Athomic Layer**—that handles cross-cutting concerns, allowing developers to focus purely on business logic.
 
 Our philosophy is grounded in battle-tested software engineering principles like **SOLID**, **Single Responsibility (SRP)**, and **Dependency Injection (DI)**, ensuring that applications built on this engine are maintainable, scalable, and easy to test.

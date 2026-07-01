@@ -1,0 +1,3850 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Robust IDP for building resilient, observable, and scalable microservices in Python.">
+      
+      
+        <meta name="author" content="Nalaminds">
+      
+      
+        <link rel="canonical" href="https://guandaline.github.io/nala-core-api/backlog/todo/features-evolution/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Feature Engineering Platform — Verified Backlog - Nala Core API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feature-engineering-platform-verified-backlog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Nala Core API" class="md-header__button md-logo" aria-label="Nala Core API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nala Core API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feature Engineering Platform — Verified Backlog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/guandaline/nala-core-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/nala-core-api
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../athomic/ai/agents/" class="md-tabs__link">
+          
+  
+  
+  Athomic Layer
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Nala Core API" class="md-nav__button md-logo" aria-label="Nala Core API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nala Core API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/guandaline/nala-core-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guandaline/nala-core-api
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/athomic-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/domain-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Athomic Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Athomic Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embeddings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/semantic_cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/ai/qa_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA & Evaluation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/ai/feature_platform_runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Platform Runbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core & Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Core & Lifecycle
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings & Context
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Settings & Context
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/config/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/live_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/credentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credential Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Persistence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & Persistence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connection Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/kvstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key-Value Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/outbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactional Outbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/database/migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/cloud_native_mesh_mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud-Native & Service Mesh Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secrets Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication & Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/security/crypto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structured Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Tracing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/observability/health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health & Readiness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/lineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Lineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting Concerns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting Concerns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/serializer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serializer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/payload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/compression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/notification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internal Event Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/feature_flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Flags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/control/scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Performance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/compression_middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Compression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/performance/bootstrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bootstrap (uvloop)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11_1" id="__nav_3_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Messaging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Messaging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/producer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Producer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/consumer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consumer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/retry-dlq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry & DLQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/delay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delayed Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/context-propagation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Propagation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/messaging/internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internals & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/outbox_publisher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbox Publisher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/consul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consul Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/settings_providers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Settings Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/integration/openlineage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenLineage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resilience Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resilience Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/retry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/circuit_breaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuit Breaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/rate_limiter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/timeout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeout & Cancellation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/bulkhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bulkhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/fallback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/locking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Locking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/idempotency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Idempotency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/leasing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Leasing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/sharding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workload Sharding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/backpressure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backpressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/backoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exponential Backoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/sagas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sagas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../athomic/resilience/adaptive_throttling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Throttling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⛔ Blocked
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⛔ Blocked">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feat-012-extended-fallback-chains-matrix-imputation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [FEAT-012] Extended Fallback Chains &amp; Matrix Imputation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategic-pursue-only-when-concrete-trigger-is-identified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟡 Strategic (pursue only when concrete trigger is identified)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🟡 Strategic (pursue only when concrete trigger is identified)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-tuning-a-adaptive-batch-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Tuning A — Adaptive Batch Splitting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-tuning-b-engine-migration-based-on-observed-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Tuning B — Engine Migration Based on Observed Throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-04-rayengine-true-distributed-task-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [ARCH-04] RayEngine — True Distributed Task Dispatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-importance-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Importance Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-memory-telemetry-rss-vs-mmap-split-in-adaptiveconcurrencycontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Memory Telemetry — RSS vs mmap Split in AdaptiveConcurrencyController
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-layer-extraction-bootstrap-debugcatalog-graph-version-promotion-out-of-features-into-athomicruntime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Layer Extraction — bootstrap/, debug/catalog*, graph/, version promotion out of features/ into athomic/runtime/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-data-contracts-schemadomain-validation-at-dataloaderprotocol-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Data Contracts — schema/domain validation at DataLoaderProtocol boundary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="feature-engineering-platform-verified-backlog">Feature Engineering Platform — Verified Backlog</h1>
+<blockquote>
+<p>Last audited: 2026-06-18 (previous audit: 2026-06-12)</p>
+<p>Items removed during audit (already implemented or false premise):
+- Harden Future Resolution Against Cancellation (former Critical Priority #1) → fixed; <code>caching/proxy.py</code> now guards <code>if not future.done(): future.set_exception(...)</code> in the single-flight coalescing path
+- Cache antes da validação → fixed; <code>base.py</code>'s pipeline is now <code>normalize → validate → cache lookup → backpressure → execute → cache write → telemetry</code> (matches the "Pipeline" diagram below, the old claim of <code>cache lookup</code> before <code>validation</code> no longer holds)
+- Streaming/Incremental Feature Support → FeatureStreamBridge + Kafka + sinks already operational
+- Auto-Scaling de Precisão → TorchEngine.<em>evaluate_dynamic_precision() already implemented
+- Multi-Backend Execution Abstraction → FeatureExecutionEngineProtocol + BaseExecutionEngine + FeatureBackendProtocol already complete
+- Sticky Partitioning in FeatureStreamBridge → wrong layer; belongs at Kafka producer (message key = entity_id)
+- np.bool</em> deprecation → false premise; np.bool_ (with underscore) is the correct NumPy dtype, not deprecated
+- Node-Level Retry &amp; Fallback Chains → FallbackChain + fallback_nodes already implemented in BaseInstruction
+- Retry &amp; Fallback Chains (6.5) → same as above
+- PolynomialTransformation RuntimeWarning → fixed (np.errstate)
+- TorchEngine pin_memory → fixed (_to_device helper)
+- FallbackError silent exception → fixed (logger.warning moved to BaseInstruction.resolve_and_transform_batch — see features-refactoring)
+- Cache Semantic Keying → <code>semantic_version: str</code> field added to <code>FeatureVectorSettings</code>; <code>get_batch()</code> / <code>set_batch()</code> in <code>base.py</code> now forward the value; cache key is version-aware and invalidates deterministically on version bump
+- <code>m.__dict__</code> → <code>m.model_dump()</code> → fixed in <code>base.py</code> <code>_extract_dicts</code> and <code>_validate_batch</code>
+- Sync/Async Mixing → <code>inspect.is_awaitable</code> check removed from <code>composite/base.py</code>; <code>_execute_transform_batch</code> is strictly sync; <code>compile_instruction</code> regression fixed (removed invalid keyword args)
+- Memory-Efficient Batch Processing → <code>NumpyBufferPool</code> class added to <code>async_numpy.py</code>; output matrix allocation is O(1) at steady state for fixed batch shapes
+- Execution Plan Serialization → <code>to_json()</code> / <code>from_json()</code> on <code>FeatureExecutionPlan</code>; round-trip invariant: <code>from_json(plan.to_json()).plan_hash == plan.plan_hash</code>
+- Remove Non-Deterministic <code>str(obj)</code> Fallback (former Critical Priority #1) → fixed; <code>_fallback_encoder</code> now raises <code>UnsupportedCacheKeyTypeError</code> for unsupported types (adding explicit, deterministic handling for <code>datetime</code>/<code>UUID</code>/<code>Decimal</code>); the separate <code>default=str</code> in <code>_generate_key</code>'s <code>_kv_client</code> branch was also unified onto <code>_fallback_encoder</code>
+- Document Event-Loop Ownership for <code>_inflight</code> (former Critical Priority #2) → fixed; <code>CachedTransformation</code>'s class docstring "Ownership contract" now documents <code>_inflight</code> as event-loop confined and not thread-safe, plus inline comments at both declaration sites
+- Premium A — Drift Alerts wiring → fixed; <code>record_output_distribution()</code> now accepts an optional <code>baseline</code>/<code>n_sigma</code>, compares <code>col_mean</code> against <code>baseline.get_feature_stats()</code> and increments <code>feature_drift_detected_total{vector_id,feature_key,direction}</code> on &gt;<code>n_sigma</code> deviation; <code>drift_baseline</code>/<code>n_sigma</code> (from <code>DriftBaselineSettings.n_sigma</code>, default 3.0) threaded through <code>FeatureEncoderService</code>/<code>BaseFeatureEncoder</code>/<code>FeatureEncoderFactory</code>/<code>VectorBootstrapCoordinator</code> (which also calls <code>track_vector()</code> on successful bootstrap)/<code>FeaturePlatformService</code>/<code>FeaturePlatformFactory</code>; <code>FeatureOutputDrift</code> alert added to <code>monitoring/prometheus/alert.rules.yml</code>
+- Premium B — Grafana dashboard → fixed; <code>monitoring/grafana/provisioning/dashboards/features.json</code> added (auto-provisioned alongside <code>api-overview.json</code>) with panels for encoding latency p50/p99, encoding success rate, per-feature output distribution heatmap, feature memory footprint, imputation rate, and a drift-events table, plus <code>vector_id</code>/<code>routing_key</code> template variables. "Cache Hit Rate" was retargeted to "Encoding Success Rate" and "Imputation Rate" grouped by <code>vector_id</code> (not <code>source_key</code>) to match the metrics' actual label sets — no new instrumentation added
+- ARCH-01 — Parallel Vector Bootstrap → fixed; <code>VectorBootstrapCoordinator.bootstrap()</code> now compiles/connects/registers all vectors concurrently via <code>asyncio.gather</code> over a new <code>_bootstrap_one()</code> helper, bounded by <code>asyncio.Semaphore(global_settings.bootstrap_concurrency_limit)</code> (new <code>FeatureSettings.bootstrap_concurrency_limit</code>, default 10); the Error Kernel pattern is preserved — each vector's compile/connect/register/<code>track_vector()</code> steps are caught independently per-vector and converted to <code>FailedVectorInfo</code> instead of propagating
+- ARCH-03 — <code>NumpyBufferPool</code> Memory Management (Memory Bloat) → fixed; <code>NumpyBufferPool._available</code> is now an <code>OrderedDict[(batch_size, dimension), List[np.ndarray]]</code> with LRU eviction (<code>move_to_end()</code> on reuse, <code>popitem(last=False)</code> to evict the least-recently-used shape when a new shape arrives at capacity); capacity bounded by new <code>AsyncNumpyProviderSettings.buffer_pool_max_shapes</code> (default 16, preserving the prior unbounded-up-to-16 behavior)
+- Cache #1 — Governance Policies → fixed; <code>FeatureCacheSettings</code> adds <code>max_payload_bytes</code> and <code>max_vector_dimension</code>; <code>PipelineCacheManager.set_batch</code>/<code>set_entity</code> check dimension before packing and payload size after packing, logging at DEBUG and returning early (write silently skipped, never raises)
+- Cache #2 — Compression Strategy → fixed; <code>FeatureCacheSettings</code> adds <code>compress_above_bytes</code>/<code>compression_algorithm</code>; v2 binary envelope carries a <code>compressed</code> flag (uint8); <code>_pack_binary_envelope</code> is now <code>async</code>, delegates to <code>GzipProvider</code> when raw bytes exceed the threshold; <code>_unpack_binary_envelope</code> decompresses on the way out
+- Cache #3 — Dtype-Aware Serialization → fixed; <code>FeatureCacheSettings</code> adds <code>serialization_dtype: Literal["float32","float16"]</code>; v2 envelope carries a <code>dtype_code</code> (uint8, 0=float32/1=float16); matrices are cast to the configured dtype before serialization and reconstructed in the same dtype on read; old v1 payloads (no <code>b"FCV2"</code> magic) decoded via backward-compat path and age out via TTL
+- Cache #4 — Explicit Cache Write Semantics → fixed; <code>PipelineCacheManager</code> class docstring now has formal "Write Semantics" and "Read Semantics" sections documenting best-effort writes, silent governance skips, exception swallowing on both read and write paths, and the v1/v2 envelope format
+- Cache #6 — Serialization Versioning → already resolved by Cache #2-3; the v2 envelope carries a 4-byte <code>b"FCV2"</code> magic marker, a <code>dtype_code</code> (uint8), and a <code>compressed</code> flag (uint8); v1 payloads detected by absence of magic marker; no separate version field needed
+- Cache #7 — Miss Semantics in <code>get_batch_granular</code> → fixed; <code>GranularCacheResult</code> dataclass (<code>caching/result.py</code>) replaces <code>Tuple[np.ndarray, List[int]]</code>; exposes <code>output_matrix</code>, <code>hit_indices</code>, <code>miss_indices</code>, <code>hit_mask</code> property, and <code>hit_rate</code> property; zero-ambiguity eliminated — callers use indices not matrix content to distinguish hits from misses
+- Cache #8 — Payload Compression Metrics → fixed; 4 Prometheus Histograms added to <code>feature_metrics.py</code> and exported from <code>observability/metrics/usage/ai/features/</code>: <code>feature_cache_payload_bytes{vector_id,operation}</code>, <code>feature_cache_compression_ratio{vector_id}</code>, <code>feature_cache_serialization_seconds{vector_id}</code>, <code>feature_cache_deserialization_seconds{vector_id}</code>; emitted inside <code>PipelineCacheManager._pack_binary_envelope</code> and <code>_unpack_binary_envelope</code>; <code>vector_id</code> threaded via constructor (<code>"unknown"</code> default until Group B wires per-vector instances)
+- Cache #5 — Modularize PipelineCacheManager → fixed; <code>FeatureCacheKeyBuilder</code> extracted to <code>caching/keys.py</code> (SHA-256 key generation, epoch/prefix namespacing, entity vs batch key distinction, <code>project_states</code> projection) and <code>FeatureBinarySerializer</code> extracted to <code>caching/serializer.py</code> (dtype resolution, v1/v2 binary envelope, GzipProvider, all 4 compression Prometheus metrics); <code>PipelineCacheManager</code> slimmed from 471 to ~230 lines, delegating to both collaborators; all 4 compression metrics now carry correct <code>vector_id</code> via <code>FeatureBinarySerializer</code> constructor
+- ARCH-07 — Inter-Vector Dependency Graph → fixed; <code>VectorDependencyGraph</code> added to <code>graph/vector_graph.py</code>; built from <code>FeatureCataloger.generate_manifest()</code> outputs after bootstrap; exposes <code>get_vectors_using_key(source_key)</code> (impact query), <code>get_all_source_keys(vector_id)</code> (union of all source_keys for a vector), and <code>topological_order()</code> (Kahn's BFS — raises <code>ValueError</code> on circular dependency); integrated into <code>VectorBootstrapCoordinator.dependency_graph</code> property and <code>FeaturePlatformService.get_vector_dependency_graph()</code> public API
+- ARCH-10 — BaseFeatureEncoder core adapter → fixed; <code>_CoreEncoderAdapter</code> extracted to own the pure CPU execution kernel (context build → engine call → drift distribution); <code>encode_batch()</code> reduced from ~150 to ~70 lines delegating execution step to <code>self._core.execute()</code>; <code>BackpressureManager</code> semantics preserved (returns imputed matrix, not raises); full decorator stack reuse not applicable — <code>BaseFeatureEncoder</code> uses <code>BackpressureManager</code> while <code>EncoderDecoratorStack</code> requires <code>AdaptiveConcurrencyController</code>
+- ARCH-06 — Temporal State Spill Queue → fixed; bounded <code>asyncio.Queue(maxsize=max_spill_queue_size)</code> added to <code>TemporalStateManager</code>; when <code>_background_tasks &gt;= max_pending_tasks</code> the dropped L2 write goes to the spill queue instead of being silently discarded; when both backlog and spill queue are full the write is dropped and <code>temporal_l2_write_failures_total{reason='backlog_full'}</code> is incremented; <code>_on_task_done()</code> triggers <code>_drain_spill_queue()</code> when backlog drops below 50%; <code>shutdown()</code> drains spill queue into tasks before waiting for flush; two new Prometheus metrics: <code>temporal_l2_spill_writes_total</code> (Counter) and <code>temporal_l2_spill_queue_size</code> (Gauge)
+- ARCH-05 — DataLake DuckDB Acceleration → fixed; optional <code>duckdb</code> dependency added to <code>pyproject.toml</code> under <code>[tool.poetry.extras] lake-acceleration</code>; <code>DataLakeStoreSettings</code> adds <code>use_duckdb: bool = False</code>; <code>DataLakePointInTimeStore._get_as_of_impl()</code> dispatches to <code>_scan_as_of_duckdb()</code> when <code>use_duckdb=True</code> and <code>duckdb</code> is importable, otherwise falls back to pyarrow silently; DuckDB path uses <code>parquet_scan(glob, hive_partitioning=true)</code> with <code>cursor.description</code> for dynamic feature column discovery; tests skip automatically via <code>pytest.importorskip("duckdb")</code> when not installed
+- ARCH-09 — Feature Catalog &amp; Governance Layer → fixed; <code>FeatureCatalogEntry</code> frozen dataclass added to <code>debug/catalog.py</code> (vector_id, plan_hash, dimension, semantic_version, owner, tags, status, registered_at, manifest, failure_info); <code>FeatureCatalog</code> service aggregates one entry per vector after bootstrap (healthy + failed); <code>FeatureCataloger.build_entry()</code> static factory creates entries from compiled plans; <code>FeatureVectorSettings</code> gains <code>owner</code> and <code>tags</code> governance fields; wired into <code>VectorBootstrapCoordinator.catalog</code> property and <code>FeaturePlatformService.get_catalog()</code> public API
+- ARCH-02 — Semantic Vector Versioning → fixed; <code>FeatureVectorRegistry</code> gains <code>register_version(name, version, encoder)</code>, <code>get_version(name, version)</code>, <code>get_all_versions(name)</code>, and <code>list_versions(name)</code> using compound key <code>name@version</code>; plain-name default key is unchanged (backward compat); <code>_VERSION_SEP = "@"</code> as compound key separator
+- ARCH-08 — Advanced Health &amp; Observability API → fixed; <code>FeaturePlatformService.health_extra()</code> rebuilt to expose per-vector catalog snapshot (status, plan_hash, dimension, semantic_version, owner, tags, registered_at, failure_info when failed) under <code>health["vectors"]</code>; <code>health["metrics"]</code> (healthy/failed/total counts) retained; <code>health["concurrency"]["backpressure_active"]</code> included when <code>AdaptiveConcurrencyController</code> has <code>is_overloaded()</code>; zero extra computation — reads from the pre-built <code>FeatureCatalog</code>
+- Cache #9 — xxHash evaluation → implemented; <code>FeatureCacheSettings</code> adds <code>use_xxhash: bool = False</code>; <code>FeatureCacheKeyBuilder</code> accepts <code>use_xxhash</code> flag and dispatches to <code>xxhash.xxh3_64_hexdigest</code> when available, falls back to SHA-256 silently when <code>xxhash</code> package not installed; <code>PipelineCacheManager</code> wires <code>use_xxhash</code> from settings into key builder
+- Cache #10 — Cache Warmup APIs → fixed; <code>PipelineCacheManager.warm_batch(plan_hash, raw_states, matrix, semantic_version)</code> pre-populates batch cache entry; <code>warm_entities(plan_hash, entity_ids, vectors, semantic_version)</code> pre-populates per-entity cache via concurrent <code>asyncio.gather</code>; governance (max_vector_dimension, max_payload_bytes) still applies
+- Cache #11 — Cache Introspection Tooling → fixed; <code>PipelineCacheManager.describe_key()</code> / <code>describe_entity_key()</code> return the cache key string for any input without a read; <code>inspect_envelope(key)</code> reads raw provider bytes and returns format/dtype/shape/compressed/expiry metadata via <code>FeatureBinarySerializer.describe_envelope()</code> — no decompression, no matrix reconstruction; handles v1 and v2 envelopes, returns <code>{"format": "unknown", "error": ...}</code> on corrupt payloads
+- Benchmarking Suite — fixed; <code>test_encode_throughput</code> (vectors/sec for batch-128, stored in <code>extra_info["vectors_per_second"]</code>) and <code>test_encode_memory_per_row</code> (bytes/row allocation rate = peak/batch_size) added alongside existing <code>test_encode_latency</code> (p50/p95/p99 across batch sizes 1/32/128/512) and <code>test_encode_peak_memory</code>; all 4 benchmarks form the baseline suite; module docstring documents full coverage</p>
+</blockquote>
+<hr />
+<h2 id="blocked">⛔ Blocked</h2>
+<h3 id="feat-012-extended-fallback-chains-matrix-imputation">[FEAT-012] Extended Fallback Chains &amp; Matrix Imputation</h3>
+<p><strong>Blocked by:</strong> <code>Core ML Module</code> (required for KNN state persistence and vectorized distance calculations).</p>
+<p><strong>Tasks:</strong>
+- Implement <code>ForwardFillTransformation</code> (requires temporal matrix context).
+- Implement <code>KNNImputationTransformation</code> (requires ML distance metrics and fitted state).
+- Create <code>FallbackChainTransformation</code> orchestrator (<code>[primary_transform -&gt; fallback_transform -&gt; final_scalar_impute]</code>).</p>
+<p><strong>Acceptance Criteria:</strong> Graceful degradation under data quality issues without breaking the columnar <code>float32</code> memory bounds or the strict execution engine contracts.</p>
+<hr />
+<h2 id="strategic-pursue-only-when-concrete-trigger-is-identified">🟡 Strategic (pursue only when concrete trigger is identified)</h2>
+<h3 id="auto-tuning-a-adaptive-batch-splitting">Auto-Tuning A — Adaptive Batch Splitting</h3>
+<p><strong>Trigger:</strong> Only pursue if a consumer is observed sending batches that cause p99 encoding latency to exceed SLA, and the caller has no control over batch sizing.</p>
+<p><strong>Approach:</strong> Intercept in <code>BaseFeatureEncoder.encode_batch()</code> / <code>FeatureEncoderService.encode_tensor_batch()</code>. If <code>batch_size &gt; adaptive_split_threshold</code> (configurable), split the batch into chunks, execute each through the engine independently, and concatenate results before returning. The threshold should be derived from the <code>feature_encoding_duration_seconds</code> p99 histogram, not hardcoded.</p>
+<p><strong>What NOT to do:</strong> Do not implement a dynamic threshold that adjusts itself at runtime — that creates oscillation. Use a static threshold set via config, informed by offline analysis of the latency histogram.</p>
+<p><strong>Acceptance Criteria:</strong>
+- [ ] A specific consumer with demonstrable SLA breach is identified first.
+- [ ] Split is transparent to callers — same response shape regardless of whether splitting occurred.
+- [ ] A config flag <code>adaptive_batch_split_threshold</code> in <code>FeatureVectorSettings</code> enables/disables it per vector.
+- [ ] Splitting adds at most one extra allocation per chunk (no copies beyond what the buffer pool already handles).</p>
+<hr />
+<h3 id="auto-tuning-b-engine-migration-based-on-observed-throughput">Auto-Tuning B — Engine Migration Based on Observed Throughput</h3>
+<p><strong>Trigger:</strong> Only pursue if a deployment runs both <code>AsyncCPUEngine</code> and <code>TorchEngine</code> and there is evidence that the wrong engine is selected at the feature-vector level due to static config.</p>
+<p><strong>Approach:</strong> After N encoding calls, compare <code>feature_encoding_duration_seconds</code> p50 for the configured engine against a shadow execution on the alternative engine. If the alternative consistently outperforms by more than a configurable margin, emit a warning log recommending a config change. Do NOT auto-migrate at runtime — engine selection affects memory layout and compilation graphs; silent migration would be a correctness risk.</p>
+<p><strong>Acceptance Criteria:</strong>
+- [ ] A concrete deployment with mixed engine types and measurable latency difference is identified.
+- [ ] Comparison is based on observed <code>feature_encoding_duration_seconds</code>, not synthetic benchmarks.
+- [ ] Output is a structured log warning with <code>vector_id</code>, current engine, recommended engine, and observed delta — never a silent config change.</p>
+<hr />
+<h3 id="arch-04-rayengine-true-distributed-task-dispatch">[ARCH-04] RayEngine — True Distributed Task Dispatch</h3>
+<p><strong>Trigger:</strong> Only pursue when a workload requiring cross-node feature computation is identified. Single-node GPU + <code>NumpyBufferPool</code> covers most real workloads.</p>
+<p><strong>Status:</strong> <code>RayEngine</code> (<code>engines/providers/ray_engine.py</code>) exists but does <strong>not</strong> use Ray for distribution. Its <code>_execute_tensor_batch_impl</code> uses <code>asyncio.gather</code> identically to <code>AsyncNumpyEngine</code> — Ray is only initialized for the connection, not for dispatching work.</p>
+<p><strong>What true distributed execution requires:</strong>
+- <code>ExecutionNodeProtocol</code> implementations must be serializable (pickle-compatible) for Ray's object store
+- <code>ColumnarFeatureContext</code> columns must be transferable via <code>ray.put()</code> / shared memory
+- Tier execution must use <code>ray.remote</code> + <code>ray.get()</code> instead of <code>asyncio.gather</code>
+- Cross-node result aggregation and memory offset merging</p>
+<p><strong>Blocking conditions:</strong>
+1. A use case requiring cross-node feature computation must be identified
+2. Ray cluster infrastructure must be provisioned and tested
+3. Instruction serialization strategy must be defined — frozen dataclasses are pickle-friendly, but transformer objects they hold may not be</p>
+<p><strong>Acceptance Criteria (when unblocked):</strong>
+- [ ] A workload is identified that genuinely requires cross-node execution.
+- [ ] <code>ColumnarFeatureContext</code> verified pickle-compatible via <code>ray.put()</code>.
+- [ ] <code>RayEngine._execute_tensor_batch_impl</code> uses <code>ray.remote</code> for at least one tier.
+- [ ] Fallback to <code>asyncio.gather</code> when Ray cluster is unavailable.</p>
+<hr />
+<h3 id="feature-importance-scoring">Feature Importance Scoring</h3>
+<p><strong>Blocked by:</strong> A downstream ML model that consumes the feature vector (feature importance is always relative to a specific prediction target — without knowing what model uses the feature vector, there is no importance to compute).</p>
+<p><strong>Approach (when unblocked):</strong>
+- Proxy importance (zero extra computation): use <code>feature_drift_detected_total</code> rate as importance signal — features that drift most affect model performance most. Available immediately once a model consumer is integrated.
+- Permutation importance: shuffle one feature column, measure prediction score drop. Requires a <code>ModelProtocol</code> interface and a labeled evaluation dataset.
+- SHAP: requires a tree or neural model with SHAP-compatible explainer. High compute cost.</p>
+<p><strong>Acceptance Criteria (when unblocked):</strong>
+- [ ] A specific downstream model and evaluation dataset are identified.
+- [ ] Importance scores are persisted per <code>(vector_id, feature_key, model_version)</code>.
+- [ ] Exposed via API endpoint or Grafana panel.</p>
+<hr />
+<h3 id="advanced-memory-telemetry-rss-vs-mmap-split-in-adaptiveconcurrencycontroller">Advanced Memory Telemetry — RSS vs mmap Split in AdaptiveConcurrencyController</h3>
+<p><strong>Blocked by:</strong> Spill system must have confirmed production usage before this distinction has any impact.</p>
+<p><strong>Problem:</strong> <code>AdaptiveConcurrencyController</code> monitors total RAM pressure without distinguishing RSS (pages in RAM) from mmap (memory-mapped files via <code>np.memmap</code> in the spill layer). If a large batch spills to disk, RSS drops but mmap grows — the controller may incorrectly grant resources because it sees lower RAM pressure, while the system is actually I/O-bound on the mmap pages.</p>
+<p><strong>Approach (when unblocked):</strong> Replace <code>psutil.virtual_memory().percent</code> with a two-signal model:
+- RSS: <code>psutil.Process().memory_info().rss / psutil.virtual_memory().total</code>
+- mmap: <code>psutil.Process().memory_maps()</code> summed for paths matching the spill directory</p>
+<p><strong>Acceptance Criteria:</strong>
+- [ ] A spill-active production scenario is identified that triggers the mmap/RSS confusion.
+- [ ] <code>AdaptiveConcurrencyController</code> back-pressure threshold accounts for both signals independently.
+- [ ] No regression in controller behavior when spill is inactive (mmap signal is zero).</p>
+<hr />
+<h3 id="runtime-layer-extraction-bootstrap-debugcatalog-graph-version-promotion-out-of-features-into-athomicruntime">Runtime Layer Extraction — <code>bootstrap/</code>, <code>debug/catalog*</code>, <code>graph/</code>, version promotion out of <code>features/</code> into <code>athomic/runtime/</code></h3>
+<p><strong>Trigger:</strong> Only pursue once a second real subsystem under <code>athomic/ai/</code> (e.g. <code>agents/</code>, <code>rag/</code>) concretely needs the same artifact lifecycle (compile → persist → serve → promote/rollback) — not when it merely <em>could</em> reuse it in theory.</p>
+<p><strong>Status (verified 2026-06-22):</strong> No such second consumer exists today. <code>grep -rl "bootstrap|catalog|canary|promote|rollback|deployment" src/nala/athomic/ai/agents src/nala/athomic/ai/rag</code> returns zero hits. <code>features/bootstrap.py</code>, <code>features/debug/catalog_repository.py</code>, <code>features/graph/</code>, and the version-promotion API (<code>registry.promote()</code>/<code>rollback()</code>) are all currently typed directly against <code>VectorId</code>/<code>FeatureExecutionPlan</code> — generalizing them now means designing a Protocol with no second real implementation to validate it against.</p>
+<p><strong>Why not now:</strong> This is the same anti-pattern the project's Factory Rules already ban for <code>*Factory</code> classes ("only introduce a Registry when more than one real provider exists or is concretely planned") — extracting a generic <code>runtime/</code> package for hypothetical <code>AgentRuntime</code>/<code>PromptRuntime</code>/<code>RAGRuntime</code> consumers is premature abstraction without a concrete second caller. The <code>adaptive_concurrency</code> precedent often cited for this move doesn't actually demonstrate proven reuse either — it has exactly one caller today (<code>features/</code>) too; it lives in a neutral namespace because admission/concurrency control is domain-agnostic <em>by construction</em>, not because two systems use it.</p>
+<p><strong>Approach (when unblocked):</strong>
+- Extract narrow <code>Protocol</code>s first (e.g. <code>CompiledArtifactRepositoryProtocol</code>, <code>DeploymentControllerProtocol</code>) without moving the implementation — shape the seam, don't build the wall.
+- Only move concrete code into <code>athomic/runtime/</code> once the second consumer (Agents or RAG) has a real, shipped need for the same lifecycle, so the abstraction is validated against two real shapes instead of one imagined one.
+- Keep <code>features/</code> owning the domain-specific parts (encoders, transformations, execution engines) regardless of what happens to the lifecycle plumbing.</p>
+<p><strong>Acceptance Criteria (when unblocked):</strong>
+- [ ] A second subsystem (Agents, RAG, or other) has a concrete, shipped requirement for compile/persist/serve/promote/rollback lifecycle.
+- [ ] Protocols are extracted and validated against both real implementations before any code physically moves.
+- [ ] <code>features/</code> <code>make solid</code> / import-linter contracts pass unchanged after extraction (no new circular imports introduced).
+- [ ] No behavior change for existing Feature Platform callers (<code>FeaturePlatformService</code> public API surface unchanged).</p>
+<hr />
+<h3 id="input-data-contracts-schemadomain-validation-at-dataloaderprotocol-boundary">Input Data Contracts — schema/domain validation at <code>DataLoaderProtocol</code> boundary</h3>
+<p><strong>Trigger:</strong> Only pursue once a real incident is observed where a malformed batch (corrupted schema, out-of-domain values) reaches <code>ColumnarFeatureContext</code> and causes a failure or silent bad output downstream — not preemptively.</p>
+<p><strong>Status:</strong> Today validation is output-side only — <code>DriftBaselineProtocol</code> catches statistical anomalies <em>after</em> transformation. There is no input-side contract check at the <code>DataLoaderProtocol</code> boundary (<code>io/</code> — <code>ArrowAdapter</code>, <code>DictListAdapter</code>) before a batch is admitted into the pipeline.</p>
+<p><strong>Approach (when unblocked):</strong>
+- Add a narrow <code>DataContractProtocol.validate(batch) -&gt; ValidationResult</code> checked at the loader boundary, before the batch reaches <code>ColumnarFeatureContext</code>.
+- Default/single-provider implementation: a lightweight in-house schema+domain check (column dtypes, declared value ranges) — no external dependency needed for the common case.
+- Only register a <code>great_expectations</code>-backed provider via the existing Strategy+Registry convention if the in-house check proves insufficient for a real failure mode (e.g. cross-column invariants) — don't pull in the dependency speculatively.
+- On violation: route the batch to a DLQ/reject path (mirroring the existing <code>retry/dlq_builder.py</code> pattern in messaging) rather than raising and failing the whole tier.</p>
+<p><strong>Acceptance Criteria (when unblocked):</strong>
+- [ ] A specific incident (corrupted schema or out-of-domain values reaching <code>ColumnarFeatureContext</code>) is identified and documented.
+- [ ] Validation runs at the <code>DataLoaderProtocol</code> boundary, before tier execution, with zero added latency on the happy path.
+- [ ] Rejected batches are observable (Prometheus counter + structured log), not silently dropped.
+- [ ] No new external dependency added unless the in-house check is demonstrated insufficient.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Nalaminds
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
