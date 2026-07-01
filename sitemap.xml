@@ -1,419 +1,419 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/</loc>
+         <loc>https://guandaline.github.io/athomic/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/README-onboarding/</loc>
+         <loc>https://guandaline.github.io/athomic/README-onboarding/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/architecture/</loc>
+         <loc>https://guandaline.github.io/athomic/architecture/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/architecture/athomic-layer/</loc>
+         <loc>https://guandaline.github.io/athomic/architecture/athomic-layer/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/architecture/dependency-injection/</loc>
+         <loc>https://guandaline.github.io/athomic/architecture/dependency-injection/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/architecture/domain-layer/</loc>
+         <loc>https://guandaline.github.io/athomic/architecture/domain-layer/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/architecture/runtime-vs-messaging-vs-outbox/</loc>
+         <loc>https://guandaline.github.io/athomic/architecture/runtime-vs-messaging-vs-outbox/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/architecture/scorecard/</loc>
+         <loc>https://guandaline.github.io/athomic/architecture/scorecard/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/cloud_native_mesh_mode/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/cloud_native_mesh_mode/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/compression/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/compression/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/config/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/config/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/context/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/context/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/credentials/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/credentials/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/events/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/events/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/http/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/http/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/lifecycle/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/lifecycle/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/lineage/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/lineage/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/notification/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/notification/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/payload/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/payload/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/plugins/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/plugins/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/router/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/router/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/serializer/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/serializer/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/services/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/services/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/session/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/session/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/storage/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/storage/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/ade-rl/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/ade-rl/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/agents/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/agents/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/cognitive/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/cognitive/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/context/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/context/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/documents/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/documents/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/embeddings/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/embeddings/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/governance/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/governance/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/graph/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/graph/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/llm/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/llm/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/memory/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/memory/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/qa_evaluation/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/qa_evaluation/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/rag/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/rag/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/rl/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/rl/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/sandbox/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/sandbox/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/semantic_cache/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/semantic_cache/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/workflow/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/workflow/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/ai/agents/persistence/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/ai/agents/persistence/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/config/schemas/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/config/schemas/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/control/feature_flags/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/control/feature_flags/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/control/live_settings/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/control/live_settings/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/control/scheduler/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/control/scheduler/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/documents/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/documents/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/graph/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/graph/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/kvstore/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/kvstore/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/migrations/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/migrations/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/outbox/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/outbox/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/database/vector/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/database/vector/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/config_providers/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/config_providers/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/consul/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/consul/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/discovery/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/discovery/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/openlineage/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/openlineage/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/outbox_publisher/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/outbox_publisher/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/tasks/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/tasks/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/advanced/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/advanced/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/consumer/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/consumer/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/context-propagation/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/context-propagation/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/decorators/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/decorators/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/delay/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/delay/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/internals/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/internals/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/producer/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/producer/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/integration/messaging/retry-dlq/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/integration/messaging/retry-dlq/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/observability/health/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/observability/health/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/observability/log/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/observability/log/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/observability/metrics/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/observability/metrics/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/observability/tracing/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/observability/tracing/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/performance/bootstrap/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/performance/bootstrap/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/performance/cache/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/performance/cache/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/performance/compression_middleware/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/performance/compression_middleware/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/adaptive_throttling/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/adaptive_throttling/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/backoff/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/backoff/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/backpressure/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/backpressure/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/bulkhead/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/bulkhead/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/circuit_breaker/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/circuit_breaker/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/fallback/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/fallback/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/idempotency/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/idempotency/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/leasing/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/leasing/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/locking/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/locking/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/rate_limiter/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/rate_limiter/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/retry/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/retry/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/sagas/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/sagas/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/sharding/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/sharding/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/resilience/timeout/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/resilience/timeout/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/security/auth/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/security/auth/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/security/crypto/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/security/crypto/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/athomic/security/secrets/</loc>
+         <loc>https://guandaline.github.io/athomic/athomic/security/secrets/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/ai/ai_guide/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/ai/ai_guide/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/ai/feature_platform_runbook/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/ai/feature_platform_runbook/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/ai/qa_evaluation/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/ai/qa_evaluation/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/architecture/athomic-capability-map/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/architecture/athomic-capability-map/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/architecture/circular-imports-rules/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/architecture/circular-imports-rules/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/architecture/code-smells/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/architecture/code-smells/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/architecture/design-patterns/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/architecture/design-patterns/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/architecture/solid-rules/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/architecture/solid-rules/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/database/graph/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/database/graph/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/database/vector/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/database/vector/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/testing/test-conventions/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/testing/test-conventions/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
     <url>
-         <loc>https://guandaline.github.io/nala-core-api/guides/workflows/getting-started/</loc>
+         <loc>https://guandaline.github.io/athomic/guides/workflows/getting-started/</loc>
          <lastmod>2026-07-01</lastmod>
     </url>
 </urlset>
